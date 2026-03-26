@@ -1,0 +1,192 @@
+﻿@{
+    ViewData["Title"] = "Map";
+}
+
+<div class="container mt-4">
+    <h2>Map</h2>
+
+    <div class="d-flex gap-2 mb-3">
+        <input id="searchBox"
+               type="text"
+               class="form-control"
+               placeholder="Search for a specific location..." />
+
+        <button id="myLocationBtn" class="btn btn-primary" type="button">
+            My Location
+        </button>
+    </div>
+
+    <div id="map" style="height: 600px; width: 100%; border-radius: 12px;"></div>
+</div>
+
+<script>
+    let map;
+    let userMarker;
+    let autocomplete;
+    let geocoder;
+    let infoWindow;
+    let shelterMarkers = [];
+
+    function initMap() {
+        const defaultCenter = { lat: 31.2518, lng: 34.7913 };
+
+            map = new google.maps.Map(document.getElementById("map"), {
+        center: defaultCenter,
+        zoom: 13,
+        mapTypeControl: false,
+        streetViewControl: false,
+        fullscreenControl: false,
+        styles: [
+            {
+                featureType: "poi.business",
+                stylers: [{ visibility: "off" }]
+            },
+            {
+                featureType: "transit",
+                stylers: [{ visibility: "off" }]
+            }
+        ]
+    });
+        geocoder = new google.maps.Geocoder();
+        infoWindow = new google.maps.InfoWindow();
+
+        userMarker = new google.maps.Marker({
+            position: defaultCenter,
+            map: map,
+            title: "Current location",
+            icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+        });
+
+        const input = document.getElementById("searchBox");
+        const myLocationBtn = document.getElementById("myLocationBtn");
+
+        autocomplete = new google.maps.places.Autocomplete(input);
+
+        autocomplete.addListener("place_changed", function () {
+            const place = autocomplete.getPlace();
+
+            if (!place.geometry || !place.geometry.location) {
+                alert("No location found");
+                return;
+            }
+
+            moveToLocation(place.geometry.location, "Selected location");
+        });
+
+        input.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+
+                const address = input.value;
+
+                geocoder.geocode({ address: address }, function (results, status) {
+                    if (status === "OK" && results[0]) {
+                        moveToLocation(results[0].geometry.location, "Selected location");
+                    } else {
+                        alert("Location not found");
+                    }
+                });
+            }
+        });
+
+        myLocationBtn.addEventListener("click", function () {
+            getUserCurrentLocation();
+        });
+
+        loadShelters();
+        getUserCurrentLocation();
+    }
+
+    function getUserCurrentLocation() {
+        if (!navigator.geolocation) {
+            alert("Geolocation is not supported by this browser.");
+            return;
+        }
+
+        navigator.geolocation.getCurrentPosition(
+            function (position) {
+                const userLocation = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+
+                moveToLocation(userLocation, "You are here");
+            },
+            function (error) {
+                console.log("Location error:", error);
+            },
+            {
+                enableHighAccuracy: true,
+                timeout: 10000,
+                maximumAge: 0
+            }
+        );
+    }
+
+    function moveToLocation(location, title) {
+        map.setCenter(location);
+        map.setZoom(16);
+        userMarker.setPosition(location);
+        userMarker.setTitle(title);
+
+        infoWindow.setContent(`<strong>${title}</strong>`);
+        infoWindow.open(map, userMarker);
+    }
+
+
+        async function loadShelters() {
+        try {
+           const response = await fetch('/api/shelters');
+            const shelters = await response.json();
+
+            shelterMarkers.forEach(marker => marker.setMap(null));
+            shelterMarkers = [];
+
+            const bounds = new google.maps.LatLngBounds();
+
+            shelters.forEach(shelter => {
+                const position = {
+                    lat: shelter.latitude,
+                    lng: shelter.longitude
+                };
+
+                const marker = new google.maps.Marker({
+                    position: position,
+                    map: map,
+                    title: shelter.name,
+                    icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                });
+
+                const shelterInfo = new google.maps.InfoWindow({
+                    content: `
+                        <div>
+                            <h6>${shelter.name}</h6>
+                            <p><strong>Address:</strong> ${shelter.address ?? ''}</p>
+                            <p><strong>City:</strong> ${shelter.city ?? ''}</p>
+                            <p><strong>Type:</strong> ${shelter.shelterType ?? ''}</p>
+                        </div>
+                    `
+                });
+
+                marker.addListener("click", () => {
+                    shelterInfo.open(map, marker);
+                });
+
+                shelterMarkers.push(marker);
+                bounds.extend(position);
+            });
+
+            if (shelters.length > 0) {
+                map.fitBounds(bounds);
+            }
+        } catch (error) {
+            console.error("Error loading shelters:", error);
+        }
+    }
+    window.initMap = initMap;
+</script>
+
+
+<script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuiZcDNCGOmwM7OSjNncN7yrjIjcRMzJk&libraries=places&callback=initMap">
+</script>
