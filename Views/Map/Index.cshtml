@@ -1,23 +1,50 @@
 ﻿@{
     ViewData["Title"] = "Map";
 }
+<link rel="stylesheet" href="~/css/map.css" />
 
-<div class="container mt-4">
-    <h2>Map</h2>
+<div class="container-fluid mt-4 map-page px-4">
+    <h2 class="map-title">Map</h2>
 
-    <div class="d-flex gap-2 mb-3">
-        <input id="searchBox"
-               type="text"
-               class="form-control"
-               placeholder="Search for a specific location..." />
+    <div class="map-toolbar">
+        <div class="map-search-group">
+            <input id="searchBox"
+                   type="text"
+                   class="form-control map-search-input"
+                   placeholder="Search for a specific location..." />
 
-        <button id="myLocationBtn" class="btn btn-primary" type="button">
+            <button id="searchBtn" class="map-search-btn" type="button">
+                Search
+            </button>
+        </div>
+
+        <button id="myLocationBtn" class="map-location-btn" type="button">
             My Location
         </button>
     </div>
 
-    <div id="map" style="height: 600px; width: 100%; border-radius: 12px;"></div>
+    <div class="map-container">
+        <div class="map-layout">
+            <div class="map-map-area">
+                <div class="map-legend">
+                    <div class="map-legend-title">Map Key</div>
+                    <div class="map-legend-item"><span class="legend-color red"></span> High risk</div>
+                    <div class="map-legend-item"><span class="legend-color yellow"></span> Medium risk</div>
+                    <div class="map-legend-item"><span class="legend-color green"></span> Low risk</div>
+                    <div class="map-legend-item"><span class="legend-color shelter"></span> Shelter</div>
+                </div>
+
+                <div id="map"></div>
+            </div>
+
+            <div id="shelterPanel" class="shelter-panel">
+                <h4>Shelter Details</h4>
+                <p>Click a shelter on the map to view details.</p>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 <script>
     let map;
@@ -26,30 +53,25 @@
     let geocoder;
     let infoWindow;
     let shelterMarkers = [];
+    let riskCircles = {};
 
     function initMap() {
         const defaultCenter = { lat: 31.2518, lng: 34.7913 };
 
-            map = new google.maps.Map(document.getElementById("map"), {
-        center: defaultCenter,
-        zoom: 13,
-        mapTypeControl: false,
-        streetViewControl: false,
-        fullscreenControl: false,
-        styles: [
-            {
-                featureType: "poi.business",
-                stylers: [{ visibility: "off" }]
-            },
-            {
-                featureType: "transit",
-                stylers: [{ visibility: "off" }]
-            }
-        ]
-    });
+        map = new google.maps.Map(document.getElementById("map"), {
+            center: defaultCenter,
+            zoom: 8,
+            mapTypeControl: false,
+            streetViewControl: false,
+            fullscreenControl: false,
+            styles: [
+                { featureType: "poi.business", stylers: [{ visibility: "off" }] },
+                { featureType: "transit", stylers: [{ visibility: "off" }] }
+            ]
+        });
+
         geocoder = new google.maps.Geocoder();
         infoWindow = new google.maps.InfoWindow();
-
         userMarker = new google.maps.Marker({
             position: defaultCenter,
             map: map,
@@ -59,6 +81,7 @@
 
         const input = document.getElementById("searchBox");
         const myLocationBtn = document.getElementById("myLocationBtn");
+        const searchBtn = document.getElementById("searchBtn");
 
         autocomplete = new google.maps.places.Autocomplete(input);
 
@@ -73,19 +96,29 @@
             moveToLocation(place.geometry.location, "Selected location");
         });
 
+        function searchTypedLocation() {
+            const address = input.value.trim();
+
+            if (!address) {
+                alert("Please enter a location");
+                return;
+            }
+
+            geocoder.geocode({ address: address }, function (results, status) {
+                if (status === "OK" && results[0]) {
+                    moveToLocation(results[0].geometry.location, "Selected location");
+                } else {
+                    alert("Location not found");
+                }
+            });
+        }
+
+        searchBtn.addEventListener("click", searchTypedLocation);
+
         input.addEventListener("keydown", function (event) {
             if (event.key === "Enter") {
                 event.preventDefault();
-
-                const address = input.value;
-
-                geocoder.geocode({ address: address }, function (results, status) {
-                    if (status === "OK" && results[0]) {
-                        moveToLocation(results[0].geometry.location, "Selected location");
-                    } else {
-                        alert("Location not found");
-                    }
-                });
+                searchTypedLocation();
             }
         });
 
@@ -94,9 +127,26 @@
         });
 
         loadShelters();
-        getUserCurrentLocation();
+        loadCityRisks();
+        setInterval(loadCityRisks, 5000);
     }
+    function showShelterPanel(shelter) {
+        const panel = document.getElementById("shelterPanel");
 
+        panel.innerHTML = `
+                <h4>Shelter Details</h4>
+                <p><strong>Name:</strong> ${shelter.name ?? 'Not available'}</p>
+                <p><strong>Address:</strong> ${shelter.address ?? 'Not available'}</p>
+                <p><strong>City:</strong> ${shelter.city ?? 'Not available'}</p>
+                <p><strong>Type:</strong> ${shelter.shelterType ?? 'Not available'}</p>
+                <p><strong>Capacity:</strong> ${shelter.capacity ?? 'Not available'}</p>
+                <p><strong>Accessible:</strong> ${shelter.isAccessible ? 'Yes' : 'No'}</p>
+                <p><strong>Public:</strong> ${shelter.isPublic ? 'Yes' : 'No'}</p>
+                <p><strong>Source:</strong> ${shelter.source ?? 'Not available'}</p>
+                <p><strong>Latitude:</strong> ${shelter.latitude ?? 'Not available'}</p>
+                <p><strong>Longitude:</strong> ${shelter.longitude ?? 'Not available'}</p>
+            `;
+    }
     function getUserCurrentLocation() {
         if (!navigator.geolocation) {
             alert("Geolocation is not supported by this browser.");
@@ -113,7 +163,12 @@
                 moveToLocation(userLocation, "You are here");
             },
             function (error) {
-                console.log("Location error:", error);
+                if (error.code === 1) alert("Permission denied");
+                else if (error.code === 2) alert("Location unavailable");
+                else if (error.code === 3) alert("Timeout");
+                else alert("Error getting location");
+
+                console.log(error);
             },
             {
                 enableHighAccuracy: true,
@@ -125,7 +180,7 @@
 
     function moveToLocation(location, title) {
         map.setCenter(location);
-        map.setZoom(16);
+        map.setZoom(12);
         userMarker.setPosition(location);
         userMarker.setTitle(title);
 
@@ -133,59 +188,78 @@
         infoWindow.open(map, userMarker);
     }
 
-
-        async function loadShelters() {
+    async function loadShelters() {
         try {
-           const response = await fetch('/api/shelters');
+            const response = await fetch('/api/shelters');
             const shelters = await response.json();
 
-            shelterMarkers.forEach(marker => marker.setMap(null));
+            shelterMarkers.forEach(m => m.setMap(null));
             shelterMarkers = [];
 
-            const bounds = new google.maps.LatLngBounds();
-
             shelters.forEach(shelter => {
-                const position = {
-                    lat: shelter.latitude,
-                    lng: shelter.longitude
-                };
-
                 const marker = new google.maps.Marker({
-                    position: position,
+                    position: { lat: shelter.latitude, lng: shelter.longitude },
                     map: map,
                     title: shelter.name,
                     icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
                 });
 
-                const shelterInfo = new google.maps.InfoWindow({
-                    content: `
-                        <div>
-                            <h6>${shelter.name}</h6>
-                            <p><strong>Address:</strong> ${shelter.address ?? ''}</p>
-                            <p><strong>City:</strong> ${shelter.city ?? ''}</p>
-                            <p><strong>Type:</strong> ${shelter.shelterType ?? ''}</p>
-                        </div>
-                    `
-                });
 
                 marker.addListener("click", () => {
-                    shelterInfo.open(map, marker);
+                    showShelterPanel(shelter);
                 });
-
                 shelterMarkers.push(marker);
-                bounds.extend(position);
             });
 
-            if (shelters.length > 0) {
-                map.fitBounds(bounds);
-            }
-        } catch (error) {
-            console.error("Error loading shelters:", error);
+        } catch (e) {
+            console.error(e);
         }
     }
+
+    async function loadCityRisks() {
+        try {
+            const response = await fetch('/Map/GetCityRisks');
+            const cities = await response.json();
+
+            const seen = new Set();
+
+            cities.forEach(city => {
+                if (!city.latitude || !city.longitude) return;
+
+                seen.add(city.cityName);
+
+                if (riskCircles[city.cityName]) {
+                    riskCircles[city.cityName].setOptions({
+                        strokeColor: city.color,
+                        fillColor: city.color
+                    });
+                } else {
+                    riskCircles[city.cityName] = new google.maps.Circle({
+                        strokeColor: city.color,
+                        fillColor: city.color,
+                        strokeOpacity: 0.8,
+                        fillOpacity: 0.35,
+                        map: map,
+                        center: { lat: city.latitude, lng: city.longitude },
+                        radius: 2500
+                    });
+                }
+            });
+
+            Object.keys(riskCircles).forEach(name => {
+                if (!seen.has(name)) {
+                    riskCircles[name].setMap(null);
+                    delete riskCircles[name];
+                }
+            });
+
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
     window.initMap = initMap;
 </script>
-
 
 <script async
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuiZcDNCGOmwM7OSjNncN7yrjIjcRMzJk&libraries=places&callback=initMap">
