@@ -50,7 +50,24 @@ namespace SamiSpot.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var shelters = _context.Shelters
+                .Select(s => new
+                {
+                    s.Id,
+                    s.Name,
+                    s.Address,
+                    s.City,
+                    s.Latitude,
+                    s.Longitude,
+                    s.ShelterType,
+                    s.Capacity,
+                    s.IsAccessible,
+                    s.IsPublic,
+                    s.Source
+                })
+                .ToList();
+
+            return View(shelters);
         }
 
         private List<double[]> GenerateIsraelGridPoints()
@@ -159,6 +176,11 @@ namespace SamiSpot.Controllers
                             var miklatNum = entity.Fields
                                 .FirstOrDefault(f => f.FieldName == "מספר מקלט")?.FieldValue?.ToString();
 
+
+                            var shelterType = GetFieldValue(entity.Fields, "סוג מקלט");
+                            var locality = GetFieldValue(entity.Fields, "יישוב");
+                            var name = GetFieldValue(entity.Fields, "שם");
+
                             double x, y;
 
                             if (!TryReadCentroid(entity.Centroid, out x, out y))
@@ -197,24 +219,32 @@ namespace SamiSpot.Controllers
                                 updated++;
                             }
 
-                            existing.Name = string.IsNullOrWhiteSpace(miklatNum)
-                                ? "GovMap Shelter"
-                                : $"מקלט {miklatNum}";
+                            existing.Name =
+      !string.IsNullOrWhiteSpace(name) ? name :
+      !string.IsNullOrWhiteSpace(miklatNum) ? $"מקלט {miklatNum}" :
+      !string.IsNullOrWhiteSpace(shelterType) ? $"מקלט מסוג {shelterType}" :
+      "GovMap Shelter";
 
                             existing.Address = address;
-                            existing.City = area;
+                            existing.City =
+                                !string.IsNullOrWhiteSpace(locality) ? locality : area;
+
                             existing.Latitude = lat;
                             existing.Longitude = lng;
-                            existing.ShelterType = "Public Shelter";
+
+                            existing.ShelterType =
+                                !string.IsNullOrWhiteSpace(shelterType) ? shelterType : "Public Shelter";
+
                             existing.IsAccessible = false;
                             existing.IsPublic = true;
                             existing.IsActive = true;
+                            existing.Source = "GovMap";
                             existing.SourceUrl = GovMapUrl;
                             existing.LastSyncedAt = DateTime.UtcNow;
                         }
                     }
 
-                  
+
                 }
                 catch
                 {
@@ -233,7 +263,290 @@ namespace SamiSpot.Controllers
                 totalPoints = samplePoints.Count
             });
         }
+        [HttpGet]
+        public IActionResult GetCityRisks()
+        {
+            var now = DateTime.UtcNow;
+            var last15Minutes = now.AddMinutes(-15);
+            var last24Hours = now.AddHours(-24);
 
+            var alerts = _context.Alerts
+                .Where(a => a.AlertTimeUtc >= last24Hours)
+                .ToList();
+
+            var cities = _context.CityLocations.ToList();
+
+            var normalizedAlerts = alerts
+                .Select(a => new
+                {
+                    OriginalName = a.CityHebrew,
+                    CanonicalName = CanonicalHebrewName(a.CityHebrew),
+                    a.AlertTimeUtc
+                })
+                .ToList();
+
+            var alertGroups = normalizedAlerts
+                .GroupBy(a => a.CanonicalName)
+                .ToDictionary(g => g.Key, g => g.ToList());
+
+            var result = new Dictionary<string, CityRiskDto>();
+
+            foreach (var city in cities)
+            {
+                var canonicalCity = CanonicalHebrewName(city.HebrewName);
+
+                bool hasLast15 = false;
+                bool hasLast24 = false;
+
+                if (alertGroups.TryGetValue(canonicalCity, out var cityAlerts))
+                {
+                    hasLast15 = cityAlerts.Any(a => a.AlertTimeUtc >= last15Minutes);
+                    hasLast24 = true;
+                }
+
+                result[canonicalCity] = new CityRiskDto
+                {
+                    CityName = city.HebrewName,
+                    Latitude = city.Latitude,
+                    Longitude = city.Longitude,
+                    Color = hasLast15 ? "red" : hasLast24 ? "orange" : "green"
+                };
+            }
+
+            foreach (var kvp in alertGroups)
+            {
+                var canonicalAlert = kvp.Key;
+
+                if (result.ContainsKey(canonicalAlert))
+                    continue;
+
+                if (!CoordinateOverrides.TryGetValue(canonicalAlert, out var coords))
+                    continue;
+
+                bool hasLast15 = kvp.Value.Any(a => a.AlertTimeUtc >= last15Minutes);
+                bool hasLast24 = true;
+
+                result[canonicalAlert] = new CityRiskDto
+                {
+                    CityName = canonicalAlert,
+                    Latitude = coords.Latitude,
+                    Longitude = coords.Longitude,
+                    Color = hasLast15 ? "red" : hasLast24 ? "orange" : "green"
+                };
+            }
+
+            return Json(result.Values.ToList());
+        }
+
+        private static bool NamesMatch(string alertName, string cityName)
+        {
+            if (string.IsNullOrWhiteSpace(alertName) || string.IsNullOrWhiteSpace(cityName))
+                return false;
+
+            var a = CanonicalHebrewName(alertName);
+            var c = CanonicalHebrewName(cityName);
+
+            return a == c || a.Contains(c) || c.Contains(a);
+        }
+
+        private static string NormalizeHebrewName(string text)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+                return "";
+
+            text = text.Trim().ToLower();
+
+            text = text.Replace("\"", "")
+                       .Replace("״", "")
+                       .Replace("׳", "")
+                       .Replace("'", "")
+                       .Replace("-", " ")
+                       .Replace("־", " ")
+                       .Replace(".", " ");
+
+            if (text.Contains(","))
+                text = string.Join(" ", text.Split(',').Select(x => x.Trim()));
+
+            while (text.Contains("  "))
+                text = text.Replace("  ", " ");
+
+            var parts = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+            if (parts.Length > 1)
+            {
+                var last = parts[^1];
+                if (last is "דרום" or "צפון" or "מזרח" or "מערב")
+                    text = string.Join(" ", parts.Take(parts.Length - 1));
+            }
+
+            text = text.Replace("כסיפה", "כסייפה")
+                       .Replace("שומרייה", "שומריה")
+                       .Replace("דביירה", "דבירה")
+                       .Replace("הרצלייה", "הרצליה")
+                       .Replace("נהרייה", "נהריה")
+                       .Replace("נורדייה", "נורדיה")
+                       .Replace("שגב שלום", "שגב שלום")
+                       .Replace("שגב שלום", "שגב שלום")
+                       .Replace("ערערה בנגב", "ערערה בנגב")
+                       .Replace("ערערה בנגב", "ערערה בנגב");
+
+            return text.Trim();
+        }
+
+        private static string CanonicalHebrewName(string text)
+        {
+            var name = NormalizeHebrewName(text);
+
+            if (StartsWith(name, "באר שבע")) return "באר שבע";
+            if (StartsWith(name, "אשדוד")) return "אשדוד";
+            if (StartsWith(name, "אשקלון")) return "אשקלון";
+            if (StartsWith(name, "ירושלים")) return "ירושלים";
+            if (StartsWith(name, "הרצליה")) return "הרצליה";
+            if (StartsWith(name, "חיפה")) return "חיפה";
+            if (StartsWith(name, "נתניה")) return "נתניה";
+            if (StartsWith(name, "ראשון לציון")) return "ראשון לציון";
+            if (StartsWith(name, "רמת גן")) return "רמת גן";
+            if (StartsWith(name, "תל אביב")) return "תל אביב";
+            if (StartsWith(name, "צפת")) return "צפת";
+            if (StartsWith(name, "עכו")) return "עכו";
+
+            var aliases = new Dictionary<string, string>
+    {
+        { "חבר", "מעלה חבר" },
+        { "פני חבר", "מעלה חבר" },
+
+        { "גבים מכללת ספיר", "גבים" },
+        { "זמרת שובה", "זמרת" },
+        { "צוחר אוהד", "צוחר" },
+        { "יעבץ יעף", "יעף" },
+        { "מבטחים עמיעוז ישע", "מבטחים" },
+        { "מעגלים גבעולים מלילות", "מעגלים" },
+
+        { "בני עיש", "בני עי\"ש" },
+        { "גבעת חן", "גבעת ח\"ן" },
+        { "גבעת כח", "גבעת כ\"ח" },
+        { "דובב", "דוב\"ב" },
+        { "יד רמבהם", "יד רמב\"ם" },
+        { "ייטב", "ייט\"ב" },
+        { "כפר בילו", "כפר ביל\"ו" },
+        { "כפר הריף", "כפר הרי\"ף" },
+        { "כפר הריף וצומת ראם", "כפר הרי\"ף" },
+        { "כפר חבד", "כפר חב\"ד" },
+        { "כפר מלל", "כפר מל\"ל" },
+        { "נווה אטיב", "נווה אטי\"ב" },
+        { "פעמי תשז", "פעמי תש\"ז" },
+        { "תלמי בילו", "תלמי ביל\"ו" },
+
+        { "יהוד מונוסון", "יהוד" },
+        { "כוכב יאיר צור יגאל", "כוכב יאיר" },
+        { "נוף איילון שעלבים", "נוף איילון" },
+        { "עלי זהב לשם", "עלי זהב" },
+        { "קדימה צורן", "צורן" },
+        { "מעלות תרשיחא", "מעלות-תרשיחא" },
+        { "מודיעין מכבים רעות", "מודיעין-מכבים-רעות" },
+        { "קרית ארבע", "קריית ארבע" },
+        { "לוחמי הגטאות", "לוחמי הגיטאות" },
+        { "בוקעתא", "בוקעאתא" },
+        { "גדידה מכר", "ג'דיידה-מכר" },
+        { "גוליס", "ג'ולס" },
+        { "דלית אל כרמל", "דלייה" },
+        { "עספיא", "עיר כרמל" },
+        { "כסיפה", "כסייפה" },
+        { "שומרייה", "שומריה" },
+        { "דביירה", "דבירה" },
+        { "גש גוש חלב", "ג'ש (גוש חלב)" },
+        { "ינוח גת", "יאנוח-ג'ת" },
+        { "תל אביב יפו", "תל אביב -יפו" },
+        { "שדרות איבים", "שדרות" },
+        { "אשדוד איזור תעשייה צפוני", "אשדוד" },
+        { "אשדוד א ב ד ה", "אשדוד" },
+        { "אשדוד ג ו ז", "אשדוד" },
+        { "אשדוד ח ט י יג יד טז", "אשדוד" },
+        { "אשדוד יא יב טו יז מרינה סיט", "אשדוד" },
+        { "אשקלון דרום", "אשקלון" },
+        { "אשקלון צפון", "אשקלון" },
+        { "הרצליה מערב", "הרצליה" },
+        { "הרצליה מרכז וגליל ים", "הרצליה" },
+        { "נתניה מזרח", "נתניה" },
+        { "נתניה מערב", "נתניה" },
+        { "ראשון לציון מזרח", "ראשון לציון" },
+        { "ראשון לציון מערב", "ראשון לציון" },
+        { "רמת גן מזרח", "רמת גן" },
+        { "רמת גן מערב", "רמת גן" },
+        { "צפת עיר", "צפת" },
+        { "צפת עכברה", "צפת" },
+        { "עכו אזור תעשייה", "עכו" },
+        { "עכו רמות ים", "עכו" }
+    };
+
+            return aliases.TryGetValue(name, out var canonical)
+                ? canonical
+                : name;
+        }
+
+        private static bool StartsWith(string text, string baseName)
+        {
+            return text == baseName || text.StartsWith(baseName + " ");
+        }
+
+        private static readonly Dictionary<string, (double Latitude, double Longitude)> CoordinateOverrides = new()
+{
+    { "אבו תלול", (31.195, 34.782) },
+    { "אבו קרינאת", (31.220, 34.865) },
+    { "אום בטין", (31.245, 34.938) },
+    { "ביר הדאג", (31.245, 34.786) },
+    { "שגב שלום", (31.1976411516052, 34.8390825304992) },
+    { "חירן", (31.301, 34.932) },
+    { "אל סייד", (31.276, 34.916) },
+    { "אל עזי", (31.7208576687222, 34.8039265935459) },
+    { "אל פורעה", (31.301, 35.028) },
+    { "ואדי אל נעם", (31.250, 34.900) },
+    { "תארבין", (31.300, 34.880) },
+    { "קסר א סר", (31.240, 34.915) },
+    { "ערערה בנגב", (31.1553589486213, 35.022268052232) },
+    { "כסייפה", (31.2447193134764, 35.0800448077145) },
+    { "לקיה", (31.3238443693905, 34.8647645020895) },
+    { "רהט", (31.3927681500537, 34.7559551560021) },
+    { "חורה", (31.2985131540456, 34.9346088118738) },
+    { "תל שבע", (31.2480492657582, 34.8601763927084) },
+    { "נמרוד", (33.250, 35.740) },
+    { "נעמה", (31.790, 35.460) },
+    { "נערן", (31.870, 35.450) },
+    { "נצר חזני", (31.900, 35.030) },
+    { "נריה", (31.930, 35.140) },
+    { "איירפורט סיטי", (31.984, 34.915) },
+    { "מיני ישראל נחשון", (31.832, 34.955) },
+    { "מכון וינגייט", (32.268, 34.842) },
+    { "תחנת רכבת ראש העין", (32.095, 34.956) },
+    { "תחנת רכבת קריית מלאכי יואב", (31.735, 34.746) },
+    { "חוף זיקים", (31.605, 34.517) },
+    { "חוף קליה", (31.7507076719296, 35.4671301033167) },
+    { "עין בוקק", (31.200, 35.362) },
+    { "מרחצאות עין גדי", (31.4577416116035, 35.3905423383238) },
+    { "מלונות ים המלח מרכז", (31.200, 35.360) },
+    { "בתי מלון ים המלח", (31.200, 35.360) }
+};
+
+
+        [HttpGet]
+        public IActionResult GetLatestRedAlerts()
+        {
+            var now = DateTime.UtcNow;
+            var last15Minutes = now.AddMinutes(-15);
+
+            var alerts = _context.Alerts
+                .Where(a => a.AlertTimeUtc >= last15Minutes)
+                .OrderByDescending(a => a.AlertTimeUtc)
+                .Select(a => new
+                {
+                    cityName = a.CityHebrew,
+                    alertTimeText = a.AlertTimeUtc.ToLocalTime().ToString("HH:mm:ss")
+                })
+                .Take(20)
+                .ToList();
+
+            return Json(alerts);
+        }
         private bool TryReadCentroid(JsonElement centroid, out double x, out double y)
         {
             x = 0;
@@ -262,6 +575,12 @@ namespace SamiSpot.Controllers
             return false;
         }
 
-        
+
+        private static string? GetFieldValue(List<GovMapField> fields, string fieldName)
+        {
+            return fields.FirstOrDefault(f => f.FieldName == fieldName)?.FieldValue?.ToString();
+        }
+
+
     }
 }

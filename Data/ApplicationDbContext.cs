@@ -12,5 +12,9 @@ namespace SamiSpot.Data
         }
 
         public DbSet<Shelter> Shelters { get; set; }
+
+        public DbSet<Alert> Alerts { get; set; }
+
+        public DbSet<CityLocation> CityLocations { get; set; }
     }
 }
