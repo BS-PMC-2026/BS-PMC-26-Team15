@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\doaaa\\source\\repos\\samispot\\SamiSpot.csproj": {}
+    "C:\\Users\\doaaa\\source\\repos\\samispot\\samispot\\samispot.csproj": {}
   },
   "projects": {
-    "C:\\Users\\doaaa\\source\\repos\\samispot\\SamiSpot.csproj": {
+    "C:\\Users\\doaaa\\source\\repos\\samispot\\samispot\\samispot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\doaaa\\source\\repos\\samispot\\SamiSpot.csproj",
-        "projectName": "SamiSpot",
-        "projectPath": "C:\\Users\\doaaa\\source\\repos\\samispot\\SamiSpot.csproj",
+        "projectUniqueName": "C:\\Users\\doaaa\\source\\repos\\samispot\\samispot\\samispot.csproj",
+        "projectName": "samispot",
+        "projectPath": "C:\\Users\\doaaa\\source\\repos\\samispot\\samispot\\samispot.csproj",
         "packagesPath": "C:\\Users\\doaaa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\doaaa\\source\\repos\\samispot\\obj\\",
+        "outputPath": "C:\\Users\\doaaa\\source\\repos\\samispot\\samispot\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -22,7 +22,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -30,8 +30,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -48,24 +48,8 @@
         "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[8.0.11, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.11, )"
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.5-beta1, )"
-            }
-          },
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",
@@ -85,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305\\RuntimeIdentifierGraph.json"
         }
       }
     }
