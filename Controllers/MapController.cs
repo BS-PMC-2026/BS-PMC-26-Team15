@@ -582,5 +582,63 @@ namespace SamiSpot.Controllers
         }
 
 
+        public class LocationRequest
+        {
+            public double Latitude { get; set; }
+            public double Longitude { get; set; }
+            public int Count { get; set; }
+        }
+
+        [HttpPost]
+        public IActionResult GetClosestShelters([FromBody] LocationRequest req)
+        {
+            if (req == null)
+                return BadRequest("Invalid request");
+
+            // ✅ Remove duplicates using rounding (fixes 3 copies → 1 copy)
+            var shelters = _context.Shelters
+                .Where(s => s.Latitude != 0 && s.Longitude != 0)
+                .GroupBy(s => new {
+                    Lat = Math.Round(s.Latitude, 4),
+                    Lng = Math.Round(s.Longitude, 4)
+                })
+                .Select(g => g.First())
+                .ToList();
+
+            var result = shelters
+                .Select(s => new
+                {
+                    id = s.Id,
+                    name = s.Name,
+                    lat = s.Latitude,
+                    lng = s.Longitude,
+                    distance = Haversine(req.Latitude, req.Longitude, s.Latitude, s.Longitude)
+                })
+                .OrderBy(x => x.distance)
+                .Take(req.Count > 0 ? req.Count : 10)
+                .ToList();
+
+            return Json(result);
+        }
+
+        private double Haversine(double lat1, double lon1, double lat2, double lon2)
+        {
+            const double R = 6371000;
+
+            var dLat = (lat2 - lat1) * Math.PI / 180;
+            var dLon = (lon2 - lon1) * Math.PI / 180;
+
+            lat1 = lat1 * Math.PI / 180;
+            lat2 = lat2 * Math.PI / 180;
+
+            var a = Math.Sin(dLat / 2) * Math.Sin(dLat / 2) +
+                    Math.Cos(lat1) * Math.Cos(lat2) *
+                    Math.Sin(dLon / 2) * Math.Sin(dLon / 2);
+
+            var c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
+
+            return R * c;
+        }
     }
+
 }
