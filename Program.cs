@@ -16,6 +16,8 @@ builder.Services.AddScoped<CityCoordinateService>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddSession();
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
@@ -28,6 +30,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
+app.UseSession();
 
 app.MapControllers();
 
@@ -41,6 +44,36 @@ using (var scope = app.Services.CreateScope())
 
     var context = services.GetRequiredService<ApplicationDbContext>();
     context.Database.EnsureCreated();
+    // 🔥 CREATE Users table if it does NOT exist
+    context.Database.ExecuteSqlRaw(@"
+    IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Users' AND xtype='U')
+    CREATE TABLE Users (
+        Id INT IDENTITY PRIMARY KEY,
+        UserName NVARCHAR(MAX),
+        Email NVARCHAR(MAX),
+        Password NVARCHAR(MAX),
+        RoleType NVARCHAR(MAX)
+    )");
+    context.Database.ExecuteSqlRaw(@"
+    IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Feedbacks' AND xtype='U')
+    CREATE TABLE Feedbacks (
+        Id INT IDENTITY PRIMARY KEY,
+        ShelterId INT NOT NULL,
+        UserName NVARCHAR(MAX),
+        Comment NVARCHAR(MAX),
+        CreatedAt DATETIME
+    )");
+
+    var adminExists = context.Users.Any(u => u.Email == "admin@sami.com");
+
+    if (!adminExists)
+    {
+        context.Database.ExecuteSqlRaw(@"
+    INSERT INTO Users (UserName, Email, Password, RoleType)
+    VALUES ('Admin', 'admin@sami.com', 'Admin123', 'Admin')
+    ");
+    }
+
 
     if (!context.Shelters.Any())
     {

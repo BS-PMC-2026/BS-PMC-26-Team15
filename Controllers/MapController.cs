@@ -639,6 +639,23 @@ namespace SamiSpot.Controllers
 
             return R * c;
         }
+
+        [HttpGet]
+        public IActionResult GetFeedbacks(int shelterId)
+        {
+            var feedbacks = _context.Feedbacks
+                .Where(f => f.ShelterId == shelterId)
+                .OrderByDescending(f => f.CreatedAt)
+                .Select(f => new
+                {
+                    f.UserName,
+                    f.Comment,
+                    CreatedAt = f.CreatedAt.ToString("yyyy-MM-dd HH:mm")
+                })
+                .ToList();
+
+            return Json(feedbacks);
+        }
     }
 
 }
