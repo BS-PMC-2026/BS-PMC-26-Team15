@@ -79,6 +79,10 @@
 </div>
 
 <script>
+    const loggedInUser = '@Context.Session.GetString("UserName")';
+</script>
+
+<script>
     let map;
     let userMarker;
     let autocomplete;
@@ -94,6 +98,10 @@
     let directionsService;
     let directionsRenderer;
     let selectedShelterIndex = null;
+
+        function isUserLoggedIn() {
+        return loggedInUser && loggedInUser !== '';
+    }
         function clearMap() {
         // ❌ remove route
         directionsRenderer.setDirections({ routes: [] });
@@ -377,22 +385,26 @@
             worstCase = `${worstMinutes.toFixed(1)} min`;
             extraNote = "Walking case depends on pace and road access.";
         }
+        
+        document.getElementById("shelterPanel").innerHTML =
+        "<h4>Shelter Route Details</h4>" +
+        "<p><strong>Name:</strong> " + shelter.name + "</p>" +
+        "<p><strong>Travel mode:</strong> " + travelModeValue + "</p>" +
+        "<p><strong>Route distance:</strong> " + routeDistanceText + "</p>" +
+        "<p><strong>Google estimated time:</strong> " + routeDurationText + "</p>" +
+        "<p><strong>Best case:</strong> " + bestCase + "</p>" +
+        "<p><strong>Worst case:</strong> " + worstCase + "</p>" +
+        "<p><strong>Latitude:</strong> " + shelter.lat + "</p>" +
+        "<p><strong>Longitude:</strong> " + shelter.lng + "</p>" +
+        "<p style='margin-top:10px; color:#555;'>" + extraNote + "</p>" +
 
-        document.getElementById("shelterPanel").innerHTML = `
-            <h4>Shelter Route Details</h4>
-            <p><strong>Name:</strong> ${shelter.name}</p>
-            <p><strong>Travel mode:</strong> ${travelModeValue}</p>
-            <p><strong>Route distance:</strong> ${routeDistanceText}</p>
-            <p><strong>Google estimated time:</strong> ${routeDurationText}</p>
-            <p><strong>Best case:</strong> ${bestCase}</p>
-            <p><strong>Worst case:</strong> ${worstCase}</p>
-            <p><strong>Latitude:</strong> ${shelter.lat}</p>
-            <p><strong>Longitude:</strong> ${shelter.lng}</p>
-            <p style="margin-top:10px; color:#555;">${extraNote}</p>
-        `;
+        getFeedbackSection(shelter.id);
+
+        loadFeedback(shelter.id);
+    
     }
 
-    async function loadShelters() {
+        async function loadShelters() {
         const response = await fetch('/api/shelters');
         const shelters = await response.json();
 
@@ -403,18 +415,33 @@
                 icon: "https://maps.google.com/mapfiles/ms/icons/red-dot.png"
             });
 
+            marker.shelterId = shelter.id;
+
             marker.addListener("click", () => {
-                document.getElementById("shelterPanel").innerHTML = `
-                    <h4>Shelter Details</h4>
-                    <p><strong>Name:</strong> ${shelter.name}</p>
-                    <p><strong>Latitude:</strong> ${shelter.latitude}</p>
-                    <p><strong>Longitude:</strong> ${shelter.longitude}</p>
-                `;
+                let html = "";
+                html += "<h4>Shelter Details</h4>";
+                html += "<p><strong>Name:</strong> " + shelter.name + "</p>";
+                html += "<p><strong>Latitude:</strong> " + shelter.latitude + "</p>";
+                html += "<p><strong>Longitude:</strong> " + shelter.longitude + "</p>";
+                html += getFeedbackSection(shelter.id);
+
+                document.getElementById("shelterPanel").innerHTML = html;
+
+                loadFeedback(shelter.id);
             });
 
             shelterMarkers.push(marker);
         });
+
+        const params = new URLSearchParams(window.location.search);
+        const shelterId = params.get("shelterId");
+
+        if (shelterId) {
+            focusShelterById(parseInt(shelterId));
+        }
     }
+
+
 
         async function loadCityRisks() {
         const response = await fetch('/Map/GetCityRisks');
@@ -453,6 +480,93 @@
             }
         });
     }
+
+
+            function getFeedbackSection(shelterId) {
+
+        let inputPart = "";
+
+        if (isUserLoggedIn()) {
+            inputPart =
+                '<textarea id="feedbackInput" class="form-control mt-2" placeholder="Write your feedback..."></textarea>' +
+                '<button onclick="sendFeedback(' + shelterId + ')" class="btn btn-primary mt-2">Send</button>';
+        } else {
+            inputPart =
+                '<p style="color:gray;">You must be logged in to write feedback.</p>' +
+                '<a href="/Account/Login?returnUrl=/Map/Index?shelterId=' + shelterId + '" class="btn btn-outline-primary btn-sm">Login</a>' +
+                '<a href="/Account/Register?returnUrl=/Map/Index?shelterId=' + shelterId + '" class="btn btn-outline-secondary btn-sm">Sign Up</a>';
+        }
+
+        return '<hr/>' +
+               '<h5>Feedback</h5>' +
+               '<div id="feedbackList">Loading feedback...</div>' +
+               inputPart;
+    }
+
+
+        async function loadFeedback(shelterId) {
+        try {
+            const res = await fetch(`/Feedback/GetByShelter?shelterId=${shelterId}`);
+            const data = await res.json();
+
+            let html = "";
+
+            if (data.length === 0) {
+                html = "<p>No feedback yet</p>";
+            } else {
+                data.forEach(f => {
+                    html += `
+                        <div style="border-bottom:1px solid #ccc; margin-bottom:5px;">
+                            <strong>${f.userName}</strong>
+                            <p>${f.comment}</p>
+                        </div>
+                    `;
+                });
+            }
+
+            document.getElementById("feedbackList").innerHTML = html;
+
+        } catch (err) {
+            console.error(err);
+            document.getElementById("feedbackList").innerHTML = "Error loading feedback";
+        }
+    }
+
+
+        async function sendFeedback(shelterId) {
+        const input = document.getElementById("feedbackInput");
+        const text = input.value.trim();
+
+        if (!text) {
+            alert("Write something first!");
+            return;
+        }
+
+        await fetch("/Feedback/Add", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                shelterId: shelterId,
+                comment: text
+            })
+        });
+
+        input.value = "";
+        loadFeedback(shelterId);
+    }
+
+            function focusShelterById(id) {
+        const marker = shelterMarkers.find(m => m.shelterId === id);
+
+        if (marker) {
+            google.maps.event.trigger(marker, "click");
+        } else {
+            console.log("Marker not found for id:", id);
+        }
+    }
+
 
     window.initMap = initMap;
 </script>
