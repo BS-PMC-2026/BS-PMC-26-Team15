@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Contributor Dashboard";
+}
+
+<h2 style="text-align:center; margin-top:20px;">Contributor Dashboard</h2>
+
+<div class="dashboard-grid">
+    <a href="/Contributor/AddShelter" class="dash-card">Add Shelter</a>
+    
+    <a href="/Contributor/MyShelters" class="dash-card">My Shelters</a>
+</div>
+
+<style>
+    .dashboard-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        padding: 30px;
+    }
+
+    .dash-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 140px;
+        background-color: #f5f5f5;
+        border-radius: 15px;
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+        font-weight: 600;
+        transition: 0.2s;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+        .dash-card:hover {
+            background-color: #e8f5e9;
+            transform: translateY(-3px);
+        }
+</style>

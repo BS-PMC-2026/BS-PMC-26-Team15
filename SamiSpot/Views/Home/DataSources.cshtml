@@ -1,0 +1,84 @@
+﻿@{
+    ViewData["Title"] = "Data Sources";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-center">Our Data Sources</h2>
+
+    <div class="row g-4">
+
+        <!-- GOVMAP -->
+        <div class="col-md-4">
+            <a href="https://www.govmap.gov.il/" target="_blank" class="data-card">
+                <div class="card-body">
+                    <h5>GovMap (GIS)</h5>
+                    <p>
+                        Public GIS platform used to collect shelter locations and spatial data.
+                    </p>
+                    <span class="link-text">Open GovMap →</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- RED ALERT -->
+        <div class="col-md-4">
+            <a href="https://www.tzevaadom.co.il/" target="_blank" class="data-card">
+                <div class="card-body">
+                    <h5>Red Alert Data</h5>
+                    <p>
+                        Provides real-time alerts and recent alerts used for risk visualization.
+                    </p>
+                    <span class="link-text">View Alerts →</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- GOOGLE MAPS -->
+        <div class="col-md-4">
+            <a href="https://developers.google.com/maps" target="_blank" class="data-card">
+                <div class="card-body">
+                    <h5>Google Maps API</h5>
+                    <p>
+                        Used to display the map, markers, and navigation features.
+                    </p>
+                    <span class="link-text">Google Maps →</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- GIS LAYERS -->
+        <div class="col-md-6">
+            <div class="data-card no-link">
+                <div class="card-body">
+                    <h5>GIS Shelter Layers</h5>
+                    <p>
+                        The system uses multiple GIS layers to collect shelters across Israel.
+                    </p>
+
+                    <ul class="mt-3">
+                        <li>Layer 227335</li>
+                        <li>Layer 218406</li>
+                        <li>Layer 226583</li>
+                        <li>Layer 217781</li>
+                        <li>Layer 226487</li>
+                        <li>Layer 215420</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- INTERNAL PROCESSING -->
+        <div class="col-md-6">
+            <div class="data-card no-link">
+                <div class="card-body">
+                    <h5>Internal Processing</h5>
+                    <p>
+                        SamiSpot processes and cleans data by removing duplicates,
+                        calculating distances, and organizing shelters for better user experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,2685 @@
+POINT: 3820000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3720000
+RESPONSE: {"data":[{"name":"layer_217208","caption":"מקלטים","fieldsMapping":{"x":"x","y":"y","setlmnt":"ישוב","location":"אזור","miklat_id":"מקלט ID","miklat_num":"מספר מקלט","status_061":"סטטוס "},"entities":[{"objectId":44,"centroid":[3861668.3236047914,3724093.242649845],"geom":"MULTIPOINT((3861668.3236047914 3724093.242649845))","fields":[{"fieldName":"מקלט ID","fieldValue":44,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":623251,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":170683,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"משואות יצחק","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"צעירים דרום","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":45,"centroid":[3861431.856873749,3724187.696672573],"geom":"MULTIPOINT((3861431.856873749 3724187.696672573))","fields":[{"fieldName":"מקלט ID","fieldValue":45,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":623332,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":170482,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"משואות יצחק","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"בסין","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":50,"centroid":[3861650.89820368,3724303.1954843234],"geom":"MULTIPOINT((3861650.89820368 3724303.1954843234))","fields":[{"fieldName":"מקלט ID","fieldValue":50,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":623429,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":170669,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"משואות יצחק","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":7,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מרפאה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":46,"centroid":[3861479.0437370343,3724390.8783286754],"geom":"MULTIPOINT((3861479.0437370343 3724390.8783286754))","fields":[{"fieldName":"מקלט ID","fieldValue":46,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":623504,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":170523,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"משואות יצחק","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"חדר נשק","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":48,"centroid":[3861396.3961466188,3724486.064661628],"geom":"MULTIPOINT((3861396.3961466188 3724486.064661628))","fields":[{"fieldName":"מקלט ID","fieldValue":48,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":623585,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":170453,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"משואות יצחק","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"צעירים","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":49,"centroid":[3861593.342373532,3724556.6216518283],"geom":"MULTIPOINT((3861593.342373532 3724556.6216518283))","fields":[{"fieldName":"מקלט ID","fieldValue":49,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":623644,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":170621,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"משואות יצחק","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מכבסה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":47,"centroid":[3861479.0505698216,3724638.679353297],"geom":"MULTIPOINT((3861479.0505698216 3724638.679353297))","fields":[{"fieldName":"מקלט ID","fieldValue":47,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":623714,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":170524,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"משואות יצחק","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"חיילים","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":38,"centroid":[3863385.241200152,3723537.249769069],"geom":"MULTIPOINT((3863385.241200152 3723537.249769069))","fields":[{"fieldName":"מקלט ID","fieldValue":38,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":622773,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":172143,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"מ. שפירא","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"אביאור","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]}],"dim":2,"layerId":"217208"}]}
+-----------------
+POINT: 3860000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3710000
+RESPONSE: {"data":[{"name":"layer_217208","caption":"מקלטים","fieldsMapping":{"x":"x","y":"y","setlmnt":"ישוב","location":"אזור","miklat_id":"מקלט ID","miklat_num":"מספר מקלט","status_061":"סטטוס "},"entities":[{"objectId":66,"centroid":[3870113.478356536,3709991.733380959],"geom":"MULTIPOINT((3870113.478356536 3709991.733380959))","fields":[{"fieldName":"מקלט ID","fieldValue":66,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":611262,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177827,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"עוזה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":7,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"עזיזה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":65,"centroid":[3870018.890732662,3709887.6335485526],"geom":"MULTIPOINT((3870018.890732662 3709887.6335485526))","fields":[{"fieldName":"מקלט ID","fieldValue":65,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":611174,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177746,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"עוזה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מול מגידיש","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":67,"centroid":[3870063.4080902785,3710194.2561793495],"geom":"MULTIPOINT((3870063.4080902785 3710194.2561793495))","fields":[{"fieldName":"מקלט ID","fieldValue":67,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":611434,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177785,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"עוזה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":8,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"דואר","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":62,"centroid":[3869795.593311757,3709999.8772201613],"geom":"MULTIPOINT((3869795.593311757 3709999.8772201613))","fields":[{"fieldName":"מקלט ID","fieldValue":62,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":611270,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177556,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"עוזה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"גן מול עזיזי","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":63,"centroid":[3869830.3349870914,3709818.511504705],"geom":"MULTIPOINT((3869830.3349870914 3709818.511504705))","fields":[{"fieldName":"מקלט ID","fieldValue":63,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":611116,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177585,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"עוזה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"חואטי יצחק","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":61,"centroid":[3869645.6656011413,3709949.7661501435],"geom":"MULTIPOINT((3869645.6656011413 3709949.7661501435))","fields":[{"fieldName":"מקלט ID","fieldValue":61,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":611228,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177428,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"עוזה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"אליהו עובדיה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":68,"centroid":[3870198.7822111133,3710365.7057325174],"geom":"MULTIPOINT((3870198.7822111133 3710365.7057325174))","fields":[{"fieldName":"מקלט ID","fieldValue":68,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":611579,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177901,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"עוזה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":9,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"גואטה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":64,"centroid":[3869837.154604345,3709580.4631307567],"geom":"MULTIPOINT((3869837.154604345 3709580.4631307567))","fields":[{"fieldName":"מקלט ID","fieldValue":64,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":610914,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177590,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"עוזה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"חלומה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":69,"centroid":[3870236.892165515,3710515.549452964],"geom":"MULTIPOINT((3870236.892165515 3710515.549452964))","fields":[{"fieldName":"מקלט ID","fieldValue":69,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":611706,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177934,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"עוזה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":10,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"עמטה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":60,"centroid":[3869433.696860396,3709869.934826738],"geom":"MULTIPOINT((3869433.696860396 3709869.934826738))","fields":[{"fieldName":"מקלט ID","fieldValue":60,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":611161,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177247,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"עוזה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"עזרה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":2,"centroid":[3869987.507746159,3708057.2576990486],"geom":"MULTIPOINT((3869987.507746159 3708057.2576990486))","fields":[{"fieldName":"מקלט ID","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":609621,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177713,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"אבן- שמואל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"בית תרבות","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":3,"centroid":[3869738.0816674284,3707967.865375473],"geom":"MULTIPOINT((3869738.0816674284 3707967.865375473))","fields":[{"fieldName":"מקלט ID","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":609546,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177500,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"אבן- שמואל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד גן שעשועים","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":5,"centroid":[3869581.1762554166,3707909.484628547],"geom":"MULTIPOINT((3869581.1762554166 3707909.484628547))","fields":[{"fieldName":"מקלט ID","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":609497,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177366,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"אבן- שמואל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"שלום זהבי","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":4,"centroid":[3869765.441338041,3707871.345599155],"geom":"MULTIPOINT((3869765.441338041 3707871.345599155))","fields":[{"fieldName":"מקלט ID","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":609464,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177523,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"אבן- שמואל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד מקווה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":1,"centroid":[3869941.7702438333,3707764.823853058],"geom":"MULTIPOINT((3869941.7702438333 3707764.823853058))","fields":[{"fieldName":"מקלט ID","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":609373,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177673,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"אבן- שמואל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד צרכניה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":6,"centroid":[3869593.368467101,3707794.04932744],"geom":"MULTIPOINT((3869593.368467101 3707794.04932744))","fields":[{"fieldName":"מקלט ID","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":609399,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177376,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"אבן- שמואל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"אולפנה בוחבוט","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":7,"centroid":[3868581.9094328946,3707657.9084819607],"geom":"MULTIPOINT((3868581.9094328946 3707657.9084819607))","fields":[{"fieldName":"מקלט ID","fieldValue":7,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":609287,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":176513,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"איתן","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מול קדושים","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":8,"centroid":[3868310.9804014177,3707668.564009314],"geom":"MULTIPOINT((3868310.9804014177 3707668.564009314))","fields":[{"fieldName":"מקלט ID","fieldValue":8,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":609297,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":176282,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"איתן","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד דוד כהן","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":15,"centroid":[3868299.611896277,3707298.5046475376],"geom":"MULTIPOINT((3868299.611896277 3707298.5046475376))","fields":[{"fieldName":"מקלט ID","fieldValue":15,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608983,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":176271,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"איתן","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":9,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"עזרא טרבלסי","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":9,"centroid":[3868022.303216498,3707435.2125114943],"geom":"MULTIPOINT((3868022.303216498 3707435.2125114943))","fields":[{"fieldName":"מקלט ID","fieldValue":9,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":609100,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":176035,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"איתן","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מכולת","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":14,"centroid":[3868167.683905666,3707158.9067041134],"geom":"MULTIPOINT((3868167.683905666 3707158.9067041134))","fields":[{"fieldName":"מקלט ID","fieldValue":14,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608865,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":176158,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"איתן","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":8,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד מזכירות","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":103,"centroid":[3870374.4262680924,3706597.637305797],"geom":"MULTIPOINT((3870374.4262680924 3706597.637305797))","fields":[{"fieldName":"מקלט ID","fieldValue":103,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608381,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":178038,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שלווה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":9,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"סעיד","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":10,"centroid":[3867898.6785516264,3707273.256089737],"geom":"MULTIPOINT((3867898.6785516264 3707273.256089737))","fields":[{"fieldName":"מקלט ID","fieldValue":10,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608963,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175929,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"איתן","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ירון חדד","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":101,"centroid":[3870824.103124506,3706448.608627704],"geom":"MULTIPOINT((3870824.103124506 3706448.608627704))","fields":[{"fieldName":"מקלט ID","fieldValue":101,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608253,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":178421,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שלווה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":7,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ברוך","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":13,"centroid":[3868008.0875563123,3706906.0728612663],"geom":"MULTIPOINT((3868008.0875563123 3706906.0728612663))","fields":[{"fieldName":"מקלט ID","fieldValue":13,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608651,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":176021,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"איתן","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":7,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד אליהו פרג'ון","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":102,"centroid":[3870061.464060191,3706275.8867952856],"geom":"MULTIPOINT((3870061.464060191 3706275.8867952856))","fields":[{"fieldName":"מקלט ID","fieldValue":102,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608109,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177770,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שלווה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":8,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"צפריר","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":11,"centroid":[3867784.9055692246,3706999.399763972],"geom":"MULTIPOINT((3867784.9055692246 3706999.399763972))","fields":[{"fieldName":"מקלט ID","fieldValue":11,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608731,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175831,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"איתן","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד כוהנים","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":57,"centroid":[3872534.2594223386,3707223.5404986585],"geom":"MULTIPOINT((3872534.2594223386 3707223.5404986585))","fields":[{"fieldName":"מקלט ID","fieldValue":57,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608905,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":179882,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"נועם","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":7,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מול בן מוחה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":100,"centroid":[3870726.2323022755,3706290.330746709],"geom":"MULTIPOINT((3870726.2323022755 3706290.330746709))","fields":[{"fieldName":"מקלט ID","fieldValue":100,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608119,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":178337,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שלווה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד צביה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":12,"centroid":[3867901.820896624,3706800.7554012784],"geom":"MULTIPOINT((3867901.820896624 3706800.7554012784))","fields":[{"fieldName":"מקלט ID","fieldValue":12,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608562,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175930,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"איתן","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מבורך","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":95,"centroid":[3869998.6051917854,3706161.341821733],"geom":"MULTIPOINT((3869998.6051917854 3706161.341821733))","fields":[{"fieldName":"מקלט ID","fieldValue":95,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608012,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177716,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שלווה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"כיכר כניסה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":58,"centroid":[3872366.363387525,3706970.730335718],"geom":"MULTIPOINT((3872366.363387525 3706970.730335718))","fields":[{"fieldName":"מקלט ID","fieldValue":58,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608691,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":179738,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"נועם","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":8,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מול הלולים","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":99,"centroid":[3870529.0183196673,3706051.536907213],"geom":"MULTIPOINT((3870529.0183196673 3706051.536907213))","fields":[{"fieldName":"מקלט ID","fieldValue":99,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":607917,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":178168,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שלווה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"חדד","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":96,"centroid":[3869913.7531978763,3705976.0141483005],"geom":"MULTIPOINT((3869913.7531978763 3705976.0141483005))","fields":[{"fieldName":"מקלט ID","fieldValue":96,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":607855,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177643,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שלווה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מנשה לדיה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":56,"centroid":[3872738.1119096684,3706961.5475715864],"geom":"MULTIPOINT((3872738.1119096684 3706961.5475715864))","fields":[{"fieldName":"מקלט ID","fieldValue":56,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608682,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":180055,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"נועם","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"בן מוחה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":51,"centroid":[3872572.7923089224,3706647.48343513],"geom":"MULTIPOINT((3872572.7923089224 3706647.48343513))","fields":[{"fieldName":"מקלט ID","fieldValue":51,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608416,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":179913,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"נועם","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד מועדון","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":97,"centroid":[3869946.253974297,3705765.242476068],"geom":"MULTIPOINT((3869946.253974297 3705765.242476068))","fields":[{"fieldName":"מקלט ID","fieldValue":97,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":607676,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177670,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שלווה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"שמעון גואטה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":98,"centroid":[3870112.7672178475,3705760.0229111332],"geom":"MULTIPOINT((3870112.7672178475 3705760.0229111332))","fields":[{"fieldName":"מקלט ID","fieldValue":98,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":607671,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177812,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שלווה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"עזר מימון","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":59,"centroid":[3872708.8393837553,3706639.7547683385],"geom":"MULTIPOINT((3872708.8393837553 3706639.7547683385))","fields":[{"fieldName":"מקלט ID","fieldValue":59,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608409,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":180029,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"נועם","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":9,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד מגרש כדור סל","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":55,"centroid":[3872852.9611044605,3706667.4044275004],"geom":"MULTIPOINT((3872852.9611044605 3706667.4044275004))","fields":[{"fieldName":"מקלט ID","fieldValue":55,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608432,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":180152,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"נועם","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ציון דהאן","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":52,"centroid":[3872614.8256631657,3706384.884899431],"geom":"MULTIPOINT((3872614.8256631657 3706384.884899431))","fields":[{"fieldName":"מקלט ID","fieldValue":52,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608193,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":179948,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"נועם","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד בטיטו","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":54,"centroid":[3872913.4345385325,3706488.532763559],"geom":"MULTIPOINT((3872913.4345385325 3706488.532763559))","fields":[{"fieldName":"מקלט ID","fieldValue":54,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608280,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":180203,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"נועם","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד אפטה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":53,"centroid":[3872733.11417604,3706110.8000296187],"geom":"MULTIPOINT((3872733.11417604 3706110.8000296187))","fields":[{"fieldName":"מקלט ID","fieldValue":53,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":607960,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":180048,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"נועם","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"יוסף יפרח","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]}],"dim":2,"layerId":"217208"}]}
+-----------------
+POINT: 3870000, 3720000
+RESPONSE: {"data":[{"name":"layer_217208","caption":"מקלטים","fieldsMapping":{"x":"x","y":"y","setlmnt":"ישוב","location":"אזור","miklat_id":"מקלט ID","miklat_num":"מספר מקלט","status_061":"סטטוס "},"entities":[{"objectId":25,"centroid":[3869614.51865755,3719125.052089806],"geom":"MULTIPOINT((3869614.51865755 3719125.052089806))","fields":[{"fieldName":"מקלט ID","fieldValue":25,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":619010,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177433,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זבדיאל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"שלום אמר","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":24,"centroid":[3869706.1190807684,3718822.299013732],"geom":"MULTIPOINT((3869706.1190807684 3718822.299013732))","fields":[{"fieldName":"מקלט ID","fieldValue":24,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":618753,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177510,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זבדיאל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מרדכי צנעני","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":23,"centroid":[3869593.212351471,3718588.306903908],"geom":"MULTIPOINT((3869593.212351471 3718588.306903908))","fields":[{"fieldName":"מקלט ID","fieldValue":23,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":618555,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177413,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זבדיאל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"בית כנסת בית תפארתו","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":26,"centroid":[3869078.1913934066,3718817.3674515556],"geom":"MULTIPOINT((3869078.1913934066 3718817.3674515556))","fields":[{"fieldName":"מקלט ID","fieldValue":26,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":618751,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":176975,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זבדיאל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מנחם משה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":22,"centroid":[3869360.2365082796,3718442.283464001],"geom":"MULTIPOINT((3869360.2365082796 3718442.283464001))","fields":[{"fieldName":"מקלט ID","fieldValue":22,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":618432,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177214,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זבדיאל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד בית כנסת","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":21,"centroid":[3869509.4565059477,3718112.6585254096],"geom":"MULTIPOINT((3869509.4565059477 3718112.6585254096))","fields":[{"fieldName":"מקלט ID","fieldValue":21,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":618152,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177340,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זבדיאל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מרים חיט","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":32,"centroid":[3868249.1437506685,3721456.2027957407],"geom":"MULTIPOINT((3868249.1437506685 3721456.2027957407))","fields":[{"fieldName":"מקלט ID","fieldValue":32,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":620991,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":176278,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זרחיה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"רפאלי גן משחקים","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":31,"centroid":[3867803.8126806584,3721269.1128640585],"geom":"MULTIPOINT((3867803.8126806584 3721269.1128640585))","fields":[{"fieldName":"מקלט ID","fieldValue":31,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":620834,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175898,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זרחיה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד מכולת","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":34,"centroid":[3867916.309673408,3721598.728548921],"geom":"MULTIPOINT((3867916.309673408 3721598.728548921))","fields":[{"fieldName":"מקלט ID","fieldValue":34,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":621113,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175995,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זרחיה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":8,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"בית כנסת","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":33,"centroid":[3867921.809706998,3721687.2318354733],"geom":"MULTIPOINT((3867921.809706998 3721687.2318354733))","fields":[{"fieldName":"מקלט ID","fieldValue":33,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":621188,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":176000,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זרחיה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":7,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד דדון","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":29,"centroid":[3867741.649031598,3721535.4644164587],"geom":"MULTIPOINT((3867741.649031598 3721535.4644164587))","fields":[{"fieldName":"מקלט ID","fieldValue":29,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":621060,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175846,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זרחיה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מול יוחנן 5","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":30,"centroid":[3867430.1449163444,3721072.877614718],"geom":"MULTIPOINT((3867430.1449163444 3721072.877614718))","fields":[{"fieldName":"מקלט ID","fieldValue":30,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":620669,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175579,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זרחיה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד יצחק 69","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":28,"centroid":[3867738.8071486703,3721933.025723141],"geom":"MULTIPOINT((3867738.8071486703 3721933.025723141))","fields":[{"fieldName":"מקלט ID","fieldValue":28,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":621397,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175845,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זרחיה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מול אבוטבול","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":16,"centroid":[3867676.1086433562,3717852.639170151],"geom":"MULTIPOINT((3867676.1086433562 3717852.639170151))","fields":[{"fieldName":"מקלט ID","fieldValue":16,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617938,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175777,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"אלומה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"בית תרבות","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":17,"centroid":[3867850.613254162,3717659.962045692],"geom":"MULTIPOINT((3867850.613254162 3717659.962045692))","fields":[{"fieldName":"מקלט ID","fieldValue":17,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617774,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175925,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"אלומה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד המקווה (גנים)","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":27,"centroid":[3867612.4138656226,3722116.5337934764],"geom":"MULTIPOINT((3867612.4138656226 3722116.5337934764))","fields":[{"fieldName":"מקלט ID","fieldValue":27,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":621553,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175738,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זרחיה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"כיכר צפונית","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":20,"centroid":[3867728.8158871215,3717598.1208254984],"geom":"MULTIPOINT((3867728.8158871215 3717598.1208254984))","fields":[{"fieldName":"מקלט ID","fieldValue":20,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617722,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175821,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"אלומה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מיגונית רחוב ראשי","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":18,"centroid":[3867714.8563902,3717568.5780783817],"geom":"MULTIPOINT((3867714.8563902 3717568.5780783817))","fields":[{"fieldName":"מקלט ID","fieldValue":18,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617697,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175809,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"אלומה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"אשר שושן","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":19,"centroid":[3867599.7204877483,3717597.573616058],"geom":"MULTIPOINT((3867599.7204877483 3717597.573616058))","fields":[{"fieldName":"מקלט ID","fieldValue":19,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617722,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175711,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"אלומה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מיגונית מכולת","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":79,"centroid":[3866653.0133531904,3718600.721169561],"geom":"MULTIPOINT((3866653.0133531904 3718600.721169561))","fields":[{"fieldName":"מקלט ID","fieldValue":79,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":618576,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174908,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"קוממיות","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד פרקש","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":80,"centroid":[3866548.2463600533,3718672.2139524766],"geom":"MULTIPOINT((3866548.2463600533 3718672.2139524766))","fields":[{"fieldName":"מקלט ID","fieldValue":80,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":618637,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174819,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"קוממיות","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"רובינשטיין","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":87,"centroid":[3867022.673194097,3717510.1981401714],"geom":"MULTIPOINT((3867022.673194097 3717510.1981401714))","fields":[{"fieldName":"מקלט ID","fieldValue":87,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617650,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175219,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"רווחה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד גדליה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":81,"centroid":[3866199.620120018,3718951.410623118],"geom":"MULTIPOINT((3866199.620120018 3718951.410623118))","fields":[{"fieldName":"מקלט ID","fieldValue":81,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":618875,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174523,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"קוממיות","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד הכיכר","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":88,"centroid":[3866919.9601859385,3717377.671723208],"geom":"MULTIPOINT((3866919.9601859385 3717377.671723208))","fields":[{"fieldName":"מקלט ID","fieldValue":88,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617538,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175131,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"רווחה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"דורון","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":86,"centroid":[3866022.350426933,3719230.1750340974],"geom":"MULTIPOINT((3866022.350426933 3719230.1750340974))","fields":[{"fieldName":"מקלט ID","fieldValue":86,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":619112,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174373,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"קוממיות","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":8,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ממ\"מ בי\"ס לבנות בית יעקב","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":84,"centroid":[3865987.040776558,3719252.4310224736],"geom":"MULTIPOINT((3865987.040776558 3719252.4310224736))","fields":[{"fieldName":"מקלט ID","fieldValue":84,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":619131,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174343,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"קוממיות","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"חצר בית הספר","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":82,"centroid":[3866063.9075358408,3718849.3835336566],"geom":"MULTIPOINT((3866063.9075358408 3718849.3835336566))","fields":[{"fieldName":"מקלט ID","fieldValue":82,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":618789,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174407,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"קוממיות","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד בית הרב","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":89,"centroid":[3866746.845918403,3717242.4837198406],"geom":"MULTIPOINT((3866746.845918403 3717242.4837198406))","fields":[{"fieldName":"מקלט ID","fieldValue":89,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617424,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174983,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"רווחה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"צומת המרפאה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":83,"centroid":[3865742.176060165,3719417.6674385737],"geom":"MULTIPOINT((3865742.176060165 3719417.6674385737))","fields":[{"fieldName":"מקלט ID","fieldValue":83,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":619272,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174135,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"קוממיות","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ונדגר שמדרה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":109,"centroid":[3866915.6829793663,3723064.4928011377],"geom":"MULTIPOINT((3866915.6829793663 3723064.4928011377))","fields":[{"fieldName":"מקלט ID","fieldValue":109,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":622359,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175148,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שפיר","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מול זלצר","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":108,"centroid":[3866747.210461979,3722923.362551413],"geom":"MULTIPOINT((3866747.210461979 3722923.362551413))","fields":[{"fieldName":"מקלט ID","fieldValue":108,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":622240,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175004,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שפיר","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"בית הרב","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":90,"centroid":[3866247.746295437,3717590.5807501827],"geom":"MULTIPOINT((3866247.746295437 3717590.5807501827))","fields":[{"fieldName":"מקלט ID","fieldValue":90,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617721,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174559,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"רווחה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"משפחת יונה, מול חיים רחמים","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":92,"centroid":[3866433.232024854,3717304.809640893],"geom":"MULTIPOINT((3866433.232024854 3717304.809640893))","fields":[{"fieldName":"מקלט ID","fieldValue":92,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617478,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174716,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"רווחה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"יוסי אהרון, כדור סל","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":93,"centroid":[3866560.9175028633,3717086.0119044036],"geom":"MULTIPOINT((3866560.9175028633 3717086.0119044036))","fields":[{"fieldName":"מקלט ID","fieldValue":93,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617292,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174824,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"רווחה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":7,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"בית הרב יונה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":85,"centroid":[3865442.00262283,3719613.324435988],"geom":"MULTIPOINT((3865442.00262283 3719613.324435988))","fields":[{"fieldName":"מקלט ID","fieldValue":85,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":619439,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":173880,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"קוממיות","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":7,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ממ\"מ בית ספר לבנים פאר אהרון","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":91,"centroid":[3865923.0212027985,3717776.679200362],"geom":"MULTIPOINT((3865923.0212027985 3717776.679200362))","fields":[{"fieldName":"מקלט ID","fieldValue":91,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617880,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174283,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"רווחה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"רחמים שושנה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":107,"centroid":[3866556.007506624,3723154.968916122],"geom":"MULTIPOINT((3866556.007506624 3723154.968916122))","fields":[{"fieldName":"מקלט ID","fieldValue":107,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":622437,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174842,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שפיר","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"פריינטה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":94,"centroid":[3866396.0818685945,3716937.885853547],"geom":"MULTIPOINT((3866396.0818685945 3716937.885853547))","fields":[{"fieldName":"מקלט ID","fieldValue":94,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617167,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174683,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"רווחה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":8,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"רחמים יוסף, משק עטייה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]}],"dim":2,"layerId":"217208"}]}
+-----------------
+POINT: 3870000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3820000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3830000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3840000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3850000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3720000
+RESPONSE: {"data":[{"name":"layer_217208","caption":"מקלטים","fieldsMapping":{"x":"x","y":"y","setlmnt":"ישוב","location":"אזור","miklat_id":"מקלט ID","miklat_num":"מספר מקלט","status_061":"סטטוס "},"entities":[{"objectId":44,"centroid":[3861668.3236047914,3724093.242649845],"geom":"MULTIPOINT((3861668.3236047914 3724093.242649845))","fields":[{"fieldName":"מקלט ID","fieldValue":44,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":623251,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":170683,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"משואות יצחק","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"צעירים דרום","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":45,"centroid":[3861431.856873749,3724187.696672573],"geom":"MULTIPOINT((3861431.856873749 3724187.696672573))","fields":[{"fieldName":"מקלט ID","fieldValue":45,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":623332,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":170482,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"משואות יצחק","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"בסין","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":50,"centroid":[3861650.89820368,3724303.1954843234],"geom":"MULTIPOINT((3861650.89820368 3724303.1954843234))","fields":[{"fieldName":"מקלט ID","fieldValue":50,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":623429,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":170669,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"משואות יצחק","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":7,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מרפאה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":46,"centroid":[3861479.0437370343,3724390.8783286754],"geom":"MULTIPOINT((3861479.0437370343 3724390.8783286754))","fields":[{"fieldName":"מקלט ID","fieldValue":46,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":623504,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":170523,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"משואות יצחק","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"חדר נשק","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":48,"centroid":[3861396.3961466188,3724486.064661628],"geom":"MULTIPOINT((3861396.3961466188 3724486.064661628))","fields":[{"fieldName":"מקלט ID","fieldValue":48,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":623585,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":170453,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"משואות יצחק","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"צעירים","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":49,"centroid":[3861593.342373532,3724556.6216518283],"geom":"MULTIPOINT((3861593.342373532 3724556.6216518283))","fields":[{"fieldName":"מקלט ID","fieldValue":49,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":623644,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":170621,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"משואות יצחק","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מכבסה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":47,"centroid":[3861479.0505698216,3724638.679353297],"geom":"MULTIPOINT((3861479.0505698216 3724638.679353297))","fields":[{"fieldName":"מקלט ID","fieldValue":47,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":623714,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":170524,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"משואות יצחק","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"חיילים","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":38,"centroid":[3863385.241200152,3723537.249769069],"geom":"MULTIPOINT((3863385.241200152 3723537.249769069))","fields":[{"fieldName":"מקלט ID","fieldValue":38,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":622773,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":172143,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"מ. שפירא","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"אביאור","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]}],"dim":2,"layerId":"217208"}]}
+-----------------
+POINT: 3860000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3860000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3710000
+RESPONSE: {"data":[{"name":"layer_217208","caption":"מקלטים","fieldsMapping":{"x":"x","y":"y","setlmnt":"ישוב","location":"אזור","miklat_id":"מקלט ID","miklat_num":"מספר מקלט","status_061":"סטטוס "},"entities":[{"objectId":66,"centroid":[3870113.478356536,3709991.733380959],"geom":"MULTIPOINT((3870113.478356536 3709991.733380959))","fields":[{"fieldName":"מקלט ID","fieldValue":66,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":611262,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177827,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"עוזה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":7,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"עזיזה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":65,"centroid":[3870018.890732662,3709887.6335485526],"geom":"MULTIPOINT((3870018.890732662 3709887.6335485526))","fields":[{"fieldName":"מקלט ID","fieldValue":65,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":611174,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177746,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"עוזה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מול מגידיש","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":67,"centroid":[3870063.4080902785,3710194.2561793495],"geom":"MULTIPOINT((3870063.4080902785 3710194.2561793495))","fields":[{"fieldName":"מקלט ID","fieldValue":67,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":611434,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177785,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"עוזה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":8,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"דואר","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":62,"centroid":[3869795.593311757,3709999.8772201613],"geom":"MULTIPOINT((3869795.593311757 3709999.8772201613))","fields":[{"fieldName":"מקלט ID","fieldValue":62,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":611270,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177556,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"עוזה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"גן מול עזיזי","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":63,"centroid":[3869830.3349870914,3709818.511504705],"geom":"MULTIPOINT((3869830.3349870914 3709818.511504705))","fields":[{"fieldName":"מקלט ID","fieldValue":63,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":611116,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177585,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"עוזה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"חואטי יצחק","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":61,"centroid":[3869645.6656011413,3709949.7661501435],"geom":"MULTIPOINT((3869645.6656011413 3709949.7661501435))","fields":[{"fieldName":"מקלט ID","fieldValue":61,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":611228,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177428,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"עוזה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"אליהו עובדיה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":68,"centroid":[3870198.7822111133,3710365.7057325174],"geom":"MULTIPOINT((3870198.7822111133 3710365.7057325174))","fields":[{"fieldName":"מקלט ID","fieldValue":68,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":611579,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177901,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"עוזה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":9,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"גואטה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":64,"centroid":[3869837.154604345,3709580.4631307567],"geom":"MULTIPOINT((3869837.154604345 3709580.4631307567))","fields":[{"fieldName":"מקלט ID","fieldValue":64,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":610914,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177590,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"עוזה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"חלומה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":69,"centroid":[3870236.892165515,3710515.549452964],"geom":"MULTIPOINT((3870236.892165515 3710515.549452964))","fields":[{"fieldName":"מקלט ID","fieldValue":69,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":611706,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177934,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"עוזה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":10,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"עמטה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":60,"centroid":[3869433.696860396,3709869.934826738],"geom":"MULTIPOINT((3869433.696860396 3709869.934826738))","fields":[{"fieldName":"מקלט ID","fieldValue":60,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":611161,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177247,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"עוזה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"עזרה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":2,"centroid":[3869987.507746159,3708057.2576990486],"geom":"MULTIPOINT((3869987.507746159 3708057.2576990486))","fields":[{"fieldName":"מקלט ID","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":609621,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177713,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"אבן- שמואל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"בית תרבות","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":3,"centroid":[3869738.0816674284,3707967.865375473],"geom":"MULTIPOINT((3869738.0816674284 3707967.865375473))","fields":[{"fieldName":"מקלט ID","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":609546,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177500,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"אבן- שמואל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד גן שעשועים","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":5,"centroid":[3869581.1762554166,3707909.484628547],"geom":"MULTIPOINT((3869581.1762554166 3707909.484628547))","fields":[{"fieldName":"מקלט ID","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":609497,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177366,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"אבן- שמואל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"שלום זהבי","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":4,"centroid":[3869765.441338041,3707871.345599155],"geom":"MULTIPOINT((3869765.441338041 3707871.345599155))","fields":[{"fieldName":"מקלט ID","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":609464,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177523,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"אבן- שמואל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד מקווה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":1,"centroid":[3869941.7702438333,3707764.823853058],"geom":"MULTIPOINT((3869941.7702438333 3707764.823853058))","fields":[{"fieldName":"מקלט ID","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":609373,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177673,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"אבן- שמואל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד צרכניה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":6,"centroid":[3869593.368467101,3707794.04932744],"geom":"MULTIPOINT((3869593.368467101 3707794.04932744))","fields":[{"fieldName":"מקלט ID","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":609399,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177376,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"אבן- שמואל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"אולפנה בוחבוט","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":7,"centroid":[3868581.9094328946,3707657.9084819607],"geom":"MULTIPOINT((3868581.9094328946 3707657.9084819607))","fields":[{"fieldName":"מקלט ID","fieldValue":7,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":609287,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":176513,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"איתן","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מול קדושים","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":8,"centroid":[3868310.9804014177,3707668.564009314],"geom":"MULTIPOINT((3868310.9804014177 3707668.564009314))","fields":[{"fieldName":"מקלט ID","fieldValue":8,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":609297,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":176282,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"איתן","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד דוד כהן","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":15,"centroid":[3868299.611896277,3707298.5046475376],"geom":"MULTIPOINT((3868299.611896277 3707298.5046475376))","fields":[{"fieldName":"מקלט ID","fieldValue":15,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608983,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":176271,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"איתן","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":9,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"עזרא טרבלסי","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":9,"centroid":[3868022.303216498,3707435.2125114943],"geom":"MULTIPOINT((3868022.303216498 3707435.2125114943))","fields":[{"fieldName":"מקלט ID","fieldValue":9,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":609100,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":176035,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"איתן","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מכולת","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":14,"centroid":[3868167.683905666,3707158.9067041134],"geom":"MULTIPOINT((3868167.683905666 3707158.9067041134))","fields":[{"fieldName":"מקלט ID","fieldValue":14,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608865,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":176158,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"איתן","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":8,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד מזכירות","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":103,"centroid":[3870374.4262680924,3706597.637305797],"geom":"MULTIPOINT((3870374.4262680924 3706597.637305797))","fields":[{"fieldName":"מקלט ID","fieldValue":103,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608381,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":178038,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שלווה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":9,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"סעיד","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":10,"centroid":[3867898.6785516264,3707273.256089737],"geom":"MULTIPOINT((3867898.6785516264 3707273.256089737))","fields":[{"fieldName":"מקלט ID","fieldValue":10,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608963,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175929,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"איתן","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ירון חדד","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":101,"centroid":[3870824.103124506,3706448.608627704],"geom":"MULTIPOINT((3870824.103124506 3706448.608627704))","fields":[{"fieldName":"מקלט ID","fieldValue":101,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608253,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":178421,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שלווה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":7,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ברוך","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":13,"centroid":[3868008.0875563123,3706906.0728612663],"geom":"MULTIPOINT((3868008.0875563123 3706906.0728612663))","fields":[{"fieldName":"מקלט ID","fieldValue":13,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608651,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":176021,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"איתן","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":7,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד אליהו פרג'ון","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":102,"centroid":[3870061.464060191,3706275.8867952856],"geom":"MULTIPOINT((3870061.464060191 3706275.8867952856))","fields":[{"fieldName":"מקלט ID","fieldValue":102,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608109,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177770,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שלווה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":8,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"צפריר","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":11,"centroid":[3867784.9055692246,3706999.399763972],"geom":"MULTIPOINT((3867784.9055692246 3706999.399763972))","fields":[{"fieldName":"מקלט ID","fieldValue":11,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608731,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175831,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"איתן","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד כוהנים","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":57,"centroid":[3872534.2594223386,3707223.5404986585],"geom":"MULTIPOINT((3872534.2594223386 3707223.5404986585))","fields":[{"fieldName":"מקלט ID","fieldValue":57,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608905,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":179882,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"נועם","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":7,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מול בן מוחה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":100,"centroid":[3870726.2323022755,3706290.330746709],"geom":"MULTIPOINT((3870726.2323022755 3706290.330746709))","fields":[{"fieldName":"מקלט ID","fieldValue":100,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608119,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":178337,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שלווה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד צביה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":12,"centroid":[3867901.820896624,3706800.7554012784],"geom":"MULTIPOINT((3867901.820896624 3706800.7554012784))","fields":[{"fieldName":"מקלט ID","fieldValue":12,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608562,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175930,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"איתן","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מבורך","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":95,"centroid":[3869998.6051917854,3706161.341821733],"geom":"MULTIPOINT((3869998.6051917854 3706161.341821733))","fields":[{"fieldName":"מקלט ID","fieldValue":95,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608012,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177716,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שלווה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"כיכר כניסה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":58,"centroid":[3872366.363387525,3706970.730335718],"geom":"MULTIPOINT((3872366.363387525 3706970.730335718))","fields":[{"fieldName":"מקלט ID","fieldValue":58,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608691,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":179738,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"נועם","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":8,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מול הלולים","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":99,"centroid":[3870529.0183196673,3706051.536907213],"geom":"MULTIPOINT((3870529.0183196673 3706051.536907213))","fields":[{"fieldName":"מקלט ID","fieldValue":99,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":607917,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":178168,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שלווה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"חדד","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":96,"centroid":[3869913.7531978763,3705976.0141483005],"geom":"MULTIPOINT((3869913.7531978763 3705976.0141483005))","fields":[{"fieldName":"מקלט ID","fieldValue":96,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":607855,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177643,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שלווה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מנשה לדיה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":56,"centroid":[3872738.1119096684,3706961.5475715864],"geom":"MULTIPOINT((3872738.1119096684 3706961.5475715864))","fields":[{"fieldName":"מקלט ID","fieldValue":56,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608682,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":180055,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"נועם","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"בן מוחה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":51,"centroid":[3872572.7923089224,3706647.48343513],"geom":"MULTIPOINT((3872572.7923089224 3706647.48343513))","fields":[{"fieldName":"מקלט ID","fieldValue":51,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608416,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":179913,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"נועם","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד מועדון","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":97,"centroid":[3869946.253974297,3705765.242476068],"geom":"MULTIPOINT((3869946.253974297 3705765.242476068))","fields":[{"fieldName":"מקלט ID","fieldValue":97,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":607676,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177670,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שלווה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"שמעון גואטה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":98,"centroid":[3870112.7672178475,3705760.0229111332],"geom":"MULTIPOINT((3870112.7672178475 3705760.0229111332))","fields":[{"fieldName":"מקלט ID","fieldValue":98,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":607671,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177812,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שלווה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"עזר מימון","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":59,"centroid":[3872708.8393837553,3706639.7547683385],"geom":"MULTIPOINT((3872708.8393837553 3706639.7547683385))","fields":[{"fieldName":"מקלט ID","fieldValue":59,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608409,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":180029,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"נועם","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":9,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד מגרש כדור סל","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":55,"centroid":[3872852.9611044605,3706667.4044275004],"geom":"MULTIPOINT((3872852.9611044605 3706667.4044275004))","fields":[{"fieldName":"מקלט ID","fieldValue":55,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608432,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":180152,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"נועם","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ציון דהאן","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":52,"centroid":[3872614.8256631657,3706384.884899431],"geom":"MULTIPOINT((3872614.8256631657 3706384.884899431))","fields":[{"fieldName":"מקלט ID","fieldValue":52,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608193,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":179948,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"נועם","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד בטיטו","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":54,"centroid":[3872913.4345385325,3706488.532763559],"geom":"MULTIPOINT((3872913.4345385325 3706488.532763559))","fields":[{"fieldName":"מקלט ID","fieldValue":54,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":608280,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":180203,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"נועם","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד אפטה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":53,"centroid":[3872733.11417604,3706110.8000296187],"geom":"MULTIPOINT((3872733.11417604 3706110.8000296187))","fields":[{"fieldName":"מקלט ID","fieldValue":53,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":607960,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":180048,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"נועם","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"יוסף יפרח","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]}],"dim":2,"layerId":"217208"}]}
+-----------------
+POINT: 3870000, 3720000
+RESPONSE: {"data":[{"name":"layer_217208","caption":"מקלטים","fieldsMapping":{"x":"x","y":"y","setlmnt":"ישוב","location":"אזור","miklat_id":"מקלט ID","miklat_num":"מספר מקלט","status_061":"סטטוס "},"entities":[{"objectId":25,"centroid":[3869614.51865755,3719125.052089806],"geom":"MULTIPOINT((3869614.51865755 3719125.052089806))","fields":[{"fieldName":"מקלט ID","fieldValue":25,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":619010,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177433,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זבדיאל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"שלום אמר","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":24,"centroid":[3869706.1190807684,3718822.299013732],"geom":"MULTIPOINT((3869706.1190807684 3718822.299013732))","fields":[{"fieldName":"מקלט ID","fieldValue":24,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":618753,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177510,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זבדיאל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מרדכי צנעני","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":23,"centroid":[3869593.212351471,3718588.306903908],"geom":"MULTIPOINT((3869593.212351471 3718588.306903908))","fields":[{"fieldName":"מקלט ID","fieldValue":23,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":618555,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177413,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זבדיאל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"בית כנסת בית תפארתו","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":26,"centroid":[3869078.1913934066,3718817.3674515556],"geom":"MULTIPOINT((3869078.1913934066 3718817.3674515556))","fields":[{"fieldName":"מקלט ID","fieldValue":26,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":618751,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":176975,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זבדיאל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מנחם משה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":22,"centroid":[3869360.2365082796,3718442.283464001],"geom":"MULTIPOINT((3869360.2365082796 3718442.283464001))","fields":[{"fieldName":"מקלט ID","fieldValue":22,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":618432,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177214,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זבדיאל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד בית כנסת","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":21,"centroid":[3869509.4565059477,3718112.6585254096],"geom":"MULTIPOINT((3869509.4565059477 3718112.6585254096))","fields":[{"fieldName":"מקלט ID","fieldValue":21,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":618152,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":177340,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זבדיאל","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מרים חיט","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":32,"centroid":[3868249.1437506685,3721456.2027957407],"geom":"MULTIPOINT((3868249.1437506685 3721456.2027957407))","fields":[{"fieldName":"מקלט ID","fieldValue":32,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":620991,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":176278,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זרחיה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"רפאלי גן משחקים","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":31,"centroid":[3867803.8126806584,3721269.1128640585],"geom":"MULTIPOINT((3867803.8126806584 3721269.1128640585))","fields":[{"fieldName":"מקלט ID","fieldValue":31,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":620834,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175898,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זרחיה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד מכולת","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":34,"centroid":[3867916.309673408,3721598.728548921],"geom":"MULTIPOINT((3867916.309673408 3721598.728548921))","fields":[{"fieldName":"מקלט ID","fieldValue":34,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":621113,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175995,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זרחיה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":8,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"בית כנסת","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":33,"centroid":[3867921.809706998,3721687.2318354733],"geom":"MULTIPOINT((3867921.809706998 3721687.2318354733))","fields":[{"fieldName":"מקלט ID","fieldValue":33,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":621188,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":176000,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זרחיה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":7,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד דדון","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":29,"centroid":[3867741.649031598,3721535.4644164587],"geom":"MULTIPOINT((3867741.649031598 3721535.4644164587))","fields":[{"fieldName":"מקלט ID","fieldValue":29,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":621060,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175846,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זרחיה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מול יוחנן 5","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":30,"centroid":[3867430.1449163444,3721072.877614718],"geom":"MULTIPOINT((3867430.1449163444 3721072.877614718))","fields":[{"fieldName":"מקלט ID","fieldValue":30,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":620669,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175579,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זרחיה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד יצחק 69","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":28,"centroid":[3867738.8071486703,3721933.025723141],"geom":"MULTIPOINT((3867738.8071486703 3721933.025723141))","fields":[{"fieldName":"מקלט ID","fieldValue":28,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":621397,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175845,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זרחיה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מול אבוטבול","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":16,"centroid":[3867676.1086433562,3717852.639170151],"geom":"MULTIPOINT((3867676.1086433562 3717852.639170151))","fields":[{"fieldName":"מקלט ID","fieldValue":16,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617938,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175777,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"אלומה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"בית תרבות","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":17,"centroid":[3867850.613254162,3717659.962045692],"geom":"MULTIPOINT((3867850.613254162 3717659.962045692))","fields":[{"fieldName":"מקלט ID","fieldValue":17,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617774,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175925,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"אלומה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד המקווה (גנים)","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":27,"centroid":[3867612.4138656226,3722116.5337934764],"geom":"MULTIPOINT((3867612.4138656226 3722116.5337934764))","fields":[{"fieldName":"מקלט ID","fieldValue":27,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":621553,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175738,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"זרחיה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"כיכר צפונית","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":20,"centroid":[3867728.8158871215,3717598.1208254984],"geom":"MULTIPOINT((3867728.8158871215 3717598.1208254984))","fields":[{"fieldName":"מקלט ID","fieldValue":20,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617722,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175821,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"אלומה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מיגונית רחוב ראשי","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":18,"centroid":[3867714.8563902,3717568.5780783817],"geom":"MULTIPOINT((3867714.8563902 3717568.5780783817))","fields":[{"fieldName":"מקלט ID","fieldValue":18,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617697,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175809,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"אלומה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"אשר שושן","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":19,"centroid":[3867599.7204877483,3717597.573616058],"geom":"MULTIPOINT((3867599.7204877483 3717597.573616058))","fields":[{"fieldName":"מקלט ID","fieldValue":19,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617722,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175711,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"אלומה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מיגונית מכולת","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":79,"centroid":[3866653.0133531904,3718600.721169561],"geom":"MULTIPOINT((3866653.0133531904 3718600.721169561))","fields":[{"fieldName":"מקלט ID","fieldValue":79,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":618576,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174908,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"קוממיות","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד פרקש","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":80,"centroid":[3866548.2463600533,3718672.2139524766],"geom":"MULTIPOINT((3866548.2463600533 3718672.2139524766))","fields":[{"fieldName":"מקלט ID","fieldValue":80,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":618637,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174819,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"קוממיות","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"רובינשטיין","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":87,"centroid":[3867022.673194097,3717510.1981401714],"geom":"MULTIPOINT((3867022.673194097 3717510.1981401714))","fields":[{"fieldName":"מקלט ID","fieldValue":87,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617650,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175219,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"רווחה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":1,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד גדליה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":81,"centroid":[3866199.620120018,3718951.410623118],"geom":"MULTIPOINT((3866199.620120018 3718951.410623118))","fields":[{"fieldName":"מקלט ID","fieldValue":81,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":618875,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174523,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"קוממיות","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד הכיכר","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":88,"centroid":[3866919.9601859385,3717377.671723208],"geom":"MULTIPOINT((3866919.9601859385 3717377.671723208))","fields":[{"fieldName":"מקלט ID","fieldValue":88,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617538,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175131,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"רווחה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":2,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"דורון","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":86,"centroid":[3866022.350426933,3719230.1750340974],"geom":"MULTIPOINT((3866022.350426933 3719230.1750340974))","fields":[{"fieldName":"מקלט ID","fieldValue":86,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":619112,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174373,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"קוממיות","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":8,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ממ\"מ בי\"ס לבנות בית יעקב","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":84,"centroid":[3865987.040776558,3719252.4310224736],"geom":"MULTIPOINT((3865987.040776558 3719252.4310224736))","fields":[{"fieldName":"מקלט ID","fieldValue":84,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":619131,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174343,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"קוממיות","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"חצר בית הספר","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":82,"centroid":[3866063.9075358408,3718849.3835336566],"geom":"MULTIPOINT((3866063.9075358408 3718849.3835336566))","fields":[{"fieldName":"מקלט ID","fieldValue":82,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":618789,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174407,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"קוממיות","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ליד בית הרב","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":89,"centroid":[3866746.845918403,3717242.4837198406],"geom":"MULTIPOINT((3866746.845918403 3717242.4837198406))","fields":[{"fieldName":"מקלט ID","fieldValue":89,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617424,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174983,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"רווחה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":3,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"צומת המרפאה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":83,"centroid":[3865742.176060165,3719417.6674385737],"geom":"MULTIPOINT((3865742.176060165 3719417.6674385737))","fields":[{"fieldName":"מקלט ID","fieldValue":83,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":619272,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174135,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"קוממיות","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ונדגר שמדרה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":109,"centroid":[3866915.6829793663,3723064.4928011377],"geom":"MULTIPOINT((3866915.6829793663 3723064.4928011377))","fields":[{"fieldName":"מקלט ID","fieldValue":109,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":622359,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175148,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שפיר","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"מול זלצר","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":108,"centroid":[3866747.210461979,3722923.362551413],"geom":"MULTIPOINT((3866747.210461979 3722923.362551413))","fields":[{"fieldName":"מקלט ID","fieldValue":108,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":622240,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":175004,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שפיר","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"בית הרב","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":90,"centroid":[3866247.746295437,3717590.5807501827],"geom":"MULTIPOINT((3866247.746295437 3717590.5807501827))","fields":[{"fieldName":"מקלט ID","fieldValue":90,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617721,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174559,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"רווחה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"משפחת יונה, מול חיים רחמים","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":92,"centroid":[3866433.232024854,3717304.809640893],"geom":"MULTIPOINT((3866433.232024854 3717304.809640893))","fields":[{"fieldName":"מקלט ID","fieldValue":92,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617478,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174716,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"רווחה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":6,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"יוסי אהרון, כדור סל","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":93,"centroid":[3866560.9175028633,3717086.0119044036],"geom":"MULTIPOINT((3866560.9175028633 3717086.0119044036))","fields":[{"fieldName":"מקלט ID","fieldValue":93,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617292,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174824,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"רווחה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":7,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"בית הרב יונה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":85,"centroid":[3865442.00262283,3719613.324435988],"geom":"MULTIPOINT((3865442.00262283 3719613.324435988))","fields":[{"fieldName":"מקלט ID","fieldValue":85,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":619439,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":173880,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"קוממיות","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":7,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"ממ\"מ בית ספר לבנים פאר אהרון","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":91,"centroid":[3865923.0212027985,3717776.679200362],"geom":"MULTIPOINT((3865923.0212027985 3717776.679200362))","fields":[{"fieldName":"מקלט ID","fieldValue":91,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617880,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174283,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"רווחה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":5,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"רחמים שושנה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]},{"objectId":107,"centroid":[3866556.007506624,3723154.968916122],"geom":"MULTIPOINT((3866556.007506624 3723154.968916122))","fields":[{"fieldName":"מקלט ID","fieldValue":107,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":622437,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174842,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"שפיר","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":4,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"פריינטה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"לא תקין","fieldType":1,"isVisible":true}]},{"objectId":94,"centroid":[3866396.0818685945,3716937.885853547],"geom":"MULTIPOINT((3866396.0818685945 3716937.885853547))","fields":[{"fieldName":"מקלט ID","fieldValue":94,"fieldType":2,"isVisible":true},{"fieldName":"y","fieldValue":617167,"fieldType":2,"isVisible":true},{"fieldName":"x","fieldValue":174683,"fieldType":2,"isVisible":true},{"fieldName":"ישוב","fieldValue":"רווחה","fieldType":1,"isVisible":true},{"fieldName":"מספר מקלט","fieldValue":8,"fieldType":2,"isVisible":true},{"fieldName":"אזור","fieldValue":"רחמים יוסף, משק עטייה","fieldType":1,"isVisible":true},{"fieldName":"סטטוס ","fieldValue":"תקין","fieldType":1,"isVisible":true}]}],"dim":2,"layerId":"217208"}]}
+-----------------
+POINT: 3870000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3870000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3880000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3890000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3900000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3910000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3920000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3930000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3940000, 3760000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3450000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3460000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3470000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3480000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3490000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3500000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3510000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3520000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3530000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3540000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3550000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3560000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3570000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3580000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3590000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3600000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3610000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3620000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3630000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3640000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3650000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3660000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3670000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3680000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3690000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3700000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3710000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3720000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3730000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3740000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3750000
+RESPONSE: {"data":[]}
+-----------------
+POINT: 3950000, 3760000
+RESPONSE: {"data":[]}
+-----------------
