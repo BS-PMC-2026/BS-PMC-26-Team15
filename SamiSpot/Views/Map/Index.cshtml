@@ -59,11 +59,22 @@
                         <span class="legend-color yellow"></span>
                         Alert in last 24 hours
                     </div>
+
                     <div class="map-legend-item">
                         <img src="https://maps.google.com/mapfiles/ms/icons/red-dot.png"
-                             alt="Shelter marker"
+                             alt="Gov shelter marker"
+                             style="width:20px; height:20px;"
                              class="legend-marker-icon" />
-                        Shelter
+
+                        Official Shelter
+                    </div>
+
+                    <div class="map-legend-item">
+                        <img src="https://maps.google.com/mapfiles/ms/icons/green-dot.png"
+                             alt="Contributor shelter marker"
+                             style="width:20px; height:20px;"
+                             class="legend-marker-icon" />
+                        Contributor Shelter
                     </div>
                 </div>
 
@@ -94,37 +105,36 @@
 
     let closestListData = [];
     let closestShelterMarkers = [];
+    let allShelters = [];
 
     let directionsService;
     let directionsRenderer;
     let selectedShelterIndex = null;
 
-        function isUserLoggedIn() {
+    function isUserLoggedIn() {
         return loggedInUser && loggedInUser !== '';
     }
-        function clearMap() {
-        // ❌ remove route
+
+    function clearMap() {
         directionsRenderer.setDirections({ routes: [] });
 
-        // ❌ remove closest markers
         closestShelterMarkers.forEach(m => m.setMap(null));
         closestShelterMarkers = [];
 
-        // ❌ clear selection
         selectedShelterIndex = null;
-
-        // ❌ close info window
         infoWindow.close();
 
-        // ❌ reset side panel
         document.getElementById("shelterPanel").innerHTML = `
             <h4>Shelter Details</h4>
             <p>Click a shelter on the map to view details.</p>
         `;
     }
+
     function initMap() {
         const defaultCenter = { lat: 31.2518, lng: 34.7913 };
+
         document.getElementById("btnClear").onclick = clearMap;
+
         map = new google.maps.Map(document.getElementById("map"), {
             center: defaultCenter,
             zoom: 8,
@@ -137,15 +147,15 @@
         infoWindow = new google.maps.InfoWindow();
 
         directionsService = new google.maps.DirectionsService();
-           directionsRenderer = new google.maps.DirectionsRenderer({
-        suppressMarkers: true,
-        preserveViewport: true,
-        polylineOptions: {
-            strokeColor: "#000000",
-            strokeOpacity: 1.0,
-            strokeWeight: 7
-        }
-    });
+        directionsRenderer = new google.maps.DirectionsRenderer({
+            suppressMarkers: true,
+            preserveViewport: true,
+            polylineOptions: {
+                strokeColor: "#000000",
+                strokeOpacity: 1.0,
+                strokeWeight: 7
+            }
+        });
         directionsRenderer.setMap(map);
 
         userMarker = new google.maps.Marker({
@@ -230,6 +240,162 @@
         infoWindow.open(map, userMarker);
     }
 
+    function getShelterFeedbackId(shelter) {
+        if (shelter.source === "Contributor") {
+            return 1000000000 + shelter.id;
+        }
+        return shelter.id;
+    }
+
+    function normalizeGovShelter(shelter) {
+        return {
+            id: shelter.id,
+            name: shelter.name || "Unnamed Shelter",
+            latitude: shelter.latitude,
+            longitude: shelter.longitude,
+            address: shelter.address || null,
+            description: shelter.description || null,
+            size: shelter.size ?? null,
+            isAvailable: shelter.isAvailable ?? null,
+            source: "Gov",
+            images: []
+        };
+    }
+
+    function normalizeContributorShelter(shelter) {
+        return {
+            id: shelter.id,
+            name: shelter.name || "Unnamed Shelter",
+            latitude: shelter.latitude,
+            longitude: shelter.longitude,
+            address: shelter.address || null,
+            description: shelter.description || null,
+            size: shelter.size ?? null,
+            isAvailable: shelter.isAvailable ?? null,
+            source: "Contributor",
+            images: []
+        };
+    }
+
+    async function loadShelters() {
+        shelterMarkers.forEach(m => m.setMap(null));
+        shelterMarkers = [];
+        allShelters = [];
+
+        let govShelters = [];
+        let contributorShelters = [];
+
+        try {
+            const govResponse = await fetch('/api/shelters');
+            if (govResponse.ok) {
+                govShelters = await govResponse.json();
+            }
+        } catch (e) {
+            console.error("failed loading gov shelters", e);
+        }
+
+        try {
+            const contributorResponse = await fetch('/api/contributor-shelters');
+            if (contributorResponse.ok) {
+                contributorShelters = await contributorResponse.json();
+            }
+        } catch (e) {
+            console.error("failed loading contributor shelters", e);
+        }
+
+        const normalizedGov = govShelters.map(normalizeGovShelter);
+        const normalizedContributor = contributorShelters.map(normalizeContributorShelter);
+
+        allShelters = [...normalizedGov, ...normalizedContributor];
+
+        allShelters.forEach(shelter => {
+            const marker = new google.maps.Marker({
+                position: { lat: shelter.latitude, lng: shelter.longitude },
+                map: map,
+                icon: {
+                    url: shelter.source === "Contributor"
+                        ? "https://maps.google.com/mapfiles/ms/icons/green-dot.png"
+                        : "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
+                    scaledSize: new google.maps.Size(20, 20)
+                },
+                title: shelter.name
+            });
+
+            marker.shelterId = shelter.id;
+            marker.shelterSource = shelter.source;
+
+            marker.addListener("click", async () => {
+                await showShelterDetails(shelter);
+            });
+
+            shelterMarkers.push(marker);
+        });
+
+        const params = new URLSearchParams(window.location.search);
+        const shelterId = params.get("shelterId");
+
+        if (shelterId) {
+            focusShelterById(parseInt(shelterId));
+        }
+    }
+
+    async function showShelterDetails(shelter) {
+        let html = "";
+        let imagesHtml = "";
+
+        if (shelter.source === "Contributor") {
+            try {
+                const res = await fetch(`/api/contributor-shelters/${shelter.id}/images`);
+                if (res.ok) {
+                    shelter.images = await res.json();
+                }
+            } catch (e) {
+                console.error("failed to load contributor images", e);
+            }
+        }
+
+        if (shelter.images && shelter.images.length > 0) {
+            imagesHtml = `
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:10px; margin-bottom:10px;">
+                    ${shelter.images.map(img => `
+                        <img src="${img}" style="width:100%; height:120px; object-fit:cover; border-radius:8px;" />
+                    `).join("")}
+                </div>
+            `;
+        }
+
+        html += "<h4>Shelter Details</h4>";
+        html += `<p><strong>Name:</strong> ${shelter.name}</p>`;
+        html += `<p><strong>Source:</strong> ${shelter.source === "Contributor" ? "Contributor Shelter" : "Official Shelter"}</p>`;
+
+        if (shelter.address) {
+            html += `<p><strong>Address:</strong> ${shelter.address}</p>`;
+        }
+
+        if (shelter.description) {
+            html += `<p><strong>Description:</strong> ${shelter.description}</p>`;
+        }
+
+        if (shelter.size !== null && shelter.size !== undefined) {
+            html += `<p><strong>Size:</strong> ${shelter.size}</p>`;
+        }
+
+        if (shelter.isAvailable !== null && shelter.isAvailable !== undefined) {
+            html += `<p><strong>Available:</strong> ${shelter.isAvailable ? "Yes" : "No"}</p>`;
+        }
+
+        html += `<p><strong>Latitude:</strong> ${shelter.latitude}</p>`;
+        html += `<p><strong>Longitude:</strong> ${shelter.longitude}</p>`;
+
+        html += imagesHtml;
+
+        const feedbackId = getShelterFeedbackId(shelter);
+        html += getFeedbackSection(feedbackId);
+
+        document.getElementById("shelterPanel").innerHTML = html;
+        loadFeedback(feedbackId);
+    }
+
     async function loadClosestShelters() {
         if (!userLocation) {
             alert("Please choose a location first.");
@@ -239,28 +405,38 @@
         let count = parseInt(document.getElementById("closestCount").value);
         if (!count || count < 1) count = 10;
 
-        try {
-            const response = await fetch("/Map/GetClosestShelters", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    latitude: userLocation.lat,
-                    longitude: userLocation.lng,
-                    count: count
-                })
-            });
-
-            if (!response.ok) {
-                throw new Error("Failed to load closest shelters");
-            }
-
-            const data = await response.json();
-            closestListData = data;
-            renderClosestList(data);
-        } catch (err) {
-            console.error(err);
-            alert("Could not load closest shelters.");
+        if (!allShelters.length) {
+            alert("No shelters loaded yet.");
+            return;
         }
+
+        const userLatLng = new google.maps.LatLng(userLocation.lat, userLocation.lng);
+
+        const sorted = allShelters
+            .map(s => {
+                const shelterLatLng = new google.maps.LatLng(s.latitude, s.longitude);
+                const distance = google.maps.geometry.spherical.computeDistanceBetween(userLatLng, shelterLatLng);
+
+                return {
+                    id: s.id,
+                    feedbackId: getShelterFeedbackId(s),
+                    name: s.name,
+                    lat: s.latitude,
+                    lng: s.longitude,
+                    address: s.address,
+                    description: s.description,
+                    size: s.size,
+                    isAvailable: s.isAvailable,
+                    source: s.source,
+                    images: s.images || [],
+                    distance: distance
+                };
+            })
+            .sort((a, b) => a.distance - b.distance)
+            .slice(0, count);
+
+        closestListData = sorted;
+        renderClosestList(sorted);
     }
 
     function renderClosestList(list) {
@@ -275,23 +451,21 @@
             <ul style="padding-left:0; list-style:none;">
         `;
 
-        const purpleIcon = {
-            url: "https://maps.google.com/mapfiles/ms/icons/purple-dot.png"
-        };
-
         list.forEach((s, i) => {
             let d = s.distance < 1000
                 ? `${Math.round(s.distance)} m`
                 : `${(s.distance / 1000).toFixed(2)} km`;
 
-            const marker = new google.maps.Marker({
-                position: { lat: s.lat, lng: s.lng },
-                map: map,
-                icon: purpleIcon,
-                zIndex: 9999,
-                title: s.name
-            });
-
+                const marker = new google.maps.Marker({
+        position: { lat: s.lat, lng: s.lng },
+        map: map,
+        icon: {
+            url: "https://maps.google.com/mapfiles/ms/icons/purple-dot.png",
+            scaledSize: new google.maps.Size(20, 20)
+        },
+        zIndex: 9999,
+        title: s.name
+    });
             closestShelterMarkers.push(marker);
 
             marker.addListener("click", () => {
@@ -302,6 +476,7 @@
                 <li onclick="focusClosest(${i})"
                     style="padding:8px; cursor:pointer; border-bottom:1px solid #ccc;">
                     <strong>${s.name}</strong> — ${d}
+                    <div style="font-size:12px; color:#666;">${s.source}</div>
                 </li>
             `;
         });
@@ -357,7 +532,7 @@
         );
     }
 
-    function showRouteDetails(result, shelter, travelModeValue) {
+    async function showRouteDetails(result, shelter, travelModeValue) {
         const route = result.routes[0];
         const leg = route.legs[0];
 
@@ -385,76 +560,58 @@
             worstCase = `${worstMinutes.toFixed(1)} min`;
             extraNote = "Walking case depends on pace and road access.";
         }
-        
-        document.getElementById("shelterPanel").innerHTML =
-        "<h4>Shelter Route Details</h4>" +
-        "<p><strong>Name:</strong> " + shelter.name + "</p>" +
-        "<p><strong>Travel mode:</strong> " + travelModeValue + "</p>" +
-        "<p><strong>Route distance:</strong> " + routeDistanceText + "</p>" +
-        "<p><strong>Google estimated time:</strong> " + routeDurationText + "</p>" +
-        "<p><strong>Best case:</strong> " + bestCase + "</p>" +
-        "<p><strong>Worst case:</strong> " + worstCase + "</p>" +
-        "<p><strong>Latitude:</strong> " + shelter.lat + "</p>" +
-        "<p><strong>Longitude:</strong> " + shelter.lng + "</p>" +
-        "<p style='margin-top:10px; color:#555;'>" + extraNote + "</p>" +
 
-        getFeedbackSection(shelter.id);
+        let imagesHtml = "";
+        if (shelter.source === "Contributor") {
+            try {
+                const res = await fetch(`/api/contributor-shelters/${shelter.id}/images`);
+                if (res.ok) {
+                    const images = await res.json();
 
-        loadFeedback(shelter.id);
-    
-    }
-
-        async function loadShelters() {
-        const response = await fetch('/api/shelters');
-        const shelters = await response.json();
-
-        shelters.forEach(shelter => {
-            const marker = new google.maps.Marker({
-                position: { lat: shelter.latitude, lng: shelter.longitude },
-                map: map,
-                icon: {
-        url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
-        scaledSize: new google.maps.Size(20, 20) // 👈 smaller
-    }
-            });
-
-            marker.shelterId = shelter.id;
-
-            marker.addListener("click", () => {
-
-                let html = "";
-                html += "<h4>Shelter Details</h4>";
-                html += "<p><strong>Name:</strong> " + shelter.name + "</p>";
-                html += "<p><strong>Latitude:</strong> " + shelter.latitude + "</p>";
-                html += "<p><strong>Longitude:</strong> " + shelter.longitude + "</p>";
-                html += getFeedbackSection(shelter.id);
-
-                document.getElementById("shelterPanel").innerHTML = html;
-
-                loadFeedback(shelter.id);
-            });
-
-            shelterMarkers.push(marker);
-        });
-
-        const params = new URLSearchParams(window.location.search);
-        const shelterId = params.get("shelterId");
-
-        if (shelterId) {
-            focusShelterById(parseInt(shelterId));
+                    if (images.length > 0) {
+                        imagesHtml = `
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:10px; margin-bottom:10px;">
+                                ${images.map(img => `
+                                    <img src="${img}" style="width:100%; height:120px; object-fit:cover; border-radius:8px;" />
+                                `).join("")}
+                            </div>
+                        `;
+                    }
+                }
+            } catch (e) {
+                console.error("failed loading route shelter images", e);
+            }
         }
+
+        document.getElementById("shelterPanel").innerHTML =
+            "<h4>Shelter Route Details</h4>" +
+            "<p><strong>Name:</strong> " + shelter.name + "</p>" +
+            "<p><strong>Source:</strong> " + shelter.source + "</p>" +
+            (shelter.address ? "<p><strong>Address:</strong> " + shelter.address + "</p>" : "") +
+            (shelter.description ? "<p><strong>Description:</strong> " + shelter.description + "</p>" : "") +
+            (shelter.size !== null && shelter.size !== undefined ? "<p><strong>Size:</strong> " + shelter.size + "</p>" : "") +
+            (shelter.isAvailable !== null && shelter.isAvailable !== undefined ? "<p><strong>Available:</strong> " + (shelter.isAvailable ? "Yes" : "No") + "</p>" : "") +
+            "<p><strong>Travel mode:</strong> " + travelModeValue + "</p>" +
+            "<p><strong>Route distance:</strong> " + routeDistanceText + "</p>" +
+            "<p><strong>Google estimated time:</strong> " + routeDurationText + "</p>" +
+            "<p><strong>Best case:</strong> " + bestCase + "</p>" +
+            "<p><strong>Worst case:</strong> " + worstCase + "</p>" +
+            "<p><strong>Latitude:</strong> " + shelter.lat + "</p>" +
+            "<p><strong>Longitude:</strong> " + shelter.lng + "</p>" +
+            imagesHtml +
+            "<p style='margin-top:10px; color:#555;'>" + extraNote + "</p>" +
+            getFeedbackSection(shelter.feedbackId || shelter.id);
+
+        loadFeedback(shelter.feedbackId || shelter.id);
     }
 
-
-
-        async function loadCityRisks() {
+    async function loadCityRisks() {
         const response = await fetch('/Map/GetCityRisks');
         const cities = await response.json();
 
         cities.forEach(city => {
             if (!city.latitude || !city.longitude) return;
 
-            // ❌ remove green (low risk)
             if (city.color === "green") {
                 if (riskCircles[city.cityName]) {
                     riskCircles[city.cityName].setMap(null);
@@ -463,15 +620,14 @@
                 return;
             }
 
-            // normalize orange/yellow (your backend uses "orange")
             let color = city.color === "orange" ? "#FFA500" : city.color;
 
             if (!riskCircles[city.cityName]) {
                 riskCircles[city.cityName] = new google.maps.Circle({
                     strokeColor: color,
                     fillColor: color,
-                    strokeOpacity: 0.5,   // softer border
-                    fillOpacity: 0.18,    // lighter fill (so route is visible)
+                    strokeOpacity: 0.5,
+                    fillOpacity: 0.18,
                     map: map,
                     center: { lat: city.latitude, lng: city.longitude },
                     radius: 2500
@@ -485,7 +641,7 @@
         });
     }
 
-        function getFeedbackSection(shelterId) {
+    function getFeedbackSection(shelterId) {
         let inputPart = "";
 
         if (isUserLoggedIn()) {

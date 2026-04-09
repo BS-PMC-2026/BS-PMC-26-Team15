@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using SamiSpot.Data;
 using SamiSpot.Models;
@@ -679,6 +680,45 @@ namespace SamiSpot.Controllers
                 .ToList();
 
             return Json(feedbacks);
+        }
+        [HttpGet]
+        [Route("api/contributor-shelters")]
+        public IActionResult GetApprovedContributorShelters()
+        {
+            var shelters = new List<object>();
+
+            string connectionString = _context.Database.GetConnectionString();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = @"
+            SELECT Id, Name, Address, Latitude, Longitude, Description, Size, IsAvailable
+            FROM ContributorShelters
+            WHERE Status = 'Approved'";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        shelters.Add(new
+                        {
+                            id = Convert.ToInt32(reader["Id"]),
+                            name = reader["Name"].ToString(),
+                            address = reader["Address"].ToString(),
+                            latitude = Convert.ToDouble(reader["Latitude"]),
+                            longitude = Convert.ToDouble(reader["Longitude"]),
+                            description = reader["Description"] == DBNull.Value ? null : reader["Description"].ToString(),
+                            size = reader["Size"] == DBNull.Value ? (int?)null : Convert.ToInt32(reader["Size"]),
+                            isAvailable = Convert.ToBoolean(reader["IsAvailable"])
+                        });
+                    }
+                }
+            }
+
+            return Json(shelters);
         }
 
     }
