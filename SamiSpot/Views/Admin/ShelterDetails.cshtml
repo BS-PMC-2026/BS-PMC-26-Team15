@@ -1,0 +1,58 @@
+﻿@model SamiSpot.Models.ContributorShelter
+
+@{
+    ViewData["Title"] = "Shelter Details";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Shelter Details</h2>
+
+    <div class="card shadow-sm p-4">
+        <h3 class="mb-3">@Model.Name</h3>
+
+        <p><strong>Address:</strong> @Model.Address</p>
+        <p><strong>Description:</strong> @Model.Description</p>
+        <p><strong>Size:</strong> @(Model.Size.HasValue ? Model.Size.ToString() : "Not specified")</p>
+        <p><strong>Available:</strong> @(Model.IsAvailable ? "Yes" : "No")</p>
+        <p><strong>Contributor:</strong> @Model.UserId</p>
+        <p><strong>Status:</strong> @Model.Status</p>
+        <p><strong>Created At:</strong> @Model.CreatedAt.ToString("yyyy-MM-dd HH:mm")</p>
+        <p><strong>Location:</strong> @Model.Latitude , @Model.Longitude</p>
+
+        <hr />
+
+        <h5 class="mb-3">Images</h5>
+
+        @if (Model.Images != null && Model.Images.Any())
+        {
+            <div class="row">
+                @foreach (var image in Model.Images)
+                {
+                    <div class="col-md-4 mb-3">
+                        <img src="@image.ImageUrl" class="img-fluid rounded shadow-sm" style="height:220px; width:100%; object-fit:cover;" />
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <p>No images uploaded.</p>
+        }
+
+        <hr />
+
+        <div class="mt-3">
+            <form asp-action="ApproveShelter" asp-controller="Admin" method="post" style="display:inline;">
+                <input type="hidden" name="id" value="@Model.Id" />
+                <button type="submit" class="btn btn-success">Approve</button>
+            </form>
+
+            <form asp-action="RejectShelter" asp-controller="Admin" method="post" style="display:inline; margin-left:10px;">
+                <input type="hidden" name="id" value="@Model.Id" />
+                <button type="submit" class="btn btn-danger">Reject</button>
+            </form>
+
+            <a href="/Admin/PendingShelters" class="btn btn-secondary ms-2">Back</a>
+        </div>
+    </div>
+</div>
