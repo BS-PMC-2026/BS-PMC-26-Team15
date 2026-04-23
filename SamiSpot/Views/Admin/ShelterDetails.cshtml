@@ -45,6 +45,10 @@
             <form asp-action="ApproveShelter" asp-controller="Admin" method="post" style="display:inline;">
                 <input type="hidden" name="id" value="@Model.Id" />
                 <button type="submit" class="btn btn-success">Approve</button>
+                <form asp-action="ApproveShelter" method="post"
+                      onsubmit="return confirm('Are you sure you want to approve this shelter? It will become visible on the map.');">
+                    <button type="submit" class="btn btn-success">Approve Shelter</button>
+                </form>
             </form>
 
             <form asp-action="RejectShelter" asp-controller="Admin" method="post" style="display:inline; margin-left:10px;">
