@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h2 style="text-align:center; margin-top:20px;">Admin Dashboard</h2>
+
+<div class="dashboard-grid">
+    <a href="/Admin/ManageUsers" class="dash-card">Manage Users</a>
+    <a href="/Admin/PendingShelters" class="dash-card">Pending Approvals</a>
+    <a href="/Admin/AllShelters" class="dash-card">All Shelters</a>
+    <a href="/Admin/Contributors" class="dash-card">Contributors</a>
+</div>
+
+<style>
+    .dashboard-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        padding: 30px;
+    }
+
+    .dash-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 140px;
+        background-color: #f5f5f5;
+        border-radius: 15px;
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+        font-weight: 600;
+        transition: 0.2s;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+        .dash-card:hover {
+            background-color: #e3f2fd;
+            transform: translateY(-3px);
+        }
+</style>
