@@ -23,6 +23,7 @@ namespace SamiSpot.Controllers
         {
             return View();
         }
+
         [HttpGet]
         public IActionResult MyShelters()
         {
@@ -68,6 +69,7 @@ namespace SamiSpot.Controllers
 
             return View(myShelters);
         }
+
         public IActionResult ShelterDetails(int id)
         {
             ContributorShelter shelter = null;
@@ -85,7 +87,6 @@ namespace SamiSpot.Controllers
             {
                 connection.Open();
 
-                // get shelter (ONLY this user's shelter 🔥 important)
                 string shelterQuery = @"
             SELECT * FROM ContributorShelters
             WHERE Id = @Id AND UserId = @UserId";
@@ -122,7 +123,6 @@ namespace SamiSpot.Controllers
                     return NotFound();
                 }
 
-                // get images
                 string imageQuery = @"
             SELECT * FROM ContributorShelterImages
             WHERE ContributorShelterId = @Id";
@@ -149,6 +149,7 @@ namespace SamiSpot.Controllers
             shelter.Images = images;
             return View(shelter);
         }
+
         [HttpGet]
         [Route("api/contributor-shelters/{id}/images")]
         public IActionResult GetContributorShelterImages(int id)
@@ -182,6 +183,7 @@ namespace SamiSpot.Controllers
 
             return Json(images);
         }
+
         [HttpPost]
         public async Task<IActionResult> AddShelter(ContributorShelterFormViewModel model)
         {
@@ -280,6 +282,68 @@ namespace SamiSpot.Controllers
 
             TempData["SuccessMessage"] = "Shelter submitted successfully and is waiting for approval.";
             return RedirectToAction("AddShelter");
+        }
+
+        [HttpGet]
+        public IActionResult EditShelter(int id)
+        {
+            var userName = HttpContext.Session.GetString("UserName");
+            if (string.IsNullOrEmpty(userName))
+                return RedirectToAction("Login", "Account");
+
+            ContributorShelter shelter = null;
+            string connectionString = _context.Database.GetConnectionString();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = @"
+                    SELECT * FROM ContributorShelters
+                    WHERE Id = @Id AND UserId = @UserId";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Id", id);
+                    command.Parameters.AddWithValue("@UserId", userName);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            shelter = new ContributorShelter
+                            {
+                                Id = Convert.ToInt32(reader["Id"]),
+                                Name = reader["Name"].ToString(),
+                                Address = reader["Address"].ToString(),
+                                Latitude = Convert.ToDouble(reader["Latitude"]),
+                                Longitude = Convert.ToDouble(reader["Longitude"]),
+                                Description = reader["Description"] == DBNull.Value ? null : reader["Description"].ToString(),
+                                Size = reader["Size"] == DBNull.Value ? null : Convert.ToInt32(reader["Size"]),
+                                IsAvailable = Convert.ToBoolean(reader["IsAvailable"]),
+                                Status = reader["Status"].ToString()
+                            };
+                        }
+                    }
+                }
+            }
+
+            if (shelter == null)
+                return NotFound();
+
+            var model = new ContributorShelterFormViewModel
+            {
+                Name = shelter.Name,
+                Address = shelter.Address,
+                Latitude = shelter.Latitude,
+                Longitude = shelter.Longitude,
+                Description = shelter.Description,
+                Size = shelter.Size,
+                IsAvailable = shelter.IsAvailable
+            };
+
+            ViewBag.ShelterId = id;
+            return View(model);
         }
     }
 }
