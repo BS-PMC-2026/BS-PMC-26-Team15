@@ -23,6 +23,7 @@ namespace SamiSpot.Controllers
         {
             return View();
         }
+
         [HttpGet]
         public IActionResult MyShelters()
         {
@@ -68,6 +69,7 @@ namespace SamiSpot.Controllers
 
             return View(myShelters);
         }
+
         public IActionResult ShelterDetails(int id)
         {
             ContributorShelter shelter = null;
@@ -85,7 +87,6 @@ namespace SamiSpot.Controllers
             {
                 connection.Open();
 
-                // get shelter (ONLY this user's shelter 🔥 important)
                 string shelterQuery = @"
             SELECT * FROM ContributorShelters
             WHERE Id = @Id AND UserId = @UserId";
@@ -122,7 +123,6 @@ namespace SamiSpot.Controllers
                     return NotFound();
                 }
 
-                // get images
                 string imageQuery = @"
             SELECT * FROM ContributorShelterImages
             WHERE ContributorShelterId = @Id";
@@ -149,6 +149,7 @@ namespace SamiSpot.Controllers
             shelter.Images = images;
             return View(shelter);
         }
+
         [HttpGet]
         [Route("api/contributor-shelters/{id}/images")]
         public IActionResult GetContributorShelterImages(int id)
@@ -182,6 +183,7 @@ namespace SamiSpot.Controllers
 
             return Json(images);
         }
+
         [HttpPost]
         public async Task<IActionResult> AddShelter(ContributorShelterFormViewModel model)
         {
