@@ -345,5 +345,101 @@ namespace SamiSpot.Controllers
             ViewBag.ShelterId = id;
             return View(model);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> EditShelter(int id, ContributorShelterFormViewModel model)
+        {
+            var userName = HttpContext.Session.GetString("UserName");
+            if (string.IsNullOrEmpty(userName))
+                return RedirectToAction("Login", "Account");
+
+            if (!ModelState.IsValid)
+            {
+                ViewBag.ShelterId = id;
+                return View(model);
+            }
+
+            if (model.Latitude == 0 || model.Longitude == 0)
+            {
+                ModelState.AddModelError("", "Please choose a location from the map.");
+                ViewBag.ShelterId = id;
+                return View(model);
+            }
+
+            string connectionString = _context.Database.GetConnectionString();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                await connection.OpenAsync();
+
+                string updateQuery = @"
+                    UPDATE ContributorShelters
+                    SET Name = @Name,
+                        Address = @Address,
+                        Latitude = @Latitude,
+                        Longitude = @Longitude,
+                        Description = @Description,
+                        Size = @Size,
+                        IsAvailable = @IsAvailable,
+                        Status = 'Pending'
+                    WHERE Id = @Id AND UserId = @UserId";
+
+                using (SqlCommand command = new SqlCommand(updateQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@Name", model.Name);
+                    command.Parameters.AddWithValue("@Address", model.Address);
+                    command.Parameters.AddWithValue("@Latitude", model.Latitude);
+                    command.Parameters.AddWithValue("@Longitude", model.Longitude);
+                    command.Parameters.AddWithValue("@Description", (object?)model.Description ?? DBNull.Value);
+                    command.Parameters.AddWithValue("@Size", (object?)model.Size ?? DBNull.Value);
+                    command.Parameters.AddWithValue("@IsAvailable", model.IsAvailable);
+                    command.Parameters.AddWithValue("@Id", id);
+                    command.Parameters.AddWithValue("@UserId", userName);
+                    await command.ExecuteNonQueryAsync();
+                }
+
+                if (model.Images != null && model.Images.Any())
+                {
+                    if (model.Images.Count > 10)
+                    {
+                        ModelState.AddModelError("", "You can upload up to 10 images only.");
+                        ViewBag.ShelterId = id;
+                        return View(model);
+                    }
+
+                    string uploadFolder = Path.Combine(_environment.WebRootPath, "uploads", "contributor-shelters");
+                    if (!Directory.Exists(uploadFolder))
+                        Directory.CreateDirectory(uploadFolder);
+
+                    foreach (var image in model.Images)
+                    {
+                        if (image.Length > 0)
+                        {
+                            string uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(image.FileName);
+                            string filePath = Path.Combine(uploadFolder, uniqueFileName);
+
+                            using (var stream = new FileStream(filePath, FileMode.Create))
+                                await image.CopyToAsync(stream);
+
+                            string imageUrl = "/uploads/contributor-shelters/" + uniqueFileName;
+
+                            string insertImageQuery = @"
+                                INSERT INTO ContributorShelterImages (ContributorShelterId, ImageUrl)
+                                VALUES (@ContributorShelterId, @ImageUrl)";
+
+                            using (SqlCommand imageCommand = new SqlCommand(insertImageQuery, connection))
+                            {
+                                imageCommand.Parameters.AddWithValue("@ContributorShelterId", id);
+                                imageCommand.Parameters.AddWithValue("@ImageUrl", imageUrl);
+                                await imageCommand.ExecuteNonQueryAsync();
+                            }
+                        }
+                    }
+                }
+            }
+
+            TempData["SuccessMessage"] = "Shelter updated successfully and is pending re-approval.";
+            return RedirectToAction("MyShelters");
+        }
     }
 }
