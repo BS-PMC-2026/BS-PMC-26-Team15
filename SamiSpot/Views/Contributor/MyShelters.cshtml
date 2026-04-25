@@ -57,6 +57,11 @@
                         <td>
                             <a href="/Contributor/ShelterDetails/@shelter.Id" class="btn btn-sm btn-primary">View</a>
                             <a href="/Contributor/EditShelter/@shelter.Id" class="btn btn-sm btn-warning">Edit</a>
+                            <form action="/Contributor/DeleteShelter/@shelter.Id" method="post" style="display:inline"
+                                  onsubmit="return confirm('Are you sure you want to delete this shelter?')">
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                            </form>
                         </td>
                     </tr>
                 }
