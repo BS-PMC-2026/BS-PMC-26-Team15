@@ -441,5 +441,44 @@ namespace SamiSpot.Controllers
             TempData["SuccessMessage"] = "Shelter updated successfully and is pending re-approval.";
             return RedirectToAction("MyShelters");
         }
+
+        [HttpPost]
+        public IActionResult DeleteShelter(int id)
+        {
+            var userName = HttpContext.Session.GetString("UserName");
+            if (string.IsNullOrEmpty(userName))
+                return RedirectToAction("Login", "Account");
+
+            string connectionString = _context.Database.GetConnectionString();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string deleteImagesQuery = @"
+                    DELETE FROM ContributorShelterImages
+                    WHERE ContributorShelterId = @Id";
+
+                using (SqlCommand command = new SqlCommand(deleteImagesQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@Id", id);
+                    command.ExecuteNonQuery();
+                }
+
+                string deleteShelterQuery = @"
+                    DELETE FROM ContributorShelters
+                    WHERE Id = @Id AND UserId = @UserId";
+
+                using (SqlCommand command = new SqlCommand(deleteShelterQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@Id", id);
+                    command.Parameters.AddWithValue("@UserId", userName);
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            TempData["SuccessMessage"] = "Shelter deleted successfully.";
+            return RedirectToAction("MyShelters");
+        }
     }
 }
