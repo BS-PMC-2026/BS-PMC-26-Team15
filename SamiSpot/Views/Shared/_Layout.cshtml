@@ -1,4 +1,7 @@
 ﻿<!DOCTYPE html>
+@{
+    var role = Context.Session.GetString("RoleType");
+}
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -38,6 +41,23 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="Home" asp-action="Emergency">Emergency</a>
                         </li>
+                        <!-- ✅ DASHBOARD (only admin + contributor) -->
+                        @if (role == "Admin")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Admindashboard">
+                                    My Dashboard
+                                </a>
+                            </li>
+                        }
+                        else if (role == "Contributor")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Contributordashboard">
+                                    My Dashboard
+                                </a>
+                            </li>
+                        }
                     </ul>
 
                     <!-- RIGHT SIDE -->

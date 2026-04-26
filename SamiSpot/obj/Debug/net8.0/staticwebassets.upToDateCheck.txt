@@ -59,6 +59,8 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\uploads\297b4f3d-21b0-4d62-b3c5-b3d24717533e.pdf
+wwwroot\uploads\44c618af-a9a6-4425-b7cf-a65f2c339672.jpeg
 wwwroot\uploads\contributor-shelters\0df7b495-d0ad-4c62-8a72-c8febad991c3.png
 wwwroot\uploads\contributor-shelters\21d03749-576c-40a6-bc14-603ec59d9ae3.png
 wwwroot\uploads\contributor-shelters\22622a58-05ff-4392-890d-c8a1ad600660.png
@@ -68,8 +70,10 @@ wwwroot\uploads\contributor-shelters\3a6a49b5-193a-4401-b69e-6bf8073becd1.png
 wwwroot\uploads\contributor-shelters\403d9a21-5b79-4f41-a53d-16f3306801dd.jpeg
 wwwroot\uploads\contributor-shelters\56254f93-fd0e-4f5c-92d9-164a3349f81b.png
 wwwroot\uploads\contributor-shelters\6a0d1a0c-b917-4185-9a2b-e6b0909226df.png
+wwwroot\uploads\contributor-shelters\6d9e2d39-1103-4fed-a77b-e066bb3b5a2f.jpg
 wwwroot\uploads\contributor-shelters\7aaffc2f-bda2-425c-a8d7-e114b0cbde01.jpg
 wwwroot\uploads\contributor-shelters\82df13d0-abdb-4bc3-af33-b18c109261b5.png
+wwwroot\uploads\contributor-shelters\93562822-6eb6-4fc5-b6ea-e2d18f64fe20.jpeg
 wwwroot\uploads\contributor-shelters\9e6b4380-e0b3-41da-bac7-3726845e6c3e.png
 wwwroot\uploads\contributor-shelters\ddf8e2d6-5938-4b90-b618-f838759b5d30.png
 wwwroot\uploads\contributor-shelters\e19da402-826a-4fbf-811c-2b88f75b9b22.jpg
