@@ -23,7 +23,7 @@ namespace SamiSpot.Controllers
         {
             return View();
         }
-
+        
         [HttpGet]
         public IActionResult MyShelters()
         {
@@ -69,87 +69,17 @@ namespace SamiSpot.Controllers
 
             return View(myShelters);
         }
-
         public IActionResult ShelterDetails(int id)
         {
-            ContributorShelter shelter = null;
-            List<ContributorShelterImage> images = new List<ContributorShelterImage>();
+            var shelter = _context.ContributorShelters
+                .Include(s => s.Images)
+                .FirstOrDefault(s => s.Id == id);
 
-            var userName = HttpContext.Session.GetString("UserName");
-            if (string.IsNullOrEmpty(userName))
-            {
-                return RedirectToAction("Login", "Account");
-            }
+            if (shelter == null)
+                return NotFound();
 
-            string connectionString = _context.Database.GetConnectionString();
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                string shelterQuery = @"
-            SELECT * FROM ContributorShelters
-            WHERE Id = @Id AND UserId = @UserId";
-
-                using (SqlCommand command = new SqlCommand(shelterQuery, connection))
-                {
-                    command.Parameters.AddWithValue("@Id", id);
-                    command.Parameters.AddWithValue("@UserId", userName);
-
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            shelter = new ContributorShelter
-                            {
-                                Id = Convert.ToInt32(reader["Id"]),
-                                Name = reader["Name"].ToString(),
-                                Address = reader["Address"].ToString(),
-                                Latitude = Convert.ToDouble(reader["Latitude"]),
-                                Longitude = Convert.ToDouble(reader["Longitude"]),
-                                Description = reader["Description"] == DBNull.Value ? null : reader["Description"].ToString(),
-                                Size = reader["Size"] == DBNull.Value ? null : Convert.ToInt32(reader["Size"]),
-                                IsAvailable = Convert.ToBoolean(reader["IsAvailable"]),
-                                UserId = reader["UserId"].ToString(),
-                                Status = reader["Status"].ToString(),
-                                CreatedAt = Convert.ToDateTime(reader["CreatedAt"])
-                            };
-                        }
-                    }
-                }
-
-                if (shelter == null)
-                {
-                    return NotFound();
-                }
-
-                string imageQuery = @"
-            SELECT * FROM ContributorShelterImages
-            WHERE ContributorShelterId = @Id";
-
-                using (SqlCommand imageCommand = new SqlCommand(imageQuery, connection))
-                {
-                    imageCommand.Parameters.AddWithValue("@Id", id);
-
-                    using (SqlDataReader imageReader = imageCommand.ExecuteReader())
-                    {
-                        while (imageReader.Read())
-                        {
-                            images.Add(new ContributorShelterImage
-                            {
-                                Id = Convert.ToInt32(imageReader["Id"]),
-                                ContributorShelterId = Convert.ToInt32(imageReader["ContributorShelterId"]),
-                                ImageUrl = imageReader["ImageUrl"].ToString()
-                            });
-                        }
-                    }
-                }
-            }
-
-            shelter.Images = images;
             return View(shelter);
         }
-
         [HttpGet]
         [Route("api/contributor-shelters/{id}/images")]
         public IActionResult GetContributorShelterImages(int id)
