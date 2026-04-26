@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using SamiSpot.Data;
 using SamiSpot.Models;
 using System.Data;
+using System.IO;
 
 namespace SamiSpot.Controllers
 {
@@ -38,25 +39,95 @@ namespace SamiSpot.Controllers
 
         public IActionResult EditShelter(int id)
         {
-            var shelter = _context.ContributorShelters.FirstOrDefault(s => s.Id == id);
+            var shelter = _context.ContributorShelters
+                .Include(s => s.Images)
+                .FirstOrDefault(s => s.Id == id);
 
             if (shelter == null)
                 return NotFound();
 
-            return View(shelter);
+            ViewBag.ShelterId = shelter.Id;
+            ViewBag.ExistingImages = shelter.Images;
+
+            var model = new ContributorShelterFormViewModel
+            {
+                Name = shelter.Name,
+                Address = shelter.Address,
+                Latitude = shelter.Latitude,
+                Longitude = shelter.Longitude,
+                Description = shelter.Description,
+                Size = shelter.Size,
+                IsAvailable = shelter.IsAvailable
+            };
+
+            return View(model);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult EditShelter(int id, ContributorShelter shelter)
+        public IActionResult EditShelter(int id, ContributorShelterFormViewModel model)
         {
-            if (id != shelter.Id)
+            var shelter = _context.ContributorShelters
+                .Include(s => s.Images)
+                .FirstOrDefault(s => s.Id == id);
+
+            if (shelter == null)
                 return NotFound();
 
             if (!ModelState.IsValid)
-                return View(shelter);
+            {
+                ViewBag.ShelterId = id;
+                ViewBag.ExistingImages = shelter.Images;
+                return View(model);
+            }
 
-            _context.ContributorShelters.Update(shelter);
+            shelter.Name = model.Name;
+            shelter.Address = model.Address;
+            shelter.Latitude = model.Latitude;
+            shelter.Longitude = model.Longitude;
+            shelter.Description = model.Description;
+            shelter.Size = model.Size;
+            shelter.IsAvailable = model.IsAvailable;
+
+            if (!string.IsNullOrWhiteSpace(model.DeletedImageIds))
+            {
+                var ids = model.DeletedImageIds
+                    .Split(',', StringSplitOptions.RemoveEmptyEntries)
+                    .Select(int.Parse)
+                    .ToList();
+
+                var imagesToDelete = _context.ContributorShelterImages
+                    .Where(i => ids.Contains(i.Id))
+                    .ToList();
+
+                _context.ContributorShelterImages.RemoveRange(imagesToDelete);
+            }
+
+            if (model.Images != null && model.Images.Count > 0)
+            {
+                var uploadFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
+
+                if (!Directory.Exists(uploadFolder))
+                    Directory.CreateDirectory(uploadFolder);
+
+                foreach (var image in model.Images)
+                {
+                    var fileName = Guid.NewGuid() + Path.GetExtension(image.FileName);
+                    var path = Path.Combine(uploadFolder, fileName);
+
+                    using (var stream = new FileStream(path, FileMode.Create))
+                    {
+                        image.CopyTo(stream);
+                    }
+
+                    shelter.Images.Add(new ContributorShelterImage
+                    {
+                        ContributorShelterId = shelter.Id,
+                        ImageUrl = "/uploads/" + fileName
+                    });
+                }
+            }
+
             _context.SaveChanges();
 
             TempData["SuccessMessage"] = "Shelter updated successfully.";
@@ -74,20 +145,18 @@ namespace SamiSpot.Controllers
             if (shelter == null)
                 return NotFound();
 
-            // delete images first (VERY IMPORTANT)
             if (shelter.Images != null && shelter.Images.Any())
             {
                 _context.ContributorShelterImages.RemoveRange(shelter.Images);
             }
 
-            // then delete shelter
             _context.ContributorShelters.Remove(shelter);
-
             _context.SaveChanges();
 
             TempData["SuccessMessage"] = "Shelter deleted successfully.";
             return RedirectToAction("AllShelters");
         }
+
         [HttpPost]
         public IActionResult ApproveShelter(int id)
         {

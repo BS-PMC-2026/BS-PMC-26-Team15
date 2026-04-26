@@ -221,42 +221,9 @@ namespace SamiSpot.Controllers
             if (string.IsNullOrEmpty(userName))
                 return RedirectToAction("Login", "Account");
 
-            ContributorShelter shelter = null;
-            string connectionString = _context.Database.GetConnectionString();
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                string query = @"
-                    SELECT * FROM ContributorShelters
-                    WHERE Id = @Id AND UserId = @UserId";
-
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@Id", id);
-                    command.Parameters.AddWithValue("@UserId", userName);
-
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            shelter = new ContributorShelter
-                            {
-                                Id = Convert.ToInt32(reader["Id"]),
-                                Name = reader["Name"].ToString(),
-                                Address = reader["Address"].ToString(),
-                                Latitude = Convert.ToDouble(reader["Latitude"]),
-                                Longitude = Convert.ToDouble(reader["Longitude"]),
-                                Description = reader["Description"] == DBNull.Value ? null : reader["Description"].ToString(),
-                                Size = reader["Size"] == DBNull.Value ? null : Convert.ToInt32(reader["Size"]),
-                                IsAvailable = Convert.ToBoolean(reader["IsAvailable"]),
-                                Status = reader["Status"].ToString()
-                            };
-                        }
-                    }
-                }
-            }
+            var shelter = _context.ContributorShelters
+                .Include(s => s.Images)
+                .FirstOrDefault(s => s.Id == id && s.UserId == userName);
 
             if (shelter == null)
                 return NotFound();
@@ -273,10 +240,19 @@ namespace SamiSpot.Controllers
             };
 
             ViewBag.ShelterId = id;
+            ViewBag.ExistingImages = shelter.Images;
+
             return View(model);
         }
-
+        private void LoadExistingImagesToViewBag(int id, string userName)
+        {
+            ViewBag.ShelterId = id;
+            ViewBag.ExistingImages = _context.ContributorShelters
+                .Include(s => s.Images)
+                .FirstOrDefault(s => s.Id == id && s.UserId == userName)?.Images;
+        }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditShelter(int id, ContributorShelterFormViewModel model)
         {
             var userName = HttpContext.Session.GetString("UserName");
@@ -285,14 +261,14 @@ namespace SamiSpot.Controllers
 
             if (!ModelState.IsValid)
             {
-                ViewBag.ShelterId = id;
+                LoadExistingImagesToViewBag(id, userName);
                 return View(model);
             }
 
             if (model.Latitude == 0 || model.Longitude == 0)
             {
                 ModelState.AddModelError("", "Please choose a location from the map.");
-                ViewBag.ShelterId = id;
+                LoadExistingImagesToViewBag(id, userName);
                 return View(model);
             }
 
@@ -302,17 +278,18 @@ namespace SamiSpot.Controllers
             {
                 await connection.OpenAsync();
 
+                // UPDATE
                 string updateQuery = @"
-                    UPDATE ContributorShelters
-                    SET Name = @Name,
-                        Address = @Address,
-                        Latitude = @Latitude,
-                        Longitude = @Longitude,
-                        Description = @Description,
-                        Size = @Size,
-                        IsAvailable = @IsAvailable,
-                        Status = 'Pending'
-                    WHERE Id = @Id AND UserId = @UserId";
+            UPDATE ContributorShelters
+            SET Name = @Name,
+                Address = @Address,
+                Latitude = @Latitude,
+                Longitude = @Longitude,
+                Description = @Description,
+                Size = @Size,
+                IsAvailable = @IsAvailable,
+                Status = 'Pending'
+            WHERE Id = @Id AND UserId = @UserId";
 
                 using (SqlCommand command = new SqlCommand(updateQuery, connection))
                 {
@@ -325,19 +302,42 @@ namespace SamiSpot.Controllers
                     command.Parameters.AddWithValue("@IsAvailable", model.IsAvailable);
                     command.Parameters.AddWithValue("@Id", id);
                     command.Parameters.AddWithValue("@UserId", userName);
+
                     await command.ExecuteNonQueryAsync();
                 }
 
-                if (model.Images != null && model.Images.Any())
+                // DELETE SELECTED IMAGES
+                if (!string.IsNullOrWhiteSpace(model.DeletedImageIds))
+                {
+                    var ids = model.DeletedImageIds
+                        .Split(',', StringSplitOptions.RemoveEmptyEntries)
+                        .Select(int.Parse)
+                        .ToList();
+
+                    string deleteQuery = @"
+                DELETE FROM ContributorShelterImages
+                WHERE Id IN (" + string.Join(",", ids) + @")
+                AND ContributorShelterId = @ShelterId";
+
+                    using (SqlCommand deleteCommand = new SqlCommand(deleteQuery, connection))
+                    {
+                        deleteCommand.Parameters.AddWithValue("@ShelterId", id);
+                        await deleteCommand.ExecuteNonQueryAsync();
+                    }
+                }
+
+                // ADD NEW IMAGES
+                if (model.Images != null && model.Images.Count > 0)
                 {
                     if (model.Images.Count > 10)
                     {
                         ModelState.AddModelError("", "You can upload up to 10 images only.");
-                        ViewBag.ShelterId = id;
+                        LoadExistingImagesToViewBag(id, userName);
                         return View(model);
                     }
 
                     string uploadFolder = Path.Combine(_environment.WebRootPath, "uploads", "contributor-shelters");
+
                     if (!Directory.Exists(uploadFolder))
                         Directory.CreateDirectory(uploadFolder);
 
@@ -345,23 +345,23 @@ namespace SamiSpot.Controllers
                     {
                         if (image.Length > 0)
                         {
-                            string uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(image.FileName);
-                            string filePath = Path.Combine(uploadFolder, uniqueFileName);
+                            string fileName = Guid.NewGuid() + Path.GetExtension(image.FileName);
+                            string path = Path.Combine(uploadFolder, fileName);
 
-                            using (var stream = new FileStream(filePath, FileMode.Create))
+                            using (var stream = new FileStream(path, FileMode.Create))
                                 await image.CopyToAsync(stream);
 
-                            string imageUrl = "/uploads/contributor-shelters/" + uniqueFileName;
+                            string imageUrl = "/uploads/contributor-shelters/" + fileName;
 
-                            string insertImageQuery = @"
-                                INSERT INTO ContributorShelterImages (ContributorShelterId, ImageUrl)
-                                VALUES (@ContributorShelterId, @ImageUrl)";
+                            string insertQuery = @"
+                        INSERT INTO ContributorShelterImages (ContributorShelterId, ImageUrl)
+                        VALUES (@Id, @Url)";
 
-                            using (SqlCommand imageCommand = new SqlCommand(insertImageQuery, connection))
+                            using (SqlCommand cmd = new SqlCommand(insertQuery, connection))
                             {
-                                imageCommand.Parameters.AddWithValue("@ContributorShelterId", id);
-                                imageCommand.Parameters.AddWithValue("@ImageUrl", imageUrl);
-                                await imageCommand.ExecuteNonQueryAsync();
+                                cmd.Parameters.AddWithValue("@Id", id);
+                                cmd.Parameters.AddWithValue("@Url", imageUrl);
+                                await cmd.ExecuteNonQueryAsync();
                             }
                         }
                     }
