@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SamiSpot")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e72ee550d1ba341f02a56997fce90ce7a7c6397a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f0e81b8999ca7f4e7f65cd172bcaadda5064c945")]
 [assembly: System.Reflection.AssemblyProductAttribute("SamiSpot")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SamiSpot")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

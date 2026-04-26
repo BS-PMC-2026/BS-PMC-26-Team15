@@ -15,6 +15,79 @@ namespace SamiSpot.Controllers
         {
             _context = context;
         }
+        public IActionResult AllShelters()
+        {
+            var shelters = _context.ContributorShelters
+                .OrderByDescending(s => s.CreatedAt)
+                .ToList();
+
+            return View(shelters);
+        }
+
+        public IActionResult ViewShelter(int id)
+        {
+            var shelter = _context.ContributorShelters
+                .Include(s => s.Images)
+                .FirstOrDefault(s => s.Id == id);
+
+            if (shelter == null)
+                return NotFound();
+
+            return View(shelter);
+        }
+
+        public IActionResult EditShelter(int id)
+        {
+            var shelter = _context.ContributorShelters.FirstOrDefault(s => s.Id == id);
+
+            if (shelter == null)
+                return NotFound();
+
+            return View(shelter);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditShelter(int id, ContributorShelter shelter)
+        {
+            if (id != shelter.Id)
+                return NotFound();
+
+            if (!ModelState.IsValid)
+                return View(shelter);
+
+            _context.ContributorShelters.Update(shelter);
+            _context.SaveChanges();
+
+            TempData["SuccessMessage"] = "Shelter updated successfully.";
+            return RedirectToAction("AllShelters");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteShelter(int id)
+        {
+            var shelter = _context.ContributorShelters
+                .Include(s => s.Images)
+                .FirstOrDefault(s => s.Id == id);
+
+            if (shelter == null)
+                return NotFound();
+
+            // delete images first (VERY IMPORTANT)
+            if (shelter.Images != null && shelter.Images.Any())
+            {
+                _context.ContributorShelterImages.RemoveRange(shelter.Images);
+            }
+
+            // then delete shelter
+            _context.ContributorShelters.Remove(shelter);
+
+            _context.SaveChanges();
+
+            TempData["SuccessMessage"] = "Shelter deleted successfully.";
+            return RedirectToAction("AllShelters");
+        }
         [HttpPost]
         public IActionResult ApproveShelter(int id)
         {
@@ -125,6 +198,7 @@ namespace SamiSpot.Controllers
             TempData["SuccessMessage"] = "Shelter rejected successfully.";
             return RedirectToAction("PendingShelters");
         }
+
         public IActionResult PendingShelters()
         {
             List<ContributorShelter> pendingShelters = new List<ContributorShelter>();
