@@ -1,0 +1,35 @@
+﻿@model List<SamiSpot.Models.User>
+
+<h2>All Registered Users</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        No users found.
+    </div>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.UserName</td>   
+                    <td>@user.Email</td>
+                    <td>@user.RoleType</td>   
+                </tr>
+            }
+        </tbody>
+    </table>
+}

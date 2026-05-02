@@ -236,5 +236,25 @@ namespace SamiSpot.Controllers
 
             return View(pendingShelters);
         }
+
+        public IActionResult ManageUsers()
+        {
+            var users = _context.Users
+                .Where(u => u.RoleType == "User")   
+                .OrderBy(u => u.Id)                 
+                .ToList();
+
+            return View(users);
+        }
+
+        public IActionResult Contributors()
+        {
+            var contributors = _context.Users
+                .Where(u => u.RoleType == "Contributor")   
+                .OrderBy(u => u.Id)                        
+                .ToList();
+
+            return View(contributors);
+        }
     }
 }
