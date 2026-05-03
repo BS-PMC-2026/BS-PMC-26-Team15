@@ -325,5 +325,80 @@ namespace SamiSpot.Controllers
 
             return View(contributors);
         }
+
+        private bool IsValidPassword(string? password)
+        {
+            if (string.IsNullOrWhiteSpace(password)) return false;
+
+            if (password.Length < 8) return false;
+            if (!password.Any(char.IsUpper)) return false;
+            if (!password.Any(char.IsLower)) return false;
+            if (!password.Any(char.IsDigit)) return false;
+
+            return true;
+        }
+
+
+        public IActionResult AddUser(string role)
+        {
+            var user = new User
+            {
+                RoleType = role
+            };
+
+            return View(user);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AddUser(User user, string ConfirmPassword)
+        {
+            // ✅ Password match
+            if (user.Password != ConfirmPassword)
+            {
+                ModelState.AddModelError("", "Passwords do not match ❌");
+                return View(user);
+            }
+
+            // ✅ Email duplicate
+            if (_context.Users.Any(u => u.Email == user.Email))
+            {
+                ModelState.AddModelError("", "This Gmail is already registered ❌");
+                return View(user);
+            }
+
+            // ✅ Username duplicate
+            if (_context.Users.Any(u => u.UserName == user.UserName))
+            {
+                ModelState.AddModelError("", "Username already exists ❌");
+                return View(user);
+            }
+
+            // ✅ Gmail check
+            if (!user.Email.EndsWith("@gmail.com"))
+            {
+                ModelState.AddModelError("", "Email must be a Gmail address ❌");
+                return View(user);
+            }
+
+            // ✅ Password validation (same as Register)
+            if (!IsValidPassword(user.Password))
+            {
+                ModelState.AddModelError("", "Password must be at least 8 chars, include upper, lower, number ❌");
+                return View(user);
+            }
+
+            // ✅ Save
+            _context.Users.Add(user);
+            _context.SaveChanges();
+
+            // ✅ Redirect based on role
+            if (user.RoleType == "Contributor")
+                return RedirectToAction("Contributors");
+
+            return RedirectToAction("ManageUsers");
+        }
+
     }
 }

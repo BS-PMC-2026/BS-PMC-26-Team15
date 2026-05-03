@@ -2,6 +2,10 @@
 
 <h2>All Registered Users</h2>
 
+<a asp-action="AddUser" asp-route-role="User" class="btn btn-primary mb-3">
+    + Add User
+</a>
+
 @if (!Model.Any())
 {
     <div class="alert alert-info">
