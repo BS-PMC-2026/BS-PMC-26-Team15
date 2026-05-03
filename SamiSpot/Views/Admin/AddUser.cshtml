@@ -1,0 +1,47 @@
+﻿@model SamiSpot.Models.User
+
+<div class="auth-container">
+    <div class="auth-card">
+
+        <h3 class="auth-title">
+            Add @(Model.RoleType == "Contributor" ? "Contributor" : "User")
+        </h3>
+
+        <form asp-action="AddUser" method="post">
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input asp-for="UserName" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input asp-for="Email" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input asp-for="Password" type="password" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Confirm Password</label>
+                <input name="ConfirmPassword" type="password" class="form-control" />
+            </div>
+
+            <p class="text-muted small">
+                Password must be at least 8 characters, include uppercase, lowercase and number.
+            </p>
+
+            <input type="hidden" asp-for="RoleType" />
+
+            <button type="submit" class="btn btn-primary auth-btn">
+                Add @(Model.RoleType == "Contributor" ? "Contributor" : "User")
+            </button>
+
+        </form>
+
+    </div>
+</div>

@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Edit Shelter";
     var shelterId = ViewBag.ShelterId;
-    var existingImages = ViewBag.ExistingImages as List<SamiSpot.Models.ContributorShelterImage>;
+    var existingImages = ViewBag.ExistingImages as IEnumerable<SamiSpot.Models.ContributorShelterImage>;
 }
 
 <link rel="stylesheet" href="~/css/map.css" />
@@ -23,16 +23,13 @@
 
         @Html.AntiForgeryToken()
 
-        <!-- hidden for delete tracking -->
         <input type="hidden" asp-for="DeletedImageIds" id="DeletedImageIds" />
 
-        <!-- Name -->
         <div class="mb-3">
             <label class="form-label">Shelter Name</label>
             <input asp-for="Name" class="form-control" />
         </div>
 
-        <!-- Search -->
         <div class="mb-3">
             <label class="form-label">Search Location</label>
             <div class="input-group">
@@ -41,7 +38,6 @@
             </div>
         </div>
 
-        <!-- Address -->
         <div class="mb-3">
             <label class="form-label">Address</label>
             <input asp-for="Address" id="Address" class="form-control" readonly />
@@ -50,30 +46,25 @@
         <input asp-for="Latitude" id="Latitude" type="hidden" />
         <input asp-for="Longitude" id="Longitude" type="hidden" />
 
-        <!-- MAP -->
         <div class="mb-3">
             <label class="form-label">Map</label>
             <div id="map" style="height:400px;"></div>
         </div>
 
-        <!-- Description -->
         <div class="mb-3">
-            <textarea asp-for="Description" class="form-control"></textarea>
+<textarea asp-for="Description" class="form-control"></textarea>
         </div>
 
-        <!-- Size -->
         <div class="mb-3">
             <input asp-for="Size" class="form-control" type="number" placeholder="Capacity" />
         </div>
 
-        <!-- Available -->
         <div class="form-check mb-3">
             <input asp-for="IsAvailable" class="form-check-input" />
             <label class="form-check-label">Available</label>
         </div>
 
-        <!-- EXISTING IMAGES -->
-        @if (existingImages != null && existingImages.Count > 0)
+        @if (existingImages != null && existingImages.Any())
         {
             <div class="mb-3">
                 <label>Current Images</label>
@@ -82,28 +73,30 @@
                     @foreach (var img in existingImages)
                     {
                         <div class="col-md-3 mb-3">
-                            <div class="position-relative" id="img-@img.Id">
+                            <div class="position-relative image-box" id="img-@img.Id">
                                 <img src="@img.ImageUrl"
                                      class="img-fluid rounded"
                                      style="height:180px; width:100%; object-fit:cover;" />
 
-                                <!-- X BUTTON -->
                                 <button type="button"
-                                        class="btn btn-danger btn-sm"
-                                        style="position:absolute; top:5px; right:5px;"
-                                        onclick="markDelete(@img.Id)">
+                                        class="btn btn-danger btn-sm delete-image-btn"
+                                        data-id="@img.Id"
+                                        style="position:absolute; top:5px; right:5px; z-index:20;">
                                     ×
                                 </button>
                             </div>
                         </div>
                     }
                 </div>
+
+                <small class="text-muted">
+                    Images marked with red will be deleted after pressing Save Changes.
+                </small>
             </div>
         }
 
-        <!-- Upload -->
         <div class="mb-3">
-            <input asp-for="Images" type="file" multiple class="form-control" />
+            <input asp-for="Images" id="Images" type="file" multiple class="form-control" />
         </div>
 
         <button type="submit" class="btn btn-primary">Save Changes</button>
@@ -114,90 +107,140 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuiZcDNCGOmwM7OSjNncN7yrjIjcRMzJk&libraries=places,geometry&callback=initMap"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuiZcDNCGOmwM7OSjNncN7yrjIjcRMzJk&libraries=places,geometry&callback=initMap" async defer></script>
 
     <script>
         let map, marker, geocoder;
 
         function initMap() {
-            const lat = parseFloat(document.getElementById("Latitude").value) || 31.2518;
-            const lng = parseFloat(document.getElementById("Longitude").value) || 34.7913;
-            const currentPos = { lat, lng };
+        const lat = parseFloat(document.getElementById("Latitude").value) || 31.2518;
+        const lng = parseFloat(document.getElementById("Longitude").value) || 34.7913;
+        const currentPos = { lat, lng };
 
-            map = new google.maps.Map(document.getElementById("map"), {
-                center: currentPos,
-                zoom: 15
-            });
+        map = new google.maps.Map(document.getElementById("map"), {
+        center: currentPos,
+        zoom: 15
+        });
 
-            geocoder = new google.maps.Geocoder();
+        geocoder = new google.maps.Geocoder();
 
-            marker = new google.maps.Marker({ position: currentPos, map });
+        marker = new google.maps.Marker({
+        position: currentPos,
+        map: map
+        });
 
-            const input = document.getElementById("searchBox");
-            const autocomplete = new google.maps.places.Autocomplete(input);
-            autocomplete.bindTo("bounds", map);
+        const input = document.getElementById("searchBox");
+        const autocomplete = new google.maps.places.Autocomplete(input);
+        autocomplete.bindTo("bounds", map);
 
-            autocomplete.addListener("place_changed", function () {
-                const place = autocomplete.getPlace();
-                if (!place.geometry) return;
-                const lat = place.geometry.location.lat();
-                const lng = place.geometry.location.lng();
-                map.setCenter({ lat, lng });
-                map.setZoom(16);
-                setMarker(lat, lng);
-                setLocationFields(lat, lng, place.formatted_address || input.value);
-            });
+        autocomplete.addListener("place_changed", function () {
+        const place = autocomplete.getPlace();
 
-            map.addListener("click", function (event) {
-                const lat = event.latLng.lat();
-                const lng = event.latLng.lng();
-                setMarker(lat, lng);
-                reverseGeocode(lat, lng);
-            });
+        if (!place.geometry) return;
 
-            document.getElementById("searchBtn").addEventListener("click", function () {
-                const address = document.getElementById("searchBox").value;
-                if (!address) return;
-                geocoder.geocode({ address }, function (results, status) {
-                    if (status === "OK" && results[0]) {
-                        const loc = results[0].geometry.location;
-                        map.setCenter(loc);
-                        map.setZoom(16);
-                        setMarker(loc.lat(), loc.lng());
-                        setLocationFields(loc.lat(), loc.lng(), results[0].formatted_address);
-                    }
-                });
-            });
+        const lat = place.geometry.location.lat();
+        const lng = place.geometry.location.lng();
+
+        map.setCenter({ lat, lng });
+        map.setZoom(16);
+
+        setMarker(lat, lng);
+        setLocationFields(lat, lng, place.formatted_address || input.value);
+        });
+
+        map.addListener("click", function (event) {
+        const lat = event.latLng.lat();
+        const lng = event.latLng.lng();
+
+        setMarker(lat, lng);
+        reverseGeocode(lat, lng);
+        });
+
+        document.getElementById("searchBtn").addEventListener("click", function () {
+        const address = document.getElementById("searchBox").value;
+
+        if (!address) return;
+
+        geocoder.geocode({ address: address }, function (results, status) {
+        if (status === "OK" && results[0]) {
+        const loc = results[0].geometry.location;
+
+        map.setCenter(loc);
+        map.setZoom(16);
+
+        setMarker(loc.lat(), loc.lng());
+        setLocationFields(loc.lat(), loc.lng(), results[0].formatted_address);
+        }
+        });
+        });
         }
 
         function setMarker(lat, lng) {
-            if (marker) marker.setMap(null);
-            marker = new google.maps.Marker({ position: { lat, lng }, map });
+        if (marker) {
+        marker.setMap(null);
+        }
+
+        marker = new google.maps.Marker({
+        position: { lat, lng },
+        map: map
+        });
         }
 
         function setLocationFields(lat, lng, address) {
-            document.getElementById("Latitude").value = lat;
-            document.getElementById("Longitude").value = lng;
-            document.getElementById("Address").value = address;
+        document.getElementById("Latitude").value = lat;
+        document.getElementById("Longitude").value = lng;
+        document.getElementById("Address").value = address;
         }
 
         function reverseGeocode(lat, lng) {
-            geocoder.geocode({ location: { lat, lng } }, function (results, status) {
-                if (status === "OK" && results[0])
-                    setLocationFields(lat, lng, results[0].formatted_address);
-                else
-                    setLocationFields(lat, lng, lat + ", " + lng);
-            });
+        geocoder.geocode({ location: { lat, lng } }, function (results, status) {
+        if (status === "OK" && results[0]) {
+        setLocationFields(lat, lng, results[0].formatted_address);
+        } else {
+        setLocationFields(lat, lng, lat + ", " + lng);
+        }
+        });
         }
 
-        document.getElementById("Images").addEventListener("change", function () {
-            if (this.files.length > 10) {
-                alert("You can upload up to 10 images only.");
-                this.value = "";
-            }
+        document.addEventListener("DOMContentLoaded", function () {
+        const imageInput = document.getElementById("Images");
+
+        if (imageInput) {
+        imageInput.addEventListener("change", function () {
+        if (this.files.length > 10) {
+        alert("You can upload up to 10 images only.");
+        this.value = "";
+        }
+        });
+        }
+
+        document.querySelectorAll(".delete-image-btn").forEach(function (button) {
+        button.addEventListener("click", function () {
+        const id = this.getAttribute("data-id");
+        const hiddenInput = document.getElementById("DeletedImageIds");
+
+        let deletedIds = hiddenInput.value
+        ? hiddenInput.value.split(",")
+        : [];
+
+        if (!deletedIds.includes(id)) {
+        deletedIds.push(id);
+        }
+
+        hiddenInput.value = deletedIds.join(",");
+
+        const imageDiv = document.getElementById("img-" + id);
+
+        if (imageDiv) {
+        imageDiv.style.opacity = "0.35";
+        imageDiv.style.border = "3px solid red";
+        imageDiv.style.borderRadius = "8px";
+        }
+        });
+        });
         });
 
         window.initMap = initMap;
-        initMap();
     </script>
 }
