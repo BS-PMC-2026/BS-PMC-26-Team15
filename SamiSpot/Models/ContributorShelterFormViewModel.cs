@@ -29,9 +29,7 @@ namespace SamiSpot.Models
         [Range(1, 5000, ErrorMessage = "Shelter size must be between 1 and 5000 people.")]
         public int? Size { get; set; }
         public string? DeletedImageIds { get; set; }
-
         public bool IsAvailable { get; set; }
-
         public List<IFormFile>? Images { get; set; }
     }
 }
