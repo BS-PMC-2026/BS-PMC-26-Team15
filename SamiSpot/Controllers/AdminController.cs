@@ -11,7 +11,6 @@ namespace SamiSpot.Controllers
     public class AdminController : Controller
     {
         private readonly ApplicationDbContext _context;
-
         public AdminController(ApplicationDbContext context)
         {
             _context = context;
@@ -24,7 +23,6 @@ namespace SamiSpot.Controllers
 
             return View(shelters);
         }
-
         public IActionResult ViewShelter(int id)
         {
             var shelter = _context.ContributorShelters

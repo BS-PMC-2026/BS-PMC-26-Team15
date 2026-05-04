@@ -35,7 +35,6 @@ namespace SamiSpot.Controllers
 
             return Ok(new { message = "feedback saved" });
         }
-
         [HttpPost]
         public IActionResult AddReply([FromBody] ReplyRequest request)
         {
