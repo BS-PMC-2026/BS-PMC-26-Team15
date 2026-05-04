@@ -3,92 +3,232 @@
 }
 <link rel="stylesheet" href="~/css/map.css" />
 
-<div class="container-fluid mt-4 map-page px-4">
-    <h2 class="map-title">Map</h2>
+<style>
+    body {
+        background: #f4fbfd;
+    }
+
+    .map-page {
+        width: 100%;
+        padding: 35px 55px;
+    }
+
+    .map-title {
+        font-size: 42px;
+        font-weight: 800;
+        color: #2c4a52;
+        margin-bottom: 6px;
+    }
+
+    .map-subtitle {
+        color: #5a7c84;
+        font-size: 17px;
+        margin-bottom: 25px;
+    }
+
+    .map-toolbar {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 25px;
+    }
+
+    .map-search-group {
+        display: flex;
+        min-width: 360px;
+        flex: 1;
+    }
+
+    .map-search-input,
+    #closestCount,
+    #travelMode {
+        border-radius: 14px;
+        border: 1px solid #d6f2f7;
+        padding: 13px 16px;
+    }
+
+    .map-search-btn,
+    .map-location-btn,
+    #btnClosest,
+    #btnClear {
+        border: none;
+        border-radius: 16px;
+        padding: 13px 26px;
+        font-weight: 800;
+    }
+
+    .map-search-btn {
+        background: #2c4a52;
+        color: white;
+        margin-left: 10px;
+    }
+
+    .map-location-btn {
+        background: #4bbfd3;
+        color: white;
+    }
+
+    #btnClosest {
+        background: #ffc107;
+        color: #111;
+    }
+
+    #btnClear {
+        background: #dc3545;
+        color: white;
+    }
+
+    .map-layout {
+        display: grid;
+        grid-template-columns: 1fr 360px;
+        gap: 22px;
+    }
+
+    .map-map-area {
+        position: relative;
+    }
+
+    #map {
+        width: 100%;
+        height: 620px;
+        border-radius: 26px;
+        overflow: hidden;
+        border: 1px solid #d6f2f7;
+        box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+    }
+
+    .map-legend {
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        z-index: 10;
+        background: rgba(255,255,255,0.95);
+        border: 1px solid #d6f2f7;
+        border-radius: 20px;
+        padding: 18px 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .map-legend-title {
+        font-weight: 800;
+        color: #2c4a52;
+        margin-bottom: 12px;
+    }
+
+    .map-legend-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #3c5c63;
+        margin-bottom: 10px;
+    }
+
+    .legend-color {
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+        .legend-color.red {
+            background: #ef4444;
+        }
+
+        .legend-color.yellow {
+            background: #f59e0b;
+        }
+
+    .shelter-panel {
+        background: white;
+        border-left: 6px solid #4bbfd3;
+        border-radius: 24px;
+        padding: 28px;
+        min-height: 620px;
+        box-shadow: 0 14px 35px rgba(0,0,0,0.07);
+        overflow-y: auto;
+    }
+
+        .shelter-panel h4 {
+            color: #2c4a52;
+            font-weight: 800;
+        }
+
+    @@media (max-width: 1100px) {
+        .map-layout {
+            grid-template-columns: 1fr;
+        }
+
+        .shelter-panel {
+            min-height: auto;
+        }
+    }
+</style>
+
+<div class="map-page">
+
+    <h2 class="map-title">🗺️ Safety Map</h2>
+    <p class="map-subtitle">
+        Search locations, find nearby shelters, view alert zones, and choose the safest route.
+    </p>
 
     <div class="map-toolbar">
         <div class="map-search-group">
-            <input id="searchBox"
-                   type="text"
-                   class="form-control map-search-input"
+            <input id="searchBox" type="text" class="form-control map-search-input"
                    placeholder="Search for a specific location..." />
 
-            <button id="searchBtn" class="map-search-btn" type="button">
-                Search
-            </button>
+            <button id="searchBtn" class="map-search-btn" type="button">Search</button>
         </div>
 
-        <button id="myLocationBtn" class="map-location-btn" type="button">
-            My Location
-        </button>
+        <button id="myLocationBtn" class="map-location-btn" type="button">📍 My Location</button>
 
-        <input id="closestCount"
-               type="number"
-               class="form-control"
-               placeholder="How many shelters?"
-               min="1"
-               style="width:200px; margin-left:10px;" />
+        <input id="closestCount" type="number" class="form-control"
+               placeholder="How many shelters?" min="1" style="width:200px;" />
 
-        <select id="travelMode"
-                class="form-control"
-                style="width:180px; margin-left:10px;">
+        <select id="travelMode" class="form-control" style="width:180px;">
             <option value="WALKING">Walking</option>
             <option value="DRIVING">Driving</option>
         </select>
 
-        <button id="btnClosest" class="btn btn-warning" style="margin-left:10px;">
-            Closest Shelters
-        </button>
-        <button id="btnClear" class="btn btn-danger" style="margin-left:10px;">
-            Clear Map
-        </button>
+        <button id="btnClosest" class="btn">Closest Shelters</button>
+        <button id="btnClear" class="btn">Clear Map</button>
     </div>
 
-    <div class="map-container">
-        <div class="map-layout">
-            <div class="map-map-area">
-                <div class="map-legend">
-                    <div class="map-legend-title">Map Key</div>
+    <div class="map-layout">
+        <div class="map-map-area">
+            <div class="map-legend">
+                <div class="map-legend-title">Map Key</div>
 
-                    <div class="map-legend-item">
-                        <span class="legend-color red"></span>
-                        Real-time alert (last 15 minutes)
-                    </div>
-
-                    <div class="map-legend-item">
-                        <span class="legend-color yellow"></span>
-                        Alert in last 24 hours
-                    </div>
-
-                    <div class="map-legend-item">
-                        <img src="https://maps.google.com/mapfiles/ms/icons/red-dot.png"
-                             alt="Gov shelter marker"
-                             style="width:20px; height:20px;"
-                             class="legend-marker-icon" />
-
-                        Official Shelter
-                    </div>
-
-                    <div class="map-legend-item">
-                        <img src="https://maps.google.com/mapfiles/ms/icons/green-dot.png"
-                             alt="Contributor shelter marker"
-                             style="width:20px; height:20px;"
-                             class="legend-marker-icon" />
-                        Contributor Shelter
-                    </div>
+                <div class="map-legend-item">
+                    <span class="legend-color red"></span>
+                    Real-time alert
                 </div>
 
-                <div id="map"></div>
+                <div class="map-legend-item">
+                    <span class="legend-color yellow"></span>
+                    Alert in last 24 hours
+                </div>
+
+                <div class="map-legend-item">
+                    <img src="https://maps.google.com/mapfiles/ms/icons/red-dot.png" style="width:20px; height:20px;" />
+                    Official Shelter
+                </div>
+
+                <div class="map-legend-item">
+                    <img src="https://maps.google.com/mapfiles/ms/icons/green-dot.png" style="width:20px; height:20px;" />
+                    Contributor Shelter
+                </div>
             </div>
 
-            <div id="shelterPanel" class="shelter-panel">
-                <h4>Shelter Details</h4>
-                <p>Click a shelter on the map to view details.</p>
-            </div>
+            <div id="map"></div>
+        </div>
+
+        <div id="shelterPanel" class="shelter-panel">
+            <h4>🏠 Shelter Details</h4>
+            <p>Click a shelter on the map to view details.</p>
         </div>
     </div>
 </div>
-
 <script>
     const loggedInUser = '@Context.Session.GetString("UserName")';
 </script>
@@ -339,7 +479,7 @@
         }
     }
 
-    async function showShelterDetails(shelter) {
+       async function showShelterDetails(shelter) {
         let html = "";
         let imagesHtml = "";
 
@@ -356,36 +496,75 @@
 
         if (shelter.images && shelter.images.length > 0) {
             imagesHtml = `
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:10px; margin-bottom:10px;">
+                <div style="
+                    display:grid;
+                    grid-template-columns:1fr 1fr;
+                    gap:10px;
+                    margin:15px 0;">
                     ${shelter.images.map(img => `
-                        <img src="${img}" style="width:100%; height:120px; object-fit:cover; border-radius:8px;" />
+                        <img src="${img}" style="
+                            width:100%;
+                            height:120px;
+                            object-fit:cover;
+                            border-radius:12px;
+                            transition:0.2s;
+                        " onmouseover="this.style.transform='scale(1.03)'"
+                          onmouseout="this.style.transform='scale(1)'"/>
                     `).join("")}
                 </div>
             `;
         }
 
-        html += "<h4>Shelter Details</h4>";
-        html += `<p><strong>Name:</strong> ${shelter.name}</p>`;
-        html += `<p><strong>Source:</strong> ${shelter.source === "Contributor" ? "Contributor Shelter" : "Official Shelter"}</p>`;
+        html += `
+            <div style="font-size:26px;font-weight:800;color:#2c4a52;margin-bottom:5px;">
+                🏠 Shelter Details
+            </div>
+            <div style="color:#5a7c84;margin-bottom:18px;">
+                Information about the selected shelter
+            </div>
+        `;
+
+        function box(label, value) {
+            return `
+                <div style="
+                    background:#f8fdff;
+                    border:1px solid #d6f2f7;
+                    border-radius:14px;
+                    padding:12px 14px;
+                    margin-bottom:10px;">
+
+                    <div style="color:#5a7c84;font-size:13px;margin-bottom:4px;">
+                        ${label}
+                    </div>
+
+                    <div style="color:#2c4a52;font-weight:800;">
+                        ${value}
+                    </div>
+                </div>
+            `;
+        }
+
+        html += box("Name", shelter.name);
+        html += box("Source", shelter.source === "Contributor" ? "🟢 Contributor Shelter" : "🔴 Official Shelter");
 
         if (shelter.address) {
-            html += `<p><strong>Address:</strong> ${shelter.address}</p>`;
+            html += box("Address", shelter.address);
         }
 
         if (shelter.description) {
-            html += `<p><strong>Description:</strong> ${shelter.description}</p>`;
+            html += box("Description", shelter.description);
         }
 
         if (shelter.size !== null && shelter.size !== undefined) {
-            html += `<p><strong>Size:</strong> ${shelter.size}</p>`;
+            html += box("Size", shelter.size);
         }
 
         if (shelter.isAvailable !== null && shelter.isAvailable !== undefined) {
-            html += `<p><strong>Available:</strong> ${shelter.isAvailable ? "Yes" : "No"}</p>`;
+            html += box("Available", shelter.isAvailable ? "Yes" : "No");
         }
 
-        html += `<p><strong>Latitude:</strong> ${shelter.latitude}</p>`;
-        html += `<p><strong>Longitude:</strong> ${shelter.longitude}</p>`;
+        html += box("Latitude", shelter.latitude);
+        html += box("Longitude", shelter.longitude);
 
         html += imagesHtml;
 

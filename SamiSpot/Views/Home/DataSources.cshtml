@@ -2,8 +2,75 @@
     ViewData["Title"] = "Data Sources";
 }
 
-<div class="container mt-4">
-    <h2 class="mb-4 text-center">Our Data Sources</h2>
+<style>
+    body {
+        background: #f4fbfd;
+    }
+
+    .page-title {
+        font-weight: 600;
+        color: #2c4a52;
+    }
+
+    .intro-box {
+        background: #eaf9fc;
+        border: 1px solid #d6f2f7;
+        border-radius: 14px;
+        padding: 18px;
+        margin-bottom: 25px;
+        color: #2c4a52;
+        text-align: center;
+    }
+
+    .data-card {
+        display: block;
+        height: 100%;
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 22px;
+        border: 1px solid #e0f2f6;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        text-decoration: none;
+        color: #2c4a52;
+        transition: all 0.25s ease;
+    }
+
+        .data-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+            border-color: #bdebf3;
+            color: #2c4a52;
+        }
+
+        .data-card h5 {
+            font-weight: 600;
+            color: #2c4a52;
+            margin-bottom: 10px;
+        }
+
+        .data-card p,
+        .data-card li {
+            color: #3c5c63;
+        }
+
+    .link-text {
+        display: inline-block;
+        margin-top: 12px;
+        color: #4bbfd3;
+        font-weight: 600;
+    }
+
+    .no-link:hover {
+        transform: none;
+    }
+</style>
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-center page-title">📚 Our Data Sources</h2>
+
+    <div class="intro-box">
+        SamiSpot combines official GIS data, alert sources, and map services to provide clear safety information.
+    </div>
 
     <div class="row g-4">
 

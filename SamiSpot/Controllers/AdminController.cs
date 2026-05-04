@@ -159,7 +159,10 @@ namespace SamiSpot.Controllers
 
         [HttpPost]
         public IActionResult ApproveShelter(int id)
+
         {
+            
+
             string connectionString = _context.Database.GetConnectionString();
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -270,6 +273,7 @@ namespace SamiSpot.Controllers
 
         public IActionResult PendingShelters()
         {
+
             List<ContributorShelter> pendingShelters = new List<ContributorShelter>();
 
             string connectionString = _context.Database.GetConnectionString();

@@ -3,13 +3,156 @@
 @{
     ViewData["Title"] = "Edit Shelter";
     var shelterId = ViewBag.ShelterId;
-    var existingImages = ViewBag.ExistingImages as List<SamiSpot.Models.ContributorShelterImage>;
+    var existingImages = ViewBag.ExistingImages as IEnumerable<SamiSpot.Models.ContributorShelterImage>;
 }
 
 <link rel="stylesheet" href="~/css/map.css" />
 
-<div class="container mt-4">
-    <h2 class="mb-4">Edit Shelter</h2>
+<style>
+    body {
+        background: #f4fbfd;
+    }
+
+    .edit-page {
+        width: 100%;
+        padding: 40px 60px;
+        margin: 0;
+    }
+
+    .page-title {
+        font-size: 38px;
+        font-weight: 800;
+        color: #2c4a52;
+        margin-bottom: 6px;
+    }
+
+    .page-subtitle {
+        color: #5a7c84;
+        font-size: 17px;
+        margin-bottom: 35px;
+        max-width: 1100px;
+    }
+
+    .section-title {
+        color: #2c4a52;
+        font-size: 24px;
+        font-weight: 800;
+        margin: 32px 0 18px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #cdeff5;
+    }
+
+    .form-label {
+        color: #2c4a52;
+        font-weight: 700;
+    }
+
+    .form-control {
+        border-radius: 14px;
+        border: 1px solid #d6f2f7;
+        padding: 13px 15px;
+        background: #ffffff;
+    }
+
+        .form-control:focus {
+            border-color: #4bbfd3;
+            box-shadow: 0 0 0 0.2rem rgba(75,191,211,0.18);
+        }
+
+    .search-btn {
+        border-radius: 0 14px 14px 0;
+        border: none;
+        background: #4bbfd3;
+        color: white;
+        font-weight: 700;
+        padding: 0 26px;
+    }
+
+        .search-btn:hover {
+            background: #36aeca;
+            color: white;
+        }
+
+    #map {
+        height: 430px;
+        width: 100%;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid #d6f2f7;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .hint-text {
+        color: #5a7c84;
+        margin-top: 8px;
+        font-size: 14px;
+    }
+
+    .available-box {
+        padding: 14px 0;
+    }
+
+    .image-box img {
+        height: 180px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 18px;
+        border: 1px solid #d6f2f7;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+    }
+
+    .delete-image-btn {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        z-index: 20;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        padding: 0;
+        font-weight: 800;
+    }
+
+    .save-btn {
+        background: #4bbfd3;
+        border: none;
+        color: white;
+        border-radius: 30px;
+        padding: 13px 34px;
+        font-weight: 800;
+        box-shadow: 0 8px 18px rgba(75,191,211,0.25);
+        transition: all 0.25s ease;
+    }
+
+        .save-btn:hover {
+            background: #36aeca;
+            transform: translateY(-2px);
+            color: white;
+        }
+
+    .cancel-btn {
+        border-radius: 30px;
+        padding: 13px 30px;
+        font-weight: 700;
+    }
+
+    @@media (max-width: 768px) {
+        .edit-page {
+            padding: 25px;
+        }
+
+        .page-title {
+            font-size: 32px;
+        }
+    }
+</style>
+
+<div class="edit-page">
+
+    <h2 class="page-title">✏️ Admin Edit Shelter</h2>
+    <p class="page-subtitle">
+        Update shelter information, location, capacity, availability, and images.
+    </p>
 
     @if (TempData["SuccessMessage"] != null)
     {
@@ -23,25 +166,25 @@
 
         @Html.AntiForgeryToken()
 
-        <!-- hidden for delete tracking -->
         <input type="hidden" asp-for="DeletedImageIds" id="DeletedImageIds" />
 
-        <!-- Name -->
+        <div class="section-title">📝 Shelter Details</div>
+
         <div class="mb-3">
             <label class="form-label">Shelter Name</label>
             <input asp-for="Name" class="form-control" />
         </div>
 
-        <!-- Search -->
+        <div class="section-title">📍 Location</div>
+
         <div class="mb-3">
             <label class="form-label">Search Location</label>
             <div class="input-group">
                 <input type="text" id="searchBox" class="form-control" placeholder="Search location..." />
-                <button type="button" id="searchBtn" class="btn btn-outline-primary">Search</button>
+                <button type="button" id="searchBtn" class="btn search-btn">Search</button>
             </div>
         </div>
 
-        <!-- Address -->
         <div class="mb-3">
             <label class="form-label">Address</label>
             <input asp-for="Address" id="Address" class="form-control" readonly />
@@ -50,154 +193,206 @@
         <input asp-for="Latitude" id="Latitude" type="hidden" />
         <input asp-for="Longitude" id="Longitude" type="hidden" />
 
-        <!-- MAP -->
         <div class="mb-3">
             <label class="form-label">Map</label>
-            <div id="map" style="height:400px;"></div>
+            <div id="map"></div>
+            <div class="hint-text">💡 Search for a place or click directly on the map to update the location.</div>
         </div>
 
-        <!-- Description -->
+        <div class="section-title">ℹ️ Extra Information</div>
+
         <div class="mb-3">
-            <textarea asp-for="Description" class="form-control"></textarea>
+            <label class="form-label">Description</label>
+            <textarea asp-for="Description" class="form-control" rows="4"></textarea>
         </div>
 
-        <!-- Size -->
         <div class="mb-3">
+            <label class="form-label">Capacity</label>
             <input asp-for="Size" class="form-control" type="number" placeholder="Capacity" />
         </div>
 
-        <!-- Available -->
-        <div class="form-check mb-3">
+        <div class="form-check mb-3 available-box">
             <input asp-for="IsAvailable" class="form-check-input" />
             <label class="form-check-label">Available</label>
         </div>
 
-        <!-- EXISTING IMAGES -->
-        @if (existingImages != null && existingImages.Count > 0)
+        @if (existingImages != null && existingImages.Any())
         {
-            <div class="mb-3">
-                <label>Current Images</label>
+            <div class="section-title">🖼️ Current Images</div>
 
+            <div class="mb-3">
                 <div class="row">
                     @foreach (var img in existingImages)
                     {
                         <div class="col-md-3 mb-3">
-                            <div class="position-relative" id="img-@img.Id">
-                                <img src="@img.ImageUrl"
-                                     class="img-fluid rounded"
-                                     style="height:180px; width:100%; object-fit:cover;" />
+                            <div class="position-relative image-box" id="img-@img.Id">
+                                <img src="@img.ImageUrl" />
 
-                                <!-- X BUTTON -->
                                 <button type="button"
-                                        class="btn btn-danger btn-sm"
-                                        style="position:absolute; top:5px; right:5px;"
-                                        onclick="markDelete(@img.Id)">
+                                        class="btn btn-danger btn-sm delete-image-btn"
+                                        data-id="@img.Id">
                                     ×
                                 </button>
                             </div>
                         </div>
                     }
                 </div>
+
+                <div class="hint-text">
+                    Images marked with red will be deleted after pressing Save Changes.
+                </div>
             </div>
         }
 
-        <!-- Upload -->
-        <div class="mb-3">
-            <input asp-for="Images" type="file" multiple class="form-control" />
+        <div class="section-title">📤 Upload New Images</div>
+
+        <div class="mb-4">
+            <label class="form-label">Upload New Images</label>
+            <input asp-for="Images" id="Images" type="file" multiple class="form-control" />
         </div>
 
-        <button type="submit" class="btn btn-primary">Save Changes</button>
-        <a href="/Admin/AllShelters" class="btn btn-secondary">Cancel</a>
+        <button type="submit" class="btn save-btn">Save Changes</button>
+        <a href="/Admin/AllShelters" class="btn btn-secondary cancel-btn ms-2">Cancel</a>
 
     </form>
 </div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuiZcDNCGOmwM7OSjNncN7yrjIjcRMzJk&libraries=places,geometry&callback=initMap"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuiZcDNCGOmwM7OSjNncN7yrjIjcRMzJk&libraries=places,geometry&callback=initMap" async defer></script>
 
     <script>
         let map, marker, geocoder;
 
         function initMap() {
-            const lat = parseFloat(document.getElementById("Latitude").value) || 31.2518;
-            const lng = parseFloat(document.getElementById("Longitude").value) || 34.7913;
-            const currentPos = { lat, lng };
+        const lat = parseFloat(document.getElementById("Latitude").value) || 31.2518;
+        const lng = parseFloat(document.getElementById("Longitude").value) || 34.7913;
+        const currentPos = { lat, lng };
 
-            map = new google.maps.Map(document.getElementById("map"), {
-                center: currentPos,
-                zoom: 15
-            });
+        map = new google.maps.Map(document.getElementById("map"), {
+        center: currentPos,
+        zoom: 15
+        });
 
-            geocoder = new google.maps.Geocoder();
+        geocoder = new google.maps.Geocoder();
 
-            marker = new google.maps.Marker({ position: currentPos, map });
+        marker = new google.maps.Marker({
+        position: currentPos,
+        map: map
+        });
 
-            const input = document.getElementById("searchBox");
-            const autocomplete = new google.maps.places.Autocomplete(input);
-            autocomplete.bindTo("bounds", map);
+        const input = document.getElementById("searchBox");
+        const autocomplete = new google.maps.places.Autocomplete(input);
+        autocomplete.bindTo("bounds", map);
 
-            autocomplete.addListener("place_changed", function () {
-                const place = autocomplete.getPlace();
-                if (!place.geometry) return;
-                const lat = place.geometry.location.lat();
-                const lng = place.geometry.location.lng();
-                map.setCenter({ lat, lng });
-                map.setZoom(16);
-                setMarker(lat, lng);
-                setLocationFields(lat, lng, place.formatted_address || input.value);
-            });
+        autocomplete.addListener("place_changed", function () {
+        const place = autocomplete.getPlace();
 
-            map.addListener("click", function (event) {
-                const lat = event.latLng.lat();
-                const lng = event.latLng.lng();
-                setMarker(lat, lng);
-                reverseGeocode(lat, lng);
-            });
+        if (!place.geometry) return;
 
-            document.getElementById("searchBtn").addEventListener("click", function () {
-                const address = document.getElementById("searchBox").value;
-                if (!address) return;
-                geocoder.geocode({ address }, function (results, status) {
-                    if (status === "OK" && results[0]) {
-                        const loc = results[0].geometry.location;
-                        map.setCenter(loc);
-                        map.setZoom(16);
-                        setMarker(loc.lat(), loc.lng());
-                        setLocationFields(loc.lat(), loc.lng(), results[0].formatted_address);
-                    }
-                });
-            });
+        const lat = place.geometry.location.lat();
+        const lng = place.geometry.location.lng();
+
+        map.setCenter({ lat, lng });
+        map.setZoom(16);
+
+        setMarker(lat, lng);
+        setLocationFields(lat, lng, place.formatted_address || input.value);
+        });
+
+        map.addListener("click", function (event) {
+        const lat = event.latLng.lat();
+        const lng = event.latLng.lng();
+
+        setMarker(lat, lng);
+        reverseGeocode(lat, lng);
+        });
+
+        document.getElementById("searchBtn").addEventListener("click", function () {
+        const address = document.getElementById("searchBox").value;
+
+        if (!address) return;
+
+        geocoder.geocode({ address: address }, function (results, status) {
+        if (status === "OK" && results[0]) {
+        const loc = results[0].geometry.location;
+
+        map.setCenter(loc);
+        map.setZoom(16);
+
+        setMarker(loc.lat(), loc.lng());
+        setLocationFields(loc.lat(), loc.lng(), results[0].formatted_address);
+        }
+        });
+        });
         }
 
         function setMarker(lat, lng) {
-            if (marker) marker.setMap(null);
-            marker = new google.maps.Marker({ position: { lat, lng }, map });
+        if (marker) {
+        marker.setMap(null);
+        }
+
+        marker = new google.maps.Marker({
+        position: { lat, lng },
+        map: map
+        });
         }
 
         function setLocationFields(lat, lng, address) {
-            document.getElementById("Latitude").value = lat;
-            document.getElementById("Longitude").value = lng;
-            document.getElementById("Address").value = address;
+        document.getElementById("Latitude").value = lat;
+        document.getElementById("Longitude").value = lng;
+        document.getElementById("Address").value = address;
         }
 
         function reverseGeocode(lat, lng) {
-            geocoder.geocode({ location: { lat, lng } }, function (results, status) {
-                if (status === "OK" && results[0])
-                    setLocationFields(lat, lng, results[0].formatted_address);
-                else
-                    setLocationFields(lat, lng, lat + ", " + lng);
-            });
+        geocoder.geocode({ location: { lat, lng } }, function (results, status) {
+        if (status === "OK" && results[0]) {
+        setLocationFields(lat, lng, results[0].formatted_address);
+        } else {
+        setLocationFields(lat, lng, lat + ", " + lng);
+        }
+        });
         }
 
-        document.getElementById("Images").addEventListener("change", function () {
-            if (this.files.length > 10) {
-                alert("You can upload up to 10 images only.");
-                this.value = "";
-            }
+        document.addEventListener("DOMContentLoaded", function () {
+        const imageInput = document.getElementById("Images");
+
+        if (imageInput) {
+        imageInput.addEventListener("change", function () {
+        if (this.files.length > 10) {
+        alert("You can upload up to 10 images only.");
+        this.value = "";
+        }
+        });
+        }
+
+        document.querySelectorAll(".delete-image-btn").forEach(function (button) {
+        button.addEventListener("click", function () {
+        const id = this.getAttribute("data-id");
+        const hiddenInput = document.getElementById("DeletedImageIds");
+
+        let deletedIds = hiddenInput.value
+        ? hiddenInput.value.split(",")
+        : [];
+
+        if (!deletedIds.includes(id)) {
+        deletedIds.push(id);
+        }
+
+        hiddenInput.value = deletedIds.join(",");
+
+        const imageDiv = document.getElementById("img-" + id);
+
+        if (imageDiv) {
+        imageDiv.style.opacity = "0.35";
+        imageDiv.style.border = "3px solid red";
+        imageDiv.style.borderRadius = "18px";
+        }
+        });
+        });
         });
 
         window.initMap = initMap;
-        initMap();
     </script>
 }

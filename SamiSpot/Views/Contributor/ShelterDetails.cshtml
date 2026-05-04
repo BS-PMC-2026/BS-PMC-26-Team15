@@ -4,77 +4,318 @@
     ViewData["Title"] = "Shelter Details";
 }
 
-<div class="container mt-4">
-    <h2 class="mb-4">Shelter Details</h2>
+<style>
+    body {
+        background: #f4fbfd;
+    }
 
-    <div class="card shadow-sm p-4">
+    .details-page {
+        width: 100%;
+        padding: 40px 60px;
+    }
 
-        <h3 class="mb-3">@Model.Name</h3>
+    .top-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
 
-        <p><strong>Address:</strong> @Model.Address</p>
+    .page-title {
+        font-size: 42px;
+        font-weight: 800;
+        color: #2c4a52;
+        margin: 0;
+    }
 
-        @if (!string.IsNullOrEmpty(Model.Description))
-        {
-            <p><strong>Description:</strong> @Model.Description</p>
+    .page-subtitle {
+        color: #5a7c84;
+        font-size: 17px;
+        margin-top: 8px;
+    }
+
+    /* 🔥 הגדלה של ה-badge */
+    .status-badge {
+        font-size: 16px !important;
+        padding: 10px 18px !important;
+        border-radius: 12px !important;
+        font-weight: 800;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .slider-container {
+        position: relative;
+        width: 100%;
+        margin-bottom: 18px;
+    }
+
+    .main-image {
+        width: 100%;
+        height: 470px;
+        object-fit: cover;
+        border-radius: 28px;
+        box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+        border: 1px solid #d6f2f7;
+        display: block;
+    }
+
+    .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(44, 74, 82, 0.65);
+        color: white;
+        border: none;
+        font-size: 26px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10;
+        transition: 0.2s;
+    }
+
+        .nav-btn:hover {
+            background: rgba(44, 74, 82, 0.9);
         }
 
-        <p>
-            <strong>Status:</strong>
-            @if (Model.Status == "Approved")
-            {
-                <span class="badge bg-success">Approved</span>
-            }
-            else if (Model.Status == "Pending")
-            {
-                <span class="badge bg-warning text-dark">Pending</span>
-            }
-            else
-            {
-                <span class="badge bg-danger">Rejected</span>
-            }
-        </p>
-
-        <p><strong>Date Added:</strong> @Model.CreatedAt.ToString("dd/MM/yyyy")</p>
-
-        @if (Model.Size != null)
-        {
-            <p><strong>Capacity:</strong> @Model.Size people</p>
+        .nav-btn.left {
+            left: 18px;
         }
 
-        <p>
-            <strong>Available:</strong>
-            @(Model.IsAvailable ? "Yes" : "No")
-        </p>
+        .nav-btn.right {
+            right: 18px;
+        }
 
-        <p><strong>Location:</strong> @Model.Latitude , @Model.Longitude</p>
+    .thumbs {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        margin-bottom: 30px;
+    }
 
-        <hr />
+    .thumb {
+        width: 135px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 16px;
+        cursor: pointer;
+        opacity: 0.65;
+        border: 2px solid transparent;
+        transition: 0.2s;
+        flex-shrink: 0;
+    }
 
-        <h5 class="mb-3">Images</h5>
+        .thumb:hover {
+            opacity: 1;
+            border-color: #4bbfd3;
+        }
 
-        @if (Model.Images != null && Model.Images.Count > 0)
+    .info-section {
+        background: #ffffff;
+        border-left: 6px solid #4bbfd3;
+        border-radius: 24px;
+        padding: 34px 42px;
+        box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+    }
+
+    .shelter-name {
+        font-size: 36px;
+        font-weight: 800;
+        color: #2c4a52;
+        margin-bottom: 25px;
+    }
+
+    .details-list {
+        display: grid;
+        grid-template-columns: 230px 1fr;
+    }
+
+    .detail-label {
+        padding: 16px 0;
+        font-weight: 800;
+        color: #2c4a52;
+        border-bottom: 1px solid #edf7f9;
+    }
+
+    .detail-value {
+        padding: 16px 0;
+        color: #3c5c63;
+        border-bottom: 1px solid #edf7f9;
+        word-break: break-word;
+    }
+
+    .back-btn {
+        background: #4bbfd3;
+        color: white;
+        border-radius: 30px;
+        padding: 12px 28px;
+        text-decoration: none;
+        font-weight: 800;
+        display: inline-block;
+        margin-top: 28px;
+    }
+
+        .back-btn:hover {
+            background: #36aeca;
+            color: white;
+        }
+
+    .empty-box {
+        background: #eaf9fc;
+        border-left: 5px solid #4bbfd3;
+        border-radius: 12px;
+        padding: 18px;
+        color: #2c4a52;
+        margin-bottom: 30px;
+    }
+
+    @@media (max-width: 900px) {
+        .details-page {
+            padding: 25px;
+        }
+
+        .page-title {
+            font-size: 34px;
+        }
+
+        .main-image {
+            height: 330px;
+        }
+
+        .details-list {
+            grid-template-columns: 1fr;
+        }
+
+        .detail-label {
+            border-bottom: none;
+            padding-bottom: 4px;
+        }
+
+        .detail-value {
+            padding-top: 0;
+        }
+    }
+</style>
+
+<div class="details-page">
+
+    <div class="top-row">
+        <div>
+            <h2 class="page-title">🏠 Shelter Details</h2>
+            <p class="page-subtitle">View full information about this submitted shelter.</p>
+        </div>
+
+        @if (Model.Status == "Approved")
         {
-            <div class="row">
-                @foreach (var image in Model.Images)
-                {
-                    <div class="col-md-4 mb-3">
-                        <img src="@image.ImageUrl"
-                             class="img-fluid rounded shadow-sm"
-                             style="height:220px; width:100%; object-fit:cover;" />
-                    </div>
-                }
-            </div>
+            <span class="badge bg-success status-badge">Approved</span>
+        }
+        else if (Model.Status == "Pending")
+        {
+            <span class="badge bg-warning text-dark status-badge">Pending</span>
         }
         else
         {
-            <p>No images uploaded.</p>
+            <span class="badge bg-danger status-badge">Rejected</span>
         }
+    </div>
 
-        <hr />
+    @if (Model.Images != null && Model.Images.Count > 0)
+    {
+        <div class="slider-container">
+            <button type="button" class="nav-btn left" onclick="prevImage()">❮</button>
 
-        <div class="mt-3">
-            <a href="/Contributor/MyShelters" class="btn btn-secondary">Back</a>
+            <img id="mainImage"
+                 src="@Model.Images.First().ImageUrl"
+                 class="main-image" />
+
+            <button type="button" class="nav-btn right" onclick="nextImage()">❯</button>
         </div>
 
+        <div class="thumbs">
+            @for (int i = 0; i < Model.Images.Count; i++)
+            {
+                <img src="@Model.Images[i].ImageUrl"
+                     class="thumb"
+                     onclick="setImage(@i)" />
+            }
+        </div>
+    }
+    else
+    {
+        <div class="empty-box">No images uploaded.</div>
+    }
+
+    <div class="info-section">
+        <div class="shelter-name">@Model.Name</div>
+
+        <div class="details-list">
+
+            <div class="detail-label">📍 Address</div>
+            <div class="detail-value">@Model.Address</div>
+
+            @if (!string.IsNullOrEmpty(Model.Description))
+            {
+                <div class="detail-label">📝 Description</div>
+                <div class="detail-value">@Model.Description</div>
+            }
+
+            <div class="detail-label">📅 Date Added</div>
+            <div class="detail-value">@Model.CreatedAt.ToString("dd/MM/yyyy")</div>
+
+            @if (Model.Size != null)
+            {
+                <div class="detail-label">👥 Capacity</div>
+                <div class="detail-value">@Model.Size people</div>
+            }
+
+            <div class="detail-label">✅ Available</div>
+            <div class="detail-value">@(Model.IsAvailable ? "Yes" : "No")</div>
+
+            <div class="detail-label">🗺️ Location</div>
+            <div class="detail-value">@Model.Latitude , @Model.Longitude</div>
+
+        </div>
+
+        <a href="/Contributor/MyShelters" class="back-btn">← Back to My Shelters</a>
     </div>
 </div>
+
+<script>
+    let images = [
+        @if (Model.Images != null && Model.Images.Count > 0)
+        {
+                foreach (var img in Model.Images)
+                {
+                        <text>"@img.ImageUrl",</text>
+                }
+        }
+    ];
+
+    let currentIndex = 0;
+
+    function showImage(index) {
+        if (images.length === 0) return;
+
+        if (index < 0) index = images.length - 1;
+        if (index >= images.length) index = 0;
+
+        currentIndex = index;
+        document.getElementById("mainImage").src = images[index];
+    }
+
+    function nextImage() {
+        showImage(currentIndex + 1);
+    }
+
+    function prevImage() {
+        showImage(currentIndex - 1);
+    }
+
+    function setImage(index) {
+        showImage(index);
+    }
+</script>
