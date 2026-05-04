@@ -8,12 +8,10 @@ namespace SamiSpot.Controllers
     public class FeedbackController : Controller
     {
         private readonly ApplicationDbContext _context;
-
         public FeedbackController(ApplicationDbContext context)
         {
             _context = context;
         }
-
         [HttpPost]
         public IActionResult Add([FromBody] Feedback feedback)
         {
