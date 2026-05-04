@@ -1,4 +1,6 @@
-﻿namespace SamiSpot.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace SamiSpot.Models
 {
     public class User
     {
@@ -11,6 +13,7 @@
         public string Password { get; set; }
 
         public string RoleType { get; set; } //User/Contributor
+        [NotMapped]   // 👈 ADD THIS
 
         public bool IsActive { get; set; } = true;   
 

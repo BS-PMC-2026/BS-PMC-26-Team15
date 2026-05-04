@@ -2,26 +2,214 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="d-flex justify-content-center align-items-center" style="height: 80vh;">
-    <div class="text-center">
+<style>
+    body {
+        background: #f4fbfd;
+    }
 
-        <h1 class="display-4 mb-3">SamiSpot 🤍</h1>
+    .home-wrapper {
+        min-height: 82vh;
+        display: flex;
+        align-items: center;
+    }
 
-        <p style="font-size: 18px;">
-            click below to explore shelters across israel
-        </p>
+    .main-hero {
+        background: linear-gradient(135deg, #ffffff 0%, #ffffff 45%, #eaf9fc 100%);
+        border: 1px solid #d6f2f7;
+        border-radius: 34px;
+        padding: 55px;
+        box-shadow: 0 14px 35px rgba(0,0,0,0.07);
+        position: relative;
+        overflow: hidden;
+    }
 
-        <a href="/Map/Index" class="btn btn-dark mt-3 px-4 py-2" style="border-radius: 20px;">
-            open map
-        </a>
+    .hero-badge {
+        display: inline-block;
+        background: #eaf9fc;
+        color: #2c4a52;
+        border: 1px solid #d6f2f7;
+        border-radius: 30px;
+        padding: 8px 16px;
+        font-weight: 600;
+        margin-bottom: 18px;
+    }
 
-        <div class="mt-4" style="font-size: 14px; color: gray;">
-            <p>
-                hey rayan hahaha  🤍
-                i started the shelters feature and got the map working
-                feel free to continue and make it even better ✨
-            </p>
+    .hero-title {
+        font-size: 58px;
+        font-weight: 700;
+        color: #2c4a52;
+        margin-bottom: 15px;
+    }
+
+    .hero-text {
+        font-size: 19px;
+        color: #3c5c63;
+        max-width: 560px;
+        margin-bottom: 28px;
+    }
+
+    .hero-btn {
+        background: #4bbfd3;
+        color: white;
+        border-radius: 30px;
+        padding: 13px 32px;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-block;
+        box-shadow: 0 8px 18px rgba(75,191,211,0.25);
+        transition: all 0.25s ease;
+    }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            background: #36aeca;
+            color: white;
+        }
+
+    .hero-secondary {
+        margin-left: 14px;
+        color: #2c4a52;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .feature-row {
+        margin-top: 34px;
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+
+    .feature {
+        background: rgba(234, 249, 252, 0.9);
+        border: 1px solid #d6f2f7;
+        border-radius: 16px;
+        padding: 15px 18px;
+        color: #2c4a52;
+        font-weight: 600;
+        min-width: 150px;
+    }
+
+    .visual-area {
+        position: relative;
+        min-height: 420px;
+    }
+
+    .map-line {
+        position: absolute;
+        height: 4px;
+        background: #9edeea;
+        transform: rotate(-25deg);
+        width: 390px;
+        top: 220px;
+        right: 95px;
+        border-radius: 20px;
+    }
+
+    .map-pin {
+        position: absolute;
+        background: white;
+        border: 1px solid #d6f2f7;
+        box-shadow: 0 7px 16px rgba(0,0,0,0.08);
+        border-radius: 18px;
+        padding: 13px 18px;
+        color: #2c4a52;
+        font-weight: 600;
+    }
+
+    .pin-one {
+        top: 85px;
+        left: 40px;
+    }
+
+    .pin-two {
+        top: 190px;
+        right: 40px;
+    }
+
+    .pin-three {
+        bottom: 70px;
+        left: 130px;
+    }
+
+    .pulse-circle {
+        position: absolute;
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        background: rgba(75,191,211,0.16);
+        top: 150px;
+        left: 160px;
+        animation: pulse 2.5s infinite;
+    }
+
+    @@keyframes pulse {
+        0% {
+            transform: scale(0.8);
+            opacity: 0.9;
+        }
+
+        100% {
+            transform: scale(1.35);
+            opacity: 0;
+        }
+    }
+
+    @@media (max-width: 992px) {
+        .main-hero {
+            padding: 35px;
+        }
+
+        .hero-title {
+            font-size: 44px;
+        }
+
+        .visual-area {
+            min-height: 300px;
+            margin-top: 20px;
+        }
+
+        .map-line {
+            width: 280px;
+            right: 70px;
+        }
+    }
+</style>
+
+<div class="container home-wrapper">
+    <div class="main-hero w-100">
+        <div class="row align-items-center g-4">
+
+            <div class="col-lg-6">
+                <div class="hero-badge">🛡️ Real-time shelter safety map</div>
+
+                <h1 class="hero-title">SamiSpot</h1>
+
+                <p class="hero-text">
+                    Find nearby shelters, understand recent alert areas, and make faster safety decisions during emergency situations.
+                </p>
+
+                <a href="/Map/Index" class="hero-btn">Open Safety Map</a>
+                <a href="/Home/Emergency" class="hero-secondary">Emergency contacts →</a>
+
+                <div class="feature-row">
+                    <div class="feature">📍 Nearby shelters</div>
+                    <div class="feature">🚨 Alert areas</div>
+                    <div class="feature">🗺️ Safe navigation</div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="visual-area">
+                    <div class="pulse-circle"></div>
+                    <div class="map-line"></div>
+
+                    <div class="map-pin pin-one">🏠 Shelter nearby</div>
+                    <div class="map-pin pin-two">🚨 Recent alert</div>
+                    <div class="map-pin pin-three">📍 Your area</div>
+                </div>
+            </div>
+
         </div>
-
     </div>
 </div>

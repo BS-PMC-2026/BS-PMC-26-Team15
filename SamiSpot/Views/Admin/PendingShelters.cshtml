@@ -4,9 +4,127 @@
     ViewData["Title"] = "Pending Shelters";
 }
 
-<div class="container mt-4">
-    <h2 class="mb-4">Pending Shelter Approvals</h2>
-    <p class="text-muted mb-3">
+<style>
+    body {
+        background: #f4fbfd;
+    }
+
+    .pending-page {
+        width: 100%;
+        padding: 40px 60px;
+        margin: 0;
+    }
+
+    .page-title {
+        font-size: 38px;
+        font-weight: 800;
+        color: #2c4a52;
+        margin-bottom: 6px;
+    }
+
+    .page-subtitle {
+        color: #5a7c84;
+        font-size: 17px;
+        margin-bottom: 35px;
+        max-width: 1100px;
+    }
+
+    .review-list {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .review-item {
+        background: #ffffff;
+        border-left: 6px solid #ffc107;
+        border-radius: 18px;
+        padding: 22px 26px;
+        display: grid;
+        grid-template-columns: 1fr 220px;
+        gap: 20px;
+        align-items: center;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+        transition: all 0.2s ease;
+    }
+
+        .review-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+        }
+
+    .status-pill {
+        display: inline-block;
+        background: #fff7d6;
+        color: #7a5a00;
+        border: 1px solid #ffe7a3;
+        border-radius: 30px;
+        padding: 6px 14px;
+        font-weight: 800;
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .shelter-title {
+        font-size: 26px;
+        font-weight: 800;
+        color: #2c4a52;
+        margin-bottom: 10px;
+    }
+
+    .meta-row {
+        color: #3c5c63;
+        display: flex;
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .details-btn {
+        background: #4bbfd3;
+        color: white;
+        border-radius: 30px;
+        padding: 12px 24px;
+        font-weight: 800;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        box-shadow: 0 8px 18px rgba(75,191,211,0.22);
+    }
+
+        .details-btn:hover {
+            background: #36aeca;
+            color: white;
+        }
+
+    .empty-box {
+        background: #eaf9fc;
+        border-left: 5px solid #4bbfd3;
+        padding: 20px;
+        color: #2c4a52;
+        border-radius: 10px;
+    }
+
+    @@media (max-width: 768px) {
+        .pending-page {
+            padding: 25px;
+        }
+
+        .review-item {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.ErrorMessage
+    </div>
+}
+
+<div class="pending-page">
+
+    <h2 class="page-title">⏳ Pending Shelter Approvals</h2>
+    <p class="page-subtitle">
         This page allow admins to view all shelter submissions and review locations added by contributors before approval or rejection.
     </p>
 
@@ -19,36 +137,33 @@
 
     @if (Model == null || !Model.Any())
     {
-        <div class="alert alert-info">No pending shelters found.</div>
+        <div class="empty-box">No pending shelters found.</div>
     }
     else
     {
-        <div class="row">
+        <div class="review-list">
             @foreach (var shelter in Model)
             {
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card shadow-sm h-100">
-                        <div class="card-body d-flex flex-column">
+                <div class="review-item">
 
-                            <h5 class="card-title mb-2">@shelter.Name</h5>
+                    <div>
+                        <div class="status-pill">Pending Review</div>
 
-                            <p class="mb-1">
-                                <strong>Contributor:</strong> @shelter.UserId
-                            </p>
+                        <div class="shelter-title">@shelter.Name</div>
 
-                            <p class="mb-3">
-                                <strong>Created:</strong> @shelter.CreatedAt.ToString("yyyy-MM-dd HH:mm")
-                            </p>
-
-                            <div class="mt-auto">
-                                <a href="/Admin/ShelterDetails/@shelter.Id"
-                                   class="btn btn-primary btn-sm w-100">
-                                    View Details
-                                </a>
-                            </div>
-
+                        <div class="meta-row">
+                            <span><strong>Contributor:</strong> @shelter.UserId</span>
+                            <span><strong>Created:</strong> @shelter.CreatedAt.ToString("yyyy-MM-dd HH:mm")</span>
                         </div>
                     </div>
+
+                    <div>
+                        <a href="/Admin/ShelterDetails/@shelter.Id"
+                           class="details-btn">
+                            Review Details
+                        </a>
+                    </div>
+
                 </div>
             }
         </div>

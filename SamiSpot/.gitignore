@@ -1,6 +1,5 @@
 .vs/
 bin/
 obj/
-AllCoverageReport/
-UnitCoverageReport/
-testlog.txt
+*.user
+*.suo

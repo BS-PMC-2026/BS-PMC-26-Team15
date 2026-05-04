@@ -4,8 +4,103 @@
     ViewData["Title"] = "All Submitted Shelters";
 }
 
-<div class="container mt-4">
-    <h2 class="mb-4">All Submitted Shelters</h2>
+<style>
+    body {
+        background: #f4fbfd;
+    }
+
+    .shelters-page {
+        width: 100%;
+        padding: 40px 60px;
+        margin: 0;
+    }
+
+    .page-title {
+        font-size: 38px;
+        font-weight: 800;
+        color: #2c4a52;
+        margin-bottom: 6px;
+    }
+
+    .page-subtitle {
+        color: #5a7c84;
+        font-size: 17px;
+        margin-bottom: 30px;
+    }
+
+    .table-scroll {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .custom-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .custom-table thead th {
+            background: #eaf9fc;
+            color: #2c4a52;
+            font-weight: 800;
+            padding: 16px;
+            border-bottom: 2px solid #cdeff5;
+        }
+
+        .custom-table tbody tr {
+            background: #ffffff;
+            transition: all 0.2s ease;
+        }
+
+            .custom-table tbody tr:hover {
+                background: #f9feff;
+                box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+            }
+
+        .custom-table tbody td {
+            background: #ffffff;
+            padding: 18px;
+            color: #3c5c63;
+            border-bottom: 1px solid #dceff3;
+            vertical-align: middle;
+        }
+
+    .id-cell {
+        font-weight: 800;
+        color: #4bbfd3;
+    }
+
+    .action-btn {
+        border-radius: 20px;
+        padding: 6px 14px;
+        font-weight: 700;
+        margin-right: 5px;
+    }
+
+    .empty-box {
+        background: #eaf9fc;
+        border-left: 5px solid #4bbfd3;
+        padding: 18px;
+        color: #2c4a52;
+        border-radius: 8px;
+    }
+
+    @@media (max-width: 768px) {
+        .shelters-page {
+            padding: 25px;
+        }
+
+        .custom-table {
+            min-width: 700px;
+        }
+    }
+</style>
+
+<div class="shelters-page">
+
+    <h2 class="page-title">🏠 All Submitted Shelters</h2>
+    <p class="page-subtitle">
+        View, edit, and manage all contributor shelter submissions.
+    </p>
 
     @if (TempData["SuccessMessage"] != null)
     {
@@ -14,61 +109,69 @@
 
     @if (Model == null || !Model.Any())
     {
-        <div class="alert alert-info">No submitted shelters found.</div>
+        <div class="empty-box">No submitted shelters found.</div>
     }
     else
     {
-        <table class="table table-bordered table-hover">
-            <thead class="table-dark">
-                <tr>
-                    <th>#</th>
-                    <th>Shelter Name</th>
-                    <th>Status</th>
-                    <th>Date Added</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                @foreach (var shelter in Model)
-                {
+        <div class="table-scroll">
+            <table class="custom-table">
+                <thead>
                     <tr>
-                        <td>@shelter.Id</td>
-                        <td>@shelter.Name</td>
-
-                        <td>
-                            @if (shelter.Status == "Approved")
-                            {
-                                <span class="badge bg-success">Approved</span>
-                            }
-                            else if (shelter.Status == "Pending")
-                            {
-                                <span class="badge bg-warning text-dark">Pending</span>
-                            }
-                            else
-                            {
-                                <span class="badge bg-danger">Rejected</span>
-                            }
-                        </td>
-
-                        <td>@shelter.CreatedAt.ToString("dd/MM/yyyy")</td>
-
-                        <td>
-                            <a href="/Admin/ShelterDetails/@shelter.Id" class="btn btn-sm btn-primary">View</a>
-
-                            <a href="/Admin/EditShelter/@shelter.Id" class="btn btn-sm btn-warning">Edit</a>
-
-                            <form action="/Admin/DeleteShelter/@shelter.Id"
-                                  method="post"
-                                  style="display:inline"
-                                  onsubmit="return confirm('Are you sure you want to delete this shelter?')">
-                                @Html.AntiForgeryToken()
-                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                            </form>
-                        </td>
+                        <th>#</th>
+                        <th>Shelter Name</th>
+                        <th>Status</th>
+                        <th>Date Added</th>
+                        <th>Actions</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+
+                <tbody>
+                    @foreach (var shelter in Model)
+                    {
+                        <tr>
+                            <td class="id-cell">@shelter.Id</td>
+                            <td>@shelter.Name</td>
+
+                            <td>
+                                @if (shelter.Status == "Approved")
+                                {
+                                    <span class="badge bg-success">Approved</span>
+                                }
+                                else if (shelter.Status == "Pending")
+                                {
+                                    <span class="badge bg-warning text-dark">Pending</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">Rejected</span>
+                                }
+                            </td>
+
+                            <td>@shelter.CreatedAt.ToString("dd/MM/yyyy")</td>
+
+                            <td>
+                                <a href="/Admin/ShelterDetails/@shelter.Id"
+                                   class="btn btn-sm btn-primary action-btn">View</a>
+
+                                <a href="/Admin/EditShelter/@shelter.Id"
+                                   class="btn btn-sm btn-warning action-btn">Edit</a>
+
+                                <form action="/Admin/DeleteShelter/@shelter.Id"
+                                      method="post"
+                                      style="display:inline"
+                                      onsubmit="return confirm('Are you sure you want to delete this shelter?')">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit"
+                                            class="btn btn-sm btn-danger action-btn">
+                                        Delete
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     }
+
 </div>
