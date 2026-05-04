@@ -125,13 +125,11 @@ namespace SamiSpot.Controllers
         {
             return View();
         }
-
         public IActionResult Contributordashboard()
         {
             return View();
         }
 
-        // ================= LOGOUT =================
 
         public IActionResult Logout()
         {

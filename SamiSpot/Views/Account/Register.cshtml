@@ -1,5 +1,6 @@
 ﻿@model SamiSpot.ViewModels.RegisterViewModel
 
+
 <div class="auth-container">
     <div class="auth-card">
 
@@ -11,6 +12,7 @@
             {
                 <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl" />
             }
+
             <div class="mb-3">
                 <label class="form-label">Username</label>
                 <input asp-for="UserName" class="form-control" />
@@ -40,7 +42,7 @@
             </div>
 
             <p class="text-muted small">
-                Password must be at least 8 characters, include uppercase, lowercase and number.
+                Password must be at least 8 characters , include uppercase, lowercase and number.
             </p>
 
             <button type="submit" class="btn btn-primary auth-btn">Sign Up</button>
@@ -48,8 +50,7 @@
         </form>
 
         <div class="text-center mt-3">
-            <a href="/Account/Login">Already have an account? Login</a>
+            <a href="/Account/Login">Already have an account ? Login</a>
         </div>
-
     </div>
 </div>
