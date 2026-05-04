@@ -7,7 +7,6 @@ namespace SamiSpot.Models
     public class ContributorShelter
     {
         public int Id { get; set; }
-
         [Required]
         public string Name { get; set; }
 
@@ -33,7 +32,6 @@ namespace SamiSpot.Models
         public string Status { get; set; } = "Pending";
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
-
         public List<ContributorShelterImage> Images { get; set; } = new List<ContributorShelterImage>();
     }
 }
