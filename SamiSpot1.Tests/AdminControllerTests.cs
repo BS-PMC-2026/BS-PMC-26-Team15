@@ -20,7 +20,6 @@ namespace SamiSpot1.Tests
             return new ApplicationDbContext(options);
         }
 
-        // ✅ TEST 1: Add user successfully
         [TestMethod]
         public void AddUser_WhenValid_AddsUserAndRedirects()
         {
@@ -42,7 +41,6 @@ namespace SamiSpot1.Tests
             Assert.AreEqual("ManageUsers", result.ActionName);
         }
 
-        // ❌ TEST 2: Duplicate email
         [TestMethod]
         public void AddUser_WhenEmailExists_ReturnsView()
         {
@@ -72,7 +70,6 @@ namespace SamiSpot1.Tests
             Assert.AreEqual(1, context.Users.Count()); // no new user added
         }
 
-        // ❌ TEST 3: Password mismatch
         [TestMethod]
         public void AddUser_WhenPasswordMismatch_ReturnsView()
         {
@@ -86,7 +83,6 @@ namespace SamiSpot1.Tests
                 Password = "Abcd1234"
             };
 
-            // simulate mismatch (depends on your logic)
             controller.ModelState.AddModelError("", "Passwords do not match");
 
             var result = controller.AddUser(user, "User") as ViewResult;
@@ -95,7 +91,6 @@ namespace SamiSpot1.Tests
             Assert.AreEqual(0, context.Users.Count());
         }
 
-        // ✅ TEST 4: Add contributor redirects correctly
         [TestMethod]
         public void AddUser_WhenContributor_RedirectsToContributors()
         {
@@ -116,7 +111,6 @@ namespace SamiSpot1.Tests
             Assert.AreEqual("Contributors", result.ActionName);
         }
 
-        // ✅ TEST 5: ManageUsers returns all non-contributors
         [TestMethod]
         public void ManageUsers_ReturnsOnlyRegularUsers()
         {
@@ -131,7 +125,6 @@ namespace SamiSpot1.Tests
 
             var controller = new AdminController(context);
 
-            // 🔥 FIX: don't cast directly
             var result = controller.ManageUsers();
 
             Assert.IsInstanceOfType(result, typeof(ViewResult));
@@ -145,7 +138,6 @@ namespace SamiSpot1.Tests
         }
 
 
-        // ✅ TEST 6: Contributors returns only contributors
         [TestMethod]
         public void Contributors_ReturnsOnlyContributors()
         {
@@ -170,6 +162,95 @@ namespace SamiSpot1.Tests
             Assert.IsNotNull(model);
             Assert.AreEqual(2, model.Count);
             Assert.IsTrue(model.All(u => u.RoleType == "Contributor"));
+        }
+
+        [TestMethod]
+        public void DeactivateUser_Should_Set_IsActive_False()
+        {
+            using var context = CreateContext(nameof(DeactivateUser_Should_Set_IsActive_False));
+
+            context.Users.Add(new User
+            {
+                Id = 1,
+                UserName = "test",
+                Email = "test@gmail.com",
+                Password = "Abcd1234",
+                RoleType = "User",
+                IsActive = true
+            });
+            context.SaveChanges();
+
+            var controller = new AdminController(context);
+
+            controller.DeactivateUser(1);
+
+            var user = context.Users.Find(1);
+
+            Assert.IsNotNull(user);
+            Assert.IsFalse(user.IsActive);
+        }
+
+        [TestMethod]
+        public void ActivateUser_Should_Set_IsActive_True()
+        {
+            using var context = CreateContext(nameof(ActivateUser_Should_Set_IsActive_True));
+
+            context.Users.Add(new User
+            {
+                Id = 1,
+                UserName = "test",
+                Email = "test@gmail.com",
+                Password = "Abcd1234",
+                RoleType = "User",
+                IsActive = false
+            });
+            context.SaveChanges();
+
+            var controller = new AdminController(context);
+
+            controller.ActivateUser(1);
+
+            var user = context.Users.Find(1);
+
+            Assert.IsNotNull(user);
+            Assert.IsTrue(user.IsActive);
+        }
+
+        [TestMethod]
+        public void DeleteUser_Should_Remove_User()
+        {
+            using var context = CreateContext(nameof(DeleteUser_Should_Remove_User));
+
+            context.Users.Add(new User
+            {
+                Id = 1,
+                UserName = "test",
+                Email = "test@gmail.com",
+                Password = "Abcd1234",
+                RoleType = "User",
+                IsActive = true
+            });
+            context.SaveChanges();
+
+            var controller = new AdminController(context);
+
+            controller.DeleteUser(1);
+
+            var user = context.Users.Find(1);
+
+            Assert.IsNull(user);
+        }
+
+        [TestMethod]
+        public void DeactivateUser_WhenUserNotFound_ShouldNotCrash()
+        {
+            using var context = CreateContext(nameof(DeactivateUser_WhenUserNotFound_ShouldNotCrash));
+
+            var controller = new AdminController(context);
+
+            var result = controller.DeactivateUser(999);
+
+            Assert.IsNotNull(result);
         }
     }
 }

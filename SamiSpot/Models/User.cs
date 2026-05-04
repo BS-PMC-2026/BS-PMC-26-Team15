@@ -11,5 +11,8 @@
         public string Password { get; set; }
 
         public string RoleType { get; set; } // User / Contributor
+
+        public bool IsActive { get; set; } = true;   
+
     }
 }
