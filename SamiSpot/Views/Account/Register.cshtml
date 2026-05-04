@@ -1,115 +1,9 @@
 ﻿@model SamiSpot.ViewModels.RegisterViewModel
 
-<style>
-    body {
-        background: #f4fbfd;
-    }
-
-    .auth-container {
-        min-height: 82vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 30px 15px;
-    }
-
-    .auth-card {
-        width: 100%;
-        max-width: 500px;
-        background: #ffffff;
-        border: 1px solid #d6f2f7;
-        border-radius: 26px;
-        padding: 38px;
-        box-shadow: 0 14px 35px rgba(0,0,0,0.07);
-        position: relative;
-        overflow: hidden;
-    }
-
-        .auth-card::before {
-            content: "";
-            position: absolute;
-            top: -80px;
-            right: -80px;
-            width: 180px;
-            height: 180px;
-            background: #eaf9fc;
-            border-radius: 50%;
-        }
-
-    .auth-title {
-        color: #2c4a52;
-        font-weight: 700;
-        font-size: 34px;
-        text-align: center;
-        margin-bottom: 8px;
-        position: relative;
-    }
-
-    .auth-subtitle {
-        color: #3c5c63;
-        text-align: center;
-        margin-bottom: 26px;
-        position: relative;
-    }
-
-    .form-label {
-        color: #2c4a52;
-        font-weight: 600;
-    }
-
-    .form-control {
-        border-radius: 12px;
-        border: 1px solid #d6f2f7;
-        padding: 12px 14px;
-    }
-
-        .form-control:focus {
-            border-color: #4bbfd3;
-            box-shadow: 0 0 0 0.2rem rgba(75,191,211,0.18);
-        }
-
-    .password-note {
-        background: #eaf9fc;
-        border: 1px solid #d6f2f7;
-        border-radius: 12px;
-        padding: 12px 14px;
-        color: #3c5c63;
-        font-size: 14px;
-    }
-
-    .auth-btn {
-        width: 100%;
-        background: #4bbfd3;
-        border: none;
-        border-radius: 30px;
-        padding: 12px;
-        font-weight: 600;
-        margin-top: 10px;
-        box-shadow: 0 8px 18px rgba(75,191,211,0.25);
-        transition: all 0.25s ease;
-    }
-
-        .auth-btn:hover {
-            background: #36aeca;
-            transform: translateY(-2px);
-        }
-
-    .login-link {
-        color: #2c4a52;
-        font-weight: 600;
-        text-decoration: none;
-    }
-
-        .login-link:hover {
-            color: #4bbfd3;
-        }
-</style>
-
 <div class="auth-container">
     <div class="auth-card">
 
-        <h3 class="auth-title">Create Account</h3>
-        <p class="auth-subtitle">Join SamiSpot and help build a safer community.</p>
+        <h3 class="auth-title">Sign Up</h3>
 
         <form asp-action="Register" method="post">
 
@@ -146,17 +40,16 @@
                 </select>
             </div>
 
-            <p class="password-note">
-                🔐 Password must be at least 8 characters, include uppercase, lowercase and number.
+            <p class="text-muted small">
+                Password must be at least 8 characters , include uppercase, lowercase and number.
             </p>
 
             <button type="submit" class="btn btn-primary auth-btn">Sign Up</button>
 
         </form>
 
-        <div class="text-center mt-4">
-            <a href="/Account/Login" class="login-link">Already have an account? Login →</a>
+        <div class="text-center mt-3">
+            <a href="/Account/Login">Already have an account ? Login</a>
         </div>
-
     </div>
 </div>

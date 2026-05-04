@@ -156,5 +156,20 @@ namespace SamiSpot1.Tests
             Assert.IsNull(controller.HttpContext.Session.GetString("UserName"));
             Assert.IsNull(controller.HttpContext.Session.GetString("RoleType"));
         }
+
+        [TestMethod]
+        public void Register_Post_WhenModelIsInvalid_ReturnsView()
+        {
+            using var context = CreateContext(nameof(Register_Post_WhenModelIsInvalid_ReturnsView));
+            var controller = CreateControllerWithHttp(context);
+
+            controller.ModelState.AddModelError("UserName", "Required");
+
+            var model = new RegisterViewModel();
+
+            var result = controller.Register(model, null) as ViewResult;
+
+            Assert.IsNotNull(result);
+        }
     }
 }
