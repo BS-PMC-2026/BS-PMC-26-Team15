@@ -99,6 +99,12 @@ namespace SamiSpot.Controllers
                 return View(model);
             }
 
+            if (!user.IsActive)
+            {
+                ModelState.AddModelError("", "Your account is deactivated. Contact admin.");
+                return View(model);
+            }
+
             HttpContext.Session.SetString("UserName", user.UserName);
             HttpContext.Session.SetString("RoleType", user.RoleType);
 

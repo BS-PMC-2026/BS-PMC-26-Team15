@@ -311,6 +311,7 @@ namespace SamiSpot.Controllers
         public IActionResult ManageUsers()
         {
             var users = _context.Users
+                .AsNoTracking()
                 .Where(u => u.RoleType == "User")   
                 .OrderBy(u => u.Id)                 
                 .ToList();
@@ -321,6 +322,7 @@ namespace SamiSpot.Controllers
         public IActionResult Contributors()
         {
             var contributors = _context.Users
+                .AsNoTracking()
                 .Where(u => u.RoleType == "Contributor")   
                 .OrderBy(u => u.Id)                        
                 .ToList();
@@ -395,8 +397,13 @@ namespace SamiSpot.Controllers
             return RedirectToAction("ManageUsers");
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult DeactivateUser(int id)
         {
+
+            System.Diagnostics.Debug.WriteLine("DEACTIVATE HIT");
+
             var user = _context.Users.Find(id);
 
             if (user != null)
@@ -409,8 +416,11 @@ namespace SamiSpot.Controllers
             }
 
             return RedirectToAction("ManageUsers");
+
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult ActivateUser(int id)
         {
             var user = _context.Users.Find(id);
@@ -427,6 +437,8 @@ namespace SamiSpot.Controllers
             return RedirectToAction("ManageUsers");
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult DeleteUser(int id)
         {
             var user = _context.Users.Find(id);
@@ -446,6 +458,8 @@ namespace SamiSpot.Controllers
 
             return RedirectToAction("ManageUsers");
         }
+
+
 
     }
 }
