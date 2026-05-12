@@ -26,3 +26,14 @@ jobs:
 
     - name: Test
       run: dotnet test SamiSpot1.Tests/SamiSpot1.Tests.csproj --no-build --verbosity normal
+
+    - name: Publish
+      run: dotnet publish SamiSpot.sln -c Release -o publish
+
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: samispot-build-${{ github.run_number }}
+        path: publish
+        if-no-files-found: error  
+        retention-days: 14
