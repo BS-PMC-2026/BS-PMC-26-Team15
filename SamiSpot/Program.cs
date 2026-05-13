@@ -10,7 +10,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<CityImportService>();
 builder.Services.AddScoped<RedAlertService>();
-builder.Services.AddHostedService<RedAlertBackgroundService>();
+if (!isTesting)
+{
+    builder.Services.AddHostedService<RedAlertBackgroundService>();
+}
 builder.Services.AddScoped<CityCoordinateService>();
 
 
