@@ -25,7 +25,9 @@ jobs:
       run: dotnet build SamiSpot.sln --no-restore
 
     - name: Test
-      run: dotnet test SamiSpot1.Tests/SamiSpot1.Tests.csproj --no-build --verbosity normal
+      run: dotnet test SamiSpot1.Tests/SamiSpot1.Tests.csproj --verbosity normal
+      env:
+        ASPNETCORE_ENVIRONMENT: Testing
 
     - name: Publish
       run: dotnet publish SamiSpot.sln -c Release -o publish
@@ -35,5 +37,5 @@ jobs:
       with:
         name: samispot-build-${{ github.run_number }}
         path: publish
-        if-no-files-found: error  
+        if-no-files-found: error
         retention-days: 14
