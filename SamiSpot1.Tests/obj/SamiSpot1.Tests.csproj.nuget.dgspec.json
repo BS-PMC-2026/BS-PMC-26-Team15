@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user2\\Desktop\\SamiSpot-Dev\\BS-PMC-26-Team15\\SamiSpot1.Tests\\SamiSpot1.Tests.csproj": {}
+    "C:\\Users\\alafi\\source\\repos\\SamiSpot\\SamiSpot1.Tests\\SamiSpot1.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user2\\Desktop\\SamiSpot-Dev\\BS-PMC-26-Team15\\SamiSpot1.Tests\\SamiSpot1.Tests.csproj": {
+    "C:\\Users\\alafi\\source\\repos\\SamiSpot\\SamiSpot1.Tests\\SamiSpot1.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user2\\Desktop\\SamiSpot-Dev\\BS-PMC-26-Team15\\SamiSpot1.Tests\\SamiSpot1.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\alafi\\source\\repos\\SamiSpot\\SamiSpot1.Tests\\SamiSpot1.Tests.csproj",
         "projectName": "SamiSpot1.Tests",
-        "projectPath": "C:\\Users\\user2\\Desktop\\SamiSpot-Dev\\BS-PMC-26-Team15\\SamiSpot1.Tests\\SamiSpot1.Tests.csproj",
-        "packagesPath": "C:\\Users\\user2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user2\\Desktop\\SamiSpot-Dev\\BS-PMC-26-Team15\\SamiSpot1.Tests\\obj\\",
+        "projectPath": "C:\\Users\\alafi\\source\\repos\\SamiSpot\\SamiSpot1.Tests\\SamiSpot1.Tests.csproj",
+        "packagesPath": "C:\\Users\\alafi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alafi\\source\\repos\\SamiSpot\\SamiSpot1.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\user2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\alafi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,14 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\user2\\Desktop\\SamiSpot-Dev\\BS-PMC-26-Team15\\SamiSpot\\SamiSpot.csproj": {
-                "projectPath": "C:\\Users\\user2\\Desktop\\SamiSpot-Dev\\BS-PMC-26-Team15\\SamiSpot\\SamiSpot.csproj"
+              "C:\\Users\\alafi\\source\\repos\\SamiSpot\\SamiSpot\\SamiSpot.csproj": {
+                "projectPath": "C:\\Users\\alafi\\source\\repos\\SamiSpot\\SamiSpot\\SamiSpot.csproj"
               }
             }
           }
@@ -46,9 +47,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -78,6 +79,10 @@
               "target": "Package",
               "version": "[4.8.1, )"
             },
+            "OpenAI": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
             "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -105,24 +110,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\user2\\Desktop\\SamiSpot-Dev\\BS-PMC-26-Team15\\SamiSpot\\SamiSpot.csproj": {
+    "C:\\Users\\alafi\\source\\repos\\SamiSpot\\SamiSpot\\SamiSpot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user2\\Desktop\\SamiSpot-Dev\\BS-PMC-26-Team15\\SamiSpot\\SamiSpot.csproj",
+        "projectUniqueName": "C:\\Users\\alafi\\source\\repos\\SamiSpot\\SamiSpot\\SamiSpot.csproj",
         "projectName": "SamiSpot",
-        "projectPath": "C:\\Users\\user2\\Desktop\\SamiSpot-Dev\\BS-PMC-26-Team15\\SamiSpot\\SamiSpot.csproj",
-        "packagesPath": "C:\\Users\\user2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user2\\Desktop\\SamiSpot-Dev\\BS-PMC-26-Team15\\SamiSpot\\obj\\",
+        "projectPath": "C:\\Users\\alafi\\source\\repos\\SamiSpot\\SamiSpot\\SamiSpot.csproj",
+        "packagesPath": "C:\\Users\\alafi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alafi\\source\\repos\\SamiSpot\\SamiSpot\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\user2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\alafi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -131,6 +136,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -147,9 +153,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -201,6 +207,10 @@
               "target": "Package",
               "version": "[13.0.5-beta1, )"
             },
+            "OpenAI": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
             "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -231,7 +241,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

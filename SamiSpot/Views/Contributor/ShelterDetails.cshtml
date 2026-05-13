@@ -205,7 +205,7 @@
 
     <div class="top-row">
         <div>
-            <h2 class="page-title">🏠 Shelter Details</h2>
+            <h2 class="page-title"> Shelter Details</h2>
             <p class="page-subtitle">View full information about this submitted shelter.</p>
         </div>
 
@@ -259,23 +259,23 @@
 
             @if (!string.IsNullOrEmpty(Model.Description))
             {
-                <div class="detail-label">📝 Description</div>
+                <div class="detail-label"> Description</div>
                 <div class="detail-value">@Model.Description</div>
             }
 
-            <div class="detail-label">📅 Date Added</div>
+            <div class="detail-label"> Date Added</div>
             <div class="detail-value">@Model.CreatedAt.ToString("dd/MM/yyyy")</div>
 
             @if (Model.Size != null)
             {
-                <div class="detail-label">👥 Capacity</div>
+                <div class="detail-label"> Capacity</div>
                 <div class="detail-value">@Model.Size people</div>
             }
 
-            <div class="detail-label">✅ Available</div>
+            <div class="detail-label">Available</div>
             <div class="detail-value">@(Model.IsAvailable ? "Yes" : "No")</div>
 
-            <div class="detail-label">🗺️ Location</div>
+            <div class="detail-label"> Location</div>
             <div class="detail-value">@Model.Latitude , @Model.Longitude</div>
 
         </div>

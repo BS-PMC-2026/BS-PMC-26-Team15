@@ -1,112 +1,517 @@
 ﻿@{
     ViewData["Title"] = "Admin Dashboard";
+    var userName = Context.Session.GetString("UserName") ?? "Admin";
+    int totalUsers = ViewBag.TotalUsers ?? 0;
+    int pending = ViewBag.PendingApprovals ?? 0;
+    int shelters = ViewBag.TotalShelters ?? 0;
+    int contributors = ViewBag.Contributors ?? 0;
 }
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@tabler/icons-webfont@@3.19.0/dist/tabler-icons.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
 <style>
+    .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
     body {
-        background: #f4fbfd;
+        background: linear-gradient(135deg, #f8fbfc 0%, #eef8fa 45%, #fff5f3 100%);
+        padding: 0 !important;
     }
 
-    .dashboard-header {
-        text-align: center;
-        margin-top: 25px;
-        margin-bottom: 10px;
+    :root {
+        --brand: #4bbfd3;
+        --brand-mid: #35a8be;
+        --brand-pale: #d8f4f9;
+        --dark-red: #7f1d1d;
+        --soft-red: #fee2e2;
+        --text-primary: #111827;
+        --text-secondary: #6b7280;
+        --border-mid: rgba(75,191,211,.35);
     }
 
-    .dashboard-title {
-        font-size: 34px;
-        font-weight: 700;
-        color: #2c4a52;
+    .adm {
+        width: 100%;
+        min-height: 100vh;
+        padding: 4rem 7rem;
+        font-family: 'DM Sans', sans-serif;
     }
 
-    .dashboard-sub {
-        color: #5a7c84;
-        margin-top: 5px;
-    }
-
-    .dashboard-grid {
+    .adm-hdr {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-        gap: 22px;
-        padding: 40px;
+        grid-template-columns: 1.1fr .9fr;
+        gap: 3rem;
+        align-items: center;
+        margin-bottom: 3rem;
     }
 
-    .dash-card {
-        display: flex;
-        flex-direction: column;
+    .adm-eyebrow {
+        display: inline-flex;
         align-items: center;
-        justify-content: center;
-        height: 150px;
-        background: linear-gradient(135deg, #ffffff, #eaf9fc);
-        border-radius: 20px;
-        border: 1px solid #d6f2f7;
-        text-decoration: none;
-        color: #2c4a52;
-        font-size: 18px;
-        font-weight: 600;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-        transition: all 0.25s ease;
+        gap: 8px;
+        font-family: 'DM Mono', monospace;
+        font-size: 12px;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: var(--dark-red);
+        border: 1px solid rgba(127,29,29,.2);
+        background: var(--soft-red);
+        padding: 8px 16px;
+        border-radius: 100px;
+        width: fit-content;
+        margin-bottom: 1.4rem;
+    }
+
+    .adm-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--dark-red);
+        animation: admPulse 2s ease-in-out infinite;
+    }
+
+    .adm-h1 {
+        font-size: clamp(3rem, 6vw, 5.5rem);
+        font-weight: 800;
+        letter-spacing: -.06em;
+        line-height: .95;
+        color: var(--text-primary);
+        margin-bottom: 1rem;
+    }
+
+        .adm-h1 span {
+            color: var(--brand);
+        }
+
+    .adm-sub {
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        line-height: 1.7;
+        max-width: 650px;
+    }
+
+    .adm-info {
+        background: #ffffff;
+        border: 1px solid rgba(127,29,29,.15);
+        border-radius: 28px;
+        padding: 2.4rem;
+        box-shadow: 0 25px 60px rgba(17,24,39,.08);
         position: relative;
         overflow: hidden;
     }
 
-        .dash-card::before {
-            content: "";
+        .adm-info::before {
+            content: '';
             position: absolute;
-            width: 120px;
-            height: 120px;
-            background: #eaf9fc;
-            border-radius: 50%;
-            top: -40px;
-            right: -40px;
-            z-index: 0;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(224,59,43,.18), transparent 45%);
+            pointer-events: none;
         }
 
-        .dash-card span {
-            position: relative;
-            z-index: 1;
-            margin-top: 6px;
-        }
-
-    .dash-icon {
-        font-size: 28px;
-        margin-bottom: 8px;
+    .adm-who {
+        position: relative;
+        font-size: 1.45rem;
+        font-weight: 700;
+        margin-bottom: .8rem;
+        color: var(--dark-red);
     }
 
-    .dash-card:hover {
-        transform: translateY(-6px) scale(1.02);
-        box-shadow: 0 14px 30px rgba(0,0,0,0.1);
-        border-color: #bdebf3;
+    .adm-pill {
+        position: relative;
+        color: var(--text-secondary);
+        font-size: 1rem;
+        line-height: 1.7;
     }
 
-        .dash-card:hover .dash-icon {
-            transform: scale(1.2);
+    .adm-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .adm-s {
+        background: rgba(255,255,255,.92);
+        border: 1px solid var(--border-mid);
+        border-radius: 22px;
+        padding: 1.5rem;
+        box-shadow: 0 18px 45px rgba(75,191,211,.10);
+    }
+
+    .adm-s-pending {
+        border-color: rgba(127,29,29,.25);
+        background: #fff8f8;
+    }
+
+    .adm-s-lbl {
+        font-size: 11px;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: var(--text-secondary);
+        margin-bottom: .7rem;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+    }
+
+        .adm-s-lbl i {
+            color: var(--brand);
+            font-size: 17px;
         }
+
+    .adm-s-pending .adm-s-lbl i,
+    .adm-s-pending .adm-s-val {
+        color: var(--dark-red);
+    }
+
+    .adm-s-val {
+        font-size: 2.4rem;
+        font-weight: 800;
+        color: var(--text-primary);
+        line-height: 1;
+    }
+
+    .adm-s-sub {
+        margin-top: .45rem;
+        font-size: .9rem;
+        color: var(--text-secondary);
+    }
+
+    .adm-s-bar {
+        height: 5px;
+        background: var(--brand-pale);
+        border-radius: 20px;
+        margin-top: 1rem;
+        overflow: hidden;
+    }
+
+    .adm-s-fill {
+        height: 100%;
+        background: var(--brand);
+        border-radius: 20px;
+    }
+
+    .adm-s-fill-warn {
+        height: 100%;
+        background: var(--dark-red);
+        border-radius: 20px;
+    }
+
+    .adm-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.2rem;
+    }
+
+    .adm-card {
+        min-height: 250px;
+        display: flex;
+        flex-direction: column;
+        background: rgba(255,255,255,.92);
+        border: 1px solid var(--border-mid);
+        border-radius: 26px;
+        padding: 2rem;
+        text-decoration: none;
+        color: var(--text-primary);
+        transition: transform .2s, box-shadow .2s, border-color .2s;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 18px 45px rgba(75,191,211,.10);
+    }
+
+        .adm-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(75,191,211,.16), transparent 55%);
+            opacity: 0;
+            transition: opacity .2s;
+        }
+
+        .adm-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 65px rgba(75,191,211,.22);
+            border-color: var(--brand);
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+            .adm-card:hover::before {
+                opacity: 1;
+            }
+
+    .adm-card-pending {
+        border-color: rgba(127,29,29,.25);
+    }
+
+        .adm-card-pending::before {
+            background: linear-gradient(135deg, rgba(127,29,29,.15), transparent 55%);
+            opacity: 1;
+        }
+
+    .adm-card-top,
+    .adm-card-lbl,
+    .adm-card-desc,
+    .adm-card-ft {
+        position: relative;
+    }
+
+    .adm-card-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 1.2rem;
+    }
+
+    .adm-ico {
+        width: 62px;
+        height: 62px;
+        border-radius: 20px;
+        background: var(--brand-pale);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--brand-mid);
+        font-size: 29px;
+    }
+
+    .adm-card-pending .adm-ico {
+        background: var(--soft-red);
+        color: var(--dark-red);
+    }
+
+    .adm-arr {
+        color: var(--brand);
+        font-size: 20px;
+        opacity: 0;
+        transition: .15s;
+    }
+
+    .adm-card:hover .adm-arr {
+        opacity: 1;
+        transform: translate(4px, -4px);
+    }
+
+    .adm-card-lbl {
+        font-size: 1.35rem;
+        font-weight: 800;
+        margin-bottom: .6rem;
+    }
+
+    .adm-card-desc {
+        font-size: .95rem;
+        color: var(--text-secondary);
+        line-height: 1.7;
+        flex: 1;
+    }
+
+    .adm-card-ft {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1.5rem;
+    }
+
+    .adm-cta {
+        font-size: .95rem;
+        font-weight: 700;
+        color: var(--brand);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .adm-card-pending .adm-cta {
+        color: var(--dark-red);
+    }
+
+    .adm-badge {
+        font-size: 11px;
+        background: var(--brand-pale);
+        color: var(--brand-mid);
+        border: 1px solid var(--border-mid);
+        padding: 5px 10px;
+        border-radius: 100px;
+        font-family: 'DM Mono', monospace;
+    }
+
+    .adm-badge-warn {
+        background: var(--soft-red);
+        color: var(--dark-red);
+        border-color: rgba(127,29,29,.2);
+    }
+
+    .adm-fade {
+        animation: admFadeUp .5s ease both;
+    }
+
+    @@keyframes admPulse {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        50% {
+            opacity: .45;
+            transform: scale(.65);
+        }
+    }
+
+    @@keyframes admFadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(14px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @@media (max-width: 1100px) {
+        .adm {
+            padding: 2rem;
+        }
+
+        .adm-hdr {
+            grid-template-columns: 1fr;
+        }
+
+        .adm-stats,
+        .adm-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @@media (max-width: 650px) {
+        .adm-stats,
+        .adm-grid {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>
 
-<div class="dashboard-header">
-    <div class="dashboard-title">👑 Admin Dashboard</div>
-    <div class="dashboard-sub">Manage the system, users, and shelters</div>
-    
-</div>
+<div class="adm">
 
-<div class="dashboard-grid">
+    <div class="adm-hdr">
+        <div>
+            <div class="adm-eyebrow adm-fade">
+                <span class="adm-dot"></span> Admin panel
+            </div>
 
-    <a href="/Admin/ManageUsers" class="dash-card">
-        <div class="dash-icon">👥</div>
-        <span>Manage Users</span>
-    </a>
-    <a href="/Admin/PendingShelters" class="dash-card">
-        <div class="dash-icon">⏳</div>
-        <span>Pending Approvals</span>
-    </a>
-    <a href="/Admin/AllShelters" class="dash-card">
-        <div class="dash-icon">🏠</div>
-        <span>All Shelters</span>
-    </a>
-    <a href="/Admin/Contributors" class="dash-card">
-        <div class="dash-icon">🛠️</div>
-        <span>Manage Contributors</span>
-    </a>
+            <h1 class="adm-h1 adm-fade">
+                System <span>control.</span>
+            </h1>
+
+            <p class="adm-sub adm-fade">
+                Manage users, shelters, pending approvals, and contributors from one powerful dashboard.
+            </p>
+        </div>
+
+        <div class="adm-info adm-fade">
+            <div class="adm-who">Signed in as @userName</div>
+            <div class="adm-pill">
+                All systems online. Pending shelter submissions should be reviewed before appearing on the public safety map.
+            </div>
+        </div>
+    </div>
+
+    <div class="adm-stats">
+        <div class="adm-s adm-fade">
+            <div class="adm-s-lbl"><i class="ti ti-users"></i>Total users</div>
+            <div class="adm-s-val">@totalUsers</div>
+            <div class="adm-s-sub">Registered accounts</div>
+            <div class="adm-s-bar"><div class="adm-s-fill" style="width:100%"></div></div>
+        </div>
+
+        <div class="adm-s adm-s-pending adm-fade">
+            <div class="adm-s-lbl"><i class="ti ti-clock-hour-4"></i>Pending approvals</div>
+            <div class="adm-s-val">@pending</div>
+            <div class="adm-s-sub">Awaiting review</div>
+            <div class="adm-s-bar">
+                <div class="@(pending > 0 ? "adm-s-fill-warn" : "adm-s-fill")" style="width:@(pending > 0 ? "60%" : "0%")"></div>
+            </div>
+        </div>
+
+        <div class="adm-s adm-fade">
+            <div class="adm-s-lbl"><i class="ti ti-building-community"></i>Total shelters</div>
+            <div class="adm-s-val">@shelters</div>
+            <div class="adm-s-sub">Approved and live</div>
+            <div class="adm-s-bar"><div class="adm-s-fill" style="width:80%"></div></div>
+        </div>
+
+        <div class="adm-s adm-fade">
+            <div class="adm-s-lbl"><i class="ti ti-tool"></i>Contributors</div>
+            <div class="adm-s-val">@contributors</div>
+            <div class="adm-s-sub">Active contributors</div>
+            <div class="adm-s-bar"><div class="adm-s-fill" style="width:65%"></div></div>
+        </div>
+    </div>
+
+    <div class="adm-grid">
+        <a href="/Admin/ManageUsers" class="adm-card adm-fade">
+            <div class="adm-card-top">
+                <div class="adm-ico"><i class="ti ti-users"></i></div>
+                <i class="ti ti-arrow-up-right adm-arr"></i>
+            </div>
+
+            <div class="adm-card-lbl">Manage users</div>
+            <div class="adm-card-desc">View, edit, and moderate all registered accounts.</div>
+
+            <div class="adm-card-ft">
+                <span class="adm-cta"><i class="ti ti-arrow-right"></i> Open</span>
+                <span class="adm-badge">@(totalUsers) users</span>
+            </div>
+        </a>
+
+        <a href="/Admin/PendingShelters" class="adm-card adm-card-pending adm-fade">
+            <div class="adm-card-top">
+                <div class="adm-ico"><i class="ti ti-clock-hour-4"></i></div>
+                <i class="ti ti-arrow-up-right adm-arr"></i>
+            </div>
+
+            <div class="adm-card-lbl">Pending approvals</div>
+            <div class="adm-card-desc">Review shelter submissions before they go live.</div>
+
+            <div class="adm-card-ft">
+                <span class="adm-cta"><i class="ti ti-arrow-right"></i> Review</span>
+                <span class="adm-badge @(pending > 0 ? "adm-badge-warn" : "")">@(pending) pending</span>
+            </div>
+        </a>
+
+        <a href="/Admin/AllShelters" class="adm-card adm-fade">
+            <div class="adm-card-top">
+                <div class="adm-ico"><i class="ti ti-building-community"></i></div>
+                <i class="ti ti-arrow-up-right adm-arr"></i>
+            </div>
+
+            <div class="adm-card-lbl">All shelters</div>
+            <div class="adm-card-desc">Browse and manage every shelter in the system.</div>
+
+            <div class="adm-card-ft">
+                <span class="adm-cta"><i class="ti ti-arrow-right"></i> View all</span>
+                <span class="adm-badge">@(shelters) shelters</span>
+            </div>
+        </a>
+
+        <a href="/Admin/Contributors" class="adm-card adm-fade">
+            <div class="adm-card-top">
+                <div class="adm-ico"><i class="ti ti-tool"></i></div>
+                <i class="ti ti-arrow-up-right adm-arr"></i>
+            </div>
+
+            <div class="adm-card-lbl">Manage contributors</div>
+            <div class="adm-card-desc">Assign roles and oversee contributor access.</div>
+
+            <div class="adm-card-ft">
+                <span class="adm-cta"><i class="ti ti-arrow-right"></i> Open</span>
+                <span class="adm-badge">@(contributors) contributors</span>
+            </div>
+        </a>
+    </div>
 
 </div>

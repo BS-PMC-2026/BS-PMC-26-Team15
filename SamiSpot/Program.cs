@@ -13,6 +13,7 @@ builder.Services.AddScoped<RedAlertService>();
 builder.Services.AddHostedService<RedAlertBackgroundService>();
 builder.Services.AddScoped<CityCoordinateService>();
 
+
 if (!isTesting)
 {
     builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -21,6 +22,7 @@ if (!isTesting)
 
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession();
+//builder.Services.AddScoped<OpenAiService>();
 
 var app = builder.Build();
 
@@ -58,8 +60,15 @@ if (!app.Environment.IsEnvironment("Testing"))
             UserName NVARCHAR(MAX),
             Email NVARCHAR(MAX),
             Password NVARCHAR(MAX),
-            RoleType NVARCHAR(MAX)
+            RoleType NVARCHAR(MAX),
+            IsActive BIT NOT NULL DEFAULT 1
         )");
+
+        context.Database.ExecuteSqlRaw(@"
+IF COL_LENGTH('Users', 'IsActive') IS NULL
+ALTER TABLE Users
+ADD IsActive BIT NOT NULL DEFAULT 1
+");
         context.Database.ExecuteSqlRaw(@"
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='ContributorShelters' AND xtype='U')
 CREATE TABLE ContributorShelters (
