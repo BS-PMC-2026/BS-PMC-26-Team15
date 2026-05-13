@@ -23,5 +23,8 @@ namespace SamiSpot.Data
         public DbSet<FeedbackReply> FeedbackReplies { get; set; }
         public DbSet<ContributorShelter> ContributorShelters { get; set; }
         public DbSet<ContributorShelterImage> ContributorShelterImages { get; set; }
+       // public DbSet<ChatSession> ChatSessions { get; set; }
+
+       // public DbSet<ChatMessage> ChatMessages { get; set; }
     }
 }

@@ -105,6 +105,7 @@ namespace SamiSpot.Controllers
                 return View(model);
             }
 
+            HttpContext.Session.SetString("UserId", user.Id.ToString());
             HttpContext.Session.SetString("UserName", user.UserName);
             HttpContext.Session.SetString("RoleType", user.RoleType);
 
@@ -129,13 +130,25 @@ namespace SamiSpot.Controllers
         }
         public IActionResult Admindashboard()
         {
+            if (HttpContext.Session.GetString("RoleType") != "Admin")
+                return RedirectToAction("Login");
+
+            ViewBag.TotalUsers = _context.Users.Count();
+            ViewBag.PendingApprovals = _context.ContributorShelters.Count(s => s.Status == "Pending");
+            ViewBag.TotalShelters = _context.ContributorShelters.Count(s => s.Status == "Approved")
+                                     + _context.Shelters.Count();
+            ViewBag.Contributors = _context.Users.Count(u => u.RoleType == "Contributor");
+
             return View();
         }
         public IActionResult Contributordashboard()
         {
             return View();
         }
-
+        private int? GetCurrentUserId()
+        {
+            return HttpContext.Session.GetInt32("UserId");
+        }
 
         public IActionResult Logout()
         {

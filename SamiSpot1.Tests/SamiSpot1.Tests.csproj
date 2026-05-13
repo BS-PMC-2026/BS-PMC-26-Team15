@@ -18,6 +18,7 @@
     <PackageReference Include="Moq" Version="4.8.1" />
     <PackageReference Include="MSTest" Version="3.6.1" />
     <PackageReference Include="MSTest.TestAdapter" Version="3.6.1" />
+    <PackageReference Include="OpenAI" Version="2.1.0" />
     <PackageReference Include="xunit" Version="1.9.0.1566" />
   </ItemGroup>
 

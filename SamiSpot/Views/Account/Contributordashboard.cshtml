@@ -1,100 +1,406 @@
-﻿@{
-    ViewData["Title"] = "Contributor Dashboard";
-}
+﻿<style>
+    .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
 
-<style>
     body {
-        background: #f4fbfd;
+        background: linear-gradient(135deg, #f8fbfc 0%, #eef8fa 45%, #fff5f3 100%);
+        padding: 0 !important;
     }
 
-    .dashboard-header {
-        text-align: center;
-        margin-top: 25px;
-        margin-bottom: 10px;
+    :root {
+        --brand: #4bbfd3;
+        --brand-mid: #35a8be;
+        --brand-pale: #d8f4f9;
+        --dark-red: #7f1d1d;
+        --soft-red: #fee2e2;
+        --text-primary: #111827;
+        --text-secondary: #6b7280;
+        --border-mid: rgba(75,191,211,.35);
     }
 
-    .dashboard-title {
-        font-size: 32px;
-        font-weight: 700;
-        color: #2c4a52;
-    }
-    .dashboard-sub {
-        color: #5a7c84;
-        margin-top: 5px;
-    }
-
-    .dashboard-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 24px;
-        padding: 40px;
-    }
-
-    .dash-card {
+    .db-wrapper {
+        width: 100%;
+        min-height: 100vh;
+        padding: 4rem 7rem;
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
-        height: 160px;
-        background: linear-gradient(135deg, #ffffff, #f0fcf6);
-        border-radius: 22px;
-        border: 1px solid #d9f3e3;
-        text-decoration: none;
-        color: #2c4a52;
-        font-size: 18px;
-        font-weight: 600;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-        transition: all 0.25s ease;
+    }
+
+    .db-hero {
+        display: grid;
+        grid-template-columns: 1.1fr .9fr;
+        gap: 3rem;
+        align-items: center;
+        margin-bottom: 3rem;
+    }
+
+    .db-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'DM Mono', monospace;
+        font-size: 12px;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: var(--dark-red);
+        border: 1px solid rgba(127,29,29,.2);
+        background: var(--soft-red);
+        padding: 8px 16px;
+        border-radius: 100px;
+        width: fit-content;
+        margin-bottom: 1.4rem;
+    }
+
+    .db-badge-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--dark-red);
+        animation: dbPulse 2s ease-in-out infinite;
+    }
+
+    .db-title {
+        font-family: 'DM Sans', sans-serif;
+        font-size: clamp(3rem, 6vw, 5.5rem);
+        font-weight: 800;
+        letter-spacing: -.06em;
+        line-height: .95;
+        color: var(--text-primary);
+        margin-bottom: 1rem;
+    }
+
+        .db-title span {
+            color: var(--brand);
+        }
+
+    .db-sub {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        line-height: 1.7;
+        max-width: 650px;
+    }
+
+    .db-info-box {
+        background: #ffffff;
+        border: 1px solid rgba(127,29,29,.15);
+        border-radius: 28px;
+        padding: 2.4rem;
+        box-shadow: 0 25px 60px rgba(17,24,39,.08);
         position: relative;
         overflow: hidden;
     }
 
-        .dash-card::before {
-            content: "";
+        .db-info-box::before {
+            content: '';
             position: absolute;
-            width: 130px;
-            height: 130px;
-            background: #e8f9f0;
-            border-radius: 50%;
-            top: -40px;
-            right: -40px;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(224,59,43,.18), transparent 45%);
+            pointer-events: none;
         }
 
-    .dash-icon {
-        font-size: 30px;
-        margin-bottom: 10px;
-        z-index: 1;
+    .db-info-title {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 1.45rem;
+        font-weight: 700;
+        margin-bottom: .8rem;
+        color: var(--dark-red);
+        position: relative;
     }
 
-    .dash-card span {
-        z-index: 1;
+    .db-info-text {
+        font-family: 'DM Sans', sans-serif;
+        color: var(--text-secondary);
+        font-size: 1rem;
+        line-height: 1.7;
+        position: relative;
     }
 
-    .dash-card:hover {
-        transform: translateY(-6px) scale(1.02);
-        box-shadow: 0 14px 30px rgba(0,0,0,0.1);
-        border-color: #bde8cd;
+    .db-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-top: 1.8rem;
+        position: relative;
     }
 
-        .dash-card:hover .dash-icon {
-            transform: scale(1.2);
+    .db-stat {
+        background: #f9fafb;
+        border: 1px solid #eef2f7;
+        border-radius: 18px;
+        padding: 1.1rem;
+    }
+
+        .db-stat strong {
+            display: block;
+            font-size: 1.6rem;
+            color: var(--text-primary);
+            font-family: 'DM Sans', sans-serif;
         }
+
+        .db-stat span {
+            font-size: .82rem;
+            color: var(--text-secondary);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+    .db-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(320px, 1fr));
+        gap: 1.7rem;
+    }
+
+    .db-card {
+        min-height: 260px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+        background: rgba(255,255,255,.92);
+        border: 1px solid var(--border-mid);
+        border-radius: 26px;
+        padding: 2.4rem;
+        text-decoration: none;
+        color: var(--text-primary);
+        transition: transform .2s, box-shadow .2s, border-color .2s;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 18px 45px rgba(75,191,211,.10);
+    }
+
+        .db-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(75,191,211,.16), transparent 55%);
+            opacity: 0;
+            transition: opacity .2s;
+        }
+
+        .db-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 65px rgba(75,191,211,.22);
+            border-color: var(--brand);
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+            .db-card:hover::before {
+                opacity: 1;
+            }
+
+    .db-icon {
+        width: 68px;
+        height: 68px;
+        border-radius: 20px;
+        background: var(--brand-pale);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+        .db-icon.red {
+            background: var(--soft-red);
+        }
+
+        .db-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--brand);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .db-icon.red svg {
+            stroke: var(--dark-red);
+        }
+
+    .db-card-title {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin: 0 0 .5rem;
+    }
+
+    .db-card-desc {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 1rem;
+        color: var(--text-secondary);
+        margin: 0;
+        line-height: 1.7;
+        max-width: 430px;
+    }
+
+    .db-card-arrow {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: .95rem;
+        font-weight: 700;
+        color: var(--brand);
+        font-family: 'DM Sans', sans-serif;
+        position: relative;
+    }
+
+        .db-card-arrow svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--brand);
+            fill: none;
+            stroke-width: 2;
+            transition: transform .15s;
+        }
+
+    .db-card:hover .db-card-arrow svg {
+        transform: translateX(5px);
+    }
+
+    .db-fade {
+        animation: dbFadeUp .5s ease both;
+    }
+
+    @@keyframes dbPulse {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        50% {
+            opacity: .45;
+            transform: scale(.65);
+        }
+    }
+
+    @@keyframes dbFadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(14px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @@media (max-width: 900px) {
+        .db-wrapper {
+            padding: 2rem;
+            justify-content: flex-start;
+        }
+
+        .db-hero {
+            grid-template-columns: 1fr;
+        }
+
+        .db-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .db-stats {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>
 
-<div class="dashboard-header">
-    <div class="dashboard-title">🌱 Contributor Dashboard</div>
-    <div class="dashboard-sub">Create and manage shelter information</div>
-</div>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-<div class="dashboard-grid">
+<div class="db-wrapper">
 
-    <a href="/Contributor/AddShelter" class="dash-card">
-        <div class="dash-icon">➕</div>
-        <span>Add Shelter</span>
-    </a>
-    <a href="/Contributor/MyShelters" class="dash-card">
-        <div class="dash-icon">🏠</div>
-        <span>My Shelters</span>
-    </a>
+    <div class="db-hero">
+        <div>
+            <div class="db-badge db-fade">
+                <span class="db-badge-dot"></span> Contributor portal
+            </div>
+
+            <h1 class="db-title db-fade">
+                Manage your<br /><span>shelters.</span>
+            </h1>
+
+            <p class="db-sub db-fade">
+                Add new shelter locations, review your submitted shelters, and help people find safe places faster during emergencies.
+            </p>
+        </div>
+
+        <div class="db-info-box db-fade">
+            <div class="db-info-title">Safety starts with accurate data.</div>
+            <div class="db-info-text">
+                Every shelter you add can help users make faster and safer decisions. Keep information clear, updated, and easy to understand.
+            </div>
+
+            <div class="db-stats">
+                <div class="db-stat">
+                    <strong>01</strong>
+                    <span>Add shelter</span>
+                </div>
+                <div class="db-stat">
+                    <strong>02</strong>
+                    <span>Wait approval</span>
+                </div>
+                <div class="db-stat">
+                    <strong>03</strong>
+                    <span>Shown on map</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="db-grid">
+        <a href="/Contributor/AddShelter" class="db-card db-fade">
+            <div class="db-icon red">
+                <svg viewBox="0 0 24 24">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+            </div>
+
+            <div>
+                <p class="db-card-title">Add Shelter</p>
+                <p class="db-card-desc">
+                    Register a new shelter with location, capacity, description, and important details for emergency use.
+                </p>
+            </div>
+
+            <div class="db-card-arrow">
+                Add new shelter
+                <svg viewBox="0 0 24 24">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </div>
+        </a>
+
+        <a href="/Contributor/MyShelters" class="db-card db-fade">
+            <div class="db-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+            </div>
+
+            <div>
+                <p class="db-card-title">My Shelters</p>
+                <p class="db-card-desc">
+                    View your submitted shelters, check their approval status, and update shelter information when needed.
+                </p>
+            </div>
+
+            <div class="db-card-arrow">
+                View my shelters
+                <svg viewBox="0 0 24 24">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </div>
+        </a>
+    </div>
 
 </div>
