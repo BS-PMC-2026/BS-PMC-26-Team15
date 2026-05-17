@@ -2365,3 +2365,4 @@ C:\Users\user2\Desktop\SamiSpot-Dev\BS-PMC-26-Team15\SamiSpot\obj\Debug\net8.0\S
 C:\Users\user2\Desktop\SamiSpot-Dev\BS-PMC-26-Team15\SamiSpot\obj\Debug\net8.0\SamiSpot.genruntimeconfig.cache
 C:\Users\user2\Desktop\SamiSpot-Dev\BS-PMC-26-Team15\SamiSpot\obj\Debug\net8.0\ref\SamiSpot.dll
 C:\Users\alafi\source\repos\SamiSpot\SamiSpot\bin\Debug\net8.0\OpenAI.dll
+C:\Users\alafi\source\repos\SamiSpot\SamiSpot\bin\Debug\net8.0\wwwroot\uploads\WhatsApp Image 2026-05-17 at 12.44.42 (1).jpeg

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1rOKu5qwlYHvizQyvlTPSCy6QEunCXyUbgg2/BJ/urU=",
+  "Hash": "YA7E8+4s8s3ATHiODk9+e9z2bVuaV3tHshN+nultjo8=",
   "Source": "SamiSpot",
   "BasePath": "_content/SamiSpot",
   "Mode": "Default",
@@ -3417,6 +3417,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\contributor-shelters\\fefad6f1-fc3b-4b0e-92ef-ad5b90f1bd40.png"
+    },
+    {
+      "Identity": "C:\\Users\\alafi\\source\\repos\\SamiSpot\\SamiSpot\\wwwroot\\uploads\\WhatsApp Image 2026-05-17 at 12.44.42 (1).jpeg",
+      "SourceId": "SamiSpot",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alafi\\source\\repos\\SamiSpot\\SamiSpot\\wwwroot\\",
+      "BasePath": "_content/SamiSpot",
+      "RelativePath": "uploads/WhatsApp Image 2026-05-17 at 12.44.42 (1)#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zxiyiqr9u7",
+      "Integrity": "mYE0I8BzIOu1ivDLyOA4CFrLSLPUyHyPb5N1LTT/z6w=",
+      "CopyToOutputDirectory": "Always",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\WhatsApp Image 2026-05-17 at 12.44.42 (1).jpeg"
     }
   ],
   "Endpoints": [
@@ -10665,7 +10686,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 09:16:54 GMT"
+          "Value": "Wed, 13 May 2026 19:33:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10702,7 +10723,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 09:16:54 GMT"
+          "Value": "Wed, 13 May 2026 19:33:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10747,7 +10768,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 09:16:54 GMT"
+          "Value": "Wed, 13 May 2026 19:33:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10792,7 +10813,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 09:16:54 GMT"
+          "Value": "Wed, 13 May 2026 19:33:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10993,7 +11014,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 11:52:08 GMT"
+          "Value": "Wed, 13 May 2026 19:39:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11030,7 +11051,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 11:52:08 GMT"
+          "Value": "Wed, 13 May 2026 19:39:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11157,7 +11178,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 11:43:14 GMT"
+          "Value": "Wed, 13 May 2026 19:39:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11194,7 +11215,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 11:43:14 GMT"
+          "Value": "Wed, 13 May 2026 19:39:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11239,7 +11260,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 11:48:59 GMT"
+          "Value": "Wed, 13 May 2026 19:39:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11284,7 +11305,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 11:48:59 GMT"
+          "Value": "Wed, 13 May 2026 19:39:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12141,7 +12162,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 11:43:14 GMT"
+          "Value": "Wed, 13 May 2026 19:39:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12186,7 +12207,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 11:43:14 GMT"
+          "Value": "Wed, 13 May 2026 19:39:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12223,7 +12244,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 11:43:14 GMT"
+          "Value": "Wed, 13 May 2026 19:39:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12268,7 +12289,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 11:43:14 GMT"
+          "Value": "Wed, 13 May 2026 19:39:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12387,7 +12408,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 11:48:59 GMT"
+          "Value": "Wed, 13 May 2026 19:39:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12424,7 +12445,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 11:48:59 GMT"
+          "Value": "Wed, 13 May 2026 19:39:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12469,7 +12490,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 11:52:08 GMT"
+          "Value": "Wed, 13 May 2026 19:39:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12514,7 +12535,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 11:52:08 GMT"
+          "Value": "Wed, 13 May 2026 19:39:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12633,7 +12654,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 11:48:59 GMT"
+          "Value": "Wed, 13 May 2026 19:39:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -12678,7 +12699,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 11:48:59 GMT"
+          "Value": "Wed, 13 May 2026 19:39:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13289,7 +13310,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 11:52:08 GMT"
+          "Value": "Wed, 13 May 2026 19:39:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13334,7 +13355,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 11:52:08 GMT"
+          "Value": "Wed, 13 May 2026 19:39:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13371,7 +13392,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 11:43:14 GMT"
+          "Value": "Wed, 13 May 2026 19:39:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13408,7 +13429,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 11:43:14 GMT"
+          "Value": "Wed, 13 May 2026 19:39:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13453,7 +13474,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 11:36:05 GMT"
+          "Value": "Wed, 13 May 2026 19:39:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13490,7 +13511,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 09 May 2026 11:36:05 GMT"
+          "Value": "Wed, 13 May 2026 19:39:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14001,6 +14022,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-+Aok3xFWJw2Fw49ppmjWVrslwNRVBQhNIQM8IFRle+A="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/WhatsApp Image 2026-05-17 at 12.44.42 (1).jpeg",
+      "AssetFile": "C:\\Users\\alafi\\source\\repos\\SamiSpot\\SamiSpot\\wwwroot\\uploads\\WhatsApp Image 2026-05-17 at 12.44.42 (1).jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "388256"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mYE0I8BzIOu1ivDLyOA4CFrLSLPUyHyPb5N1LTT/z6w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 17 May 2026 09:45:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mYE0I8BzIOu1ivDLyOA4CFrLSLPUyHyPb5N1LTT/z6w="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/WhatsApp Image 2026-05-17 at 12.44.42 (1).zxiyiqr9u7.jpeg",
+      "AssetFile": "C:\\Users\\alafi\\source\\repos\\SamiSpot\\SamiSpot\\wwwroot\\uploads\\WhatsApp Image 2026-05-17 at 12.44.42 (1).jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "388256"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mYE0I8BzIOu1ivDLyOA4CFrLSLPUyHyPb5N1LTT/z6w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 17 May 2026 09:45:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zxiyiqr9u7"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/WhatsApp Image 2026-05-17 at 12.44.42 (1).jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mYE0I8BzIOu1ivDLyOA4CFrLSLPUyHyPb5N1LTT/z6w="
         }
       ]
     }
