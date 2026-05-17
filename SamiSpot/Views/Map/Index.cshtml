@@ -5,84 +5,198 @@
 
 <style>
     body {
-        background: #f4fbfd;
+        background: #0d1117;
+        background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&auto=format&fit=crop&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        position: relative;
     }
 
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 15, 22, 0.72);
+            z-index: 0;
+            pointer-events: none;
+        }
+
     .map-page {
+        position: relative;
+        z-index: 1;
         width: 100%;
-        padding: 35px 55px;
+        padding: 32px 48px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     .map-title {
-        font-size: 42px;
+        font-size: 28px;
         font-weight: 800;
-        color: #2c4a52;
-        margin-bottom: 6px;
+        color: #ffffff;
+        margin-bottom: 4px;
     }
 
     .map-subtitle {
-        color: #5a7c84;
-        font-size: 17px;
-        margin-bottom: 25px;
+        color: #94b3bc;
+        font-size: 14px;
+        margin-bottom: 20px;
     }
 
     .map-toolbar {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 10px;
         flex-wrap: wrap;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
     }
 
+    /* Search bar — matches reference: border, icon inside, no button */
     .map-search-group {
-        display: flex;
-        min-width: 360px;
+        position: relative;
+        min-width: 320px;
         flex: 1;
     }
 
-    .map-search-input,
-    #closestCount,
-    #travelMode {
-        border-radius: 14px;
-        border: 1px solid #d6f2f7;
-        padding: 13px 16px;
+    .map-search-icon {
+        position: absolute;
+        left: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba(255,255,255,0.4);
+        pointer-events: none;
+        display: flex;
+        align-items: center;
     }
 
-    .map-search-btn,
-    .map-location-btn,
-    #btnClosest,
-    #btnClear {
-        border: none;
-        border-radius: 16px;
-        padding: 13px 26px;
-        font-weight: 800;
+    .map-search-input {
+        width: 100%;
+        border-radius: 12px;
+        border: 1.5px solid rgba(255,255,255,0.12);
+        padding: 11px 16px 11px 40px;
+        font-size: 14px;
+        color: #ffffff;
+        background: rgba(255,255,255,0.08);
+        backdrop-filter: blur(8px);
+        box-shadow: none;
+        outline: none;
+        transition: border-color 0.2s;
     }
 
-    .map-search-btn {
-        background: #2c4a52;
-        color: white;
-        margin-left: 10px;
+        .map-search-input::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+
+        .map-search-input:focus {
+            border-color: #4bbfd3;
+            background: rgba(255,255,255,0.12);
+        }
+
+    /* My Location dropdown */
+    #myLocationDropdown {
+        display: none;
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 0;
+        right: 0;
+        background: #1e2a32;
+        border: 1.5px solid rgba(255,255,255,0.12);
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        z-index: 9999;
+        overflow: hidden;
     }
 
-    .map-location-btn {
-        background: #4bbfd3;
-        color: white;
+        #myLocationDropdown .my-location-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 11px 16px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.9);
+            transition: background 0.15s;
+        }
+
+            #myLocationDropdown .my-location-row:hover {
+                background: rgba(255,255,255,0.06);
+            }
+
+        #myLocationDropdown .my-location-icon {
+            width: 28px;
+            height: 28px;
+            background: #e8f6f9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+            #myLocationDropdown .my-location-icon svg {
+                width: 14px;
+                height: 14px;
+                fill: #4bbfd3;
+            }
+
+    /* Walking / Driving toggle — two separate pill buttons like reference */
+    .mode-toggle {
+        display: flex;
+        gap: 8px;
     }
 
+    .mode-btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        border: 1.5px solid rgba(255,255,255,0.15);
+        border-radius: 10px;
+        padding: 9px 18px;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        background: rgba(255,255,255,0.08);
+        backdrop-filter: blur(8px);
+        color: rgba(255,255,255,0.6);
+        transition: all 0.18s;
+    }
+
+        .mode-btn.active-walk {
+            background: rgba(75,191,211,0.2);
+            border-color: #4bbfd3;
+            color: #7eeaf7;
+        }
+
+        .mode-btn.active-drive {
+            background: rgba(245,158,11,0.2);
+            border-color: #f59e0b;
+            color: #fcd34d;
+        }
+
+    /* Closest Shelters button */
     #btnClosest {
-        background: #ffc107;
-        color: #111;
+        border: 1.5px solid rgba(255,255,255,0.15);
+        border-radius: 10px;
+        padding: 10px 20px;
+        font-weight: 700;
+        font-size: 14px;
+        background: rgba(255,255,255,0.08);
+        backdrop-filter: blur(8px);
+        color: rgba(255,255,255,0.9);
+        cursor: pointer;
+        transition: all 0.2s;
     }
 
-    #btnClear {
-        background: #dc3545;
-        color: white;
-    }
+        #btnClosest:hover {
+            background: rgba(255,255,255,0.15);
+        }
 
+    /* Layout */
     .map-layout {
         display: grid;
-        grid-template-columns: 1fr 360px;
-        gap: 22px;
+        grid-template-columns: 1fr 340px;
+        gap: 18px;
     }
 
     .map-map-area {
@@ -92,43 +206,46 @@
     #map {
         width: 100%;
         height: 620px;
-        border-radius: 26px;
+        border-radius: 20px;
         overflow: hidden;
-        border: 1px solid #d6f2f7;
-        box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
 
+    /* Map legend — white card, clean */
     .map-legend {
         position: absolute;
-        top: 24px;
-        left: 24px;
+        top: 16px;
+        left: 16px;
         z-index: 10;
-        background: rgba(255,255,255,0.95);
-        border: 1px solid #d6f2f7;
-        border-radius: 20px;
-        padding: 18px 20px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        background: white;
+        border-radius: 16px;
+        padding: 16px 18px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+        min-width: 170px;
     }
 
     .map-legend-title {
-        font-weight: 800;
-        color: #2c4a52;
+        font-weight: 700;
+        font-size: 13px;
+        color: #1a2e35;
         margin-bottom: 12px;
     }
 
     .map-legend-item {
         display: flex;
         align-items: center;
-        gap: 10px;
-        color: #3c5c63;
-        margin-bottom: 10px;
+        gap: 9px;
+        font-size: 13px;
+        color: #4a6572;
+        margin-bottom: 8px;
     }
 
     .legend-color {
-        width: 17px;
-        height: 17px;
+        width: 13px;
+        height: 13px;
         border-radius: 50%;
         display: inline-block;
+        flex-shrink: 0;
     }
 
         .legend-color.red {
@@ -139,20 +256,119 @@
             background: #f59e0b;
         }
 
+    /* Shelter panel */
     .shelter-panel {
-        background: white;
-        border-left: 6px solid #4bbfd3;
-        border-radius: 24px;
-        padding: 28px;
+        background: rgba(18, 26, 32, 0.82);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 20px;
+        padding: 24px;
         min-height: 620px;
-        box-shadow: 0 14px 35px rgba(0,0,0,0.07);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.35);
         overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        color: rgba(255,255,255,0.9);
     }
 
         .shelter-panel h4 {
-            color: #2c4a52;
+            color: #ffffff;
             font-weight: 800;
+            font-size: 18px;
         }
+
+        .shelter-panel p {
+            color: rgba(255,255,255,0.5);
+        }
+
+    .stat-text-label {
+        color: rgba(255,255,255,0.45) !important;
+    }
+
+    .stat-text-value {
+        color: #ffffff !important;
+    }
+
+    .stat-row {
+        border-bottom-color: rgba(255,255,255,0.07) !important;
+    }
+
+    /* Stat row — icon + label + value, like reference */
+    .stat-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 0;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+        .stat-row:last-of-type {
+            border-bottom: none;
+        }
+
+    .stat-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 18px;
+    }
+
+    .stat-text-label {
+        font-size: 12px;
+        color: #6b8a93;
+        margin-bottom: 2px;
+    }
+
+    .stat-text-value {
+        font-size: 16px;
+        font-weight: 700;
+        color: #1a2e35;
+    }
+
+    /* Dark Google autocomplete dropdown */
+    .pac-container {
+        background: rgba(18, 26, 32, 0.96) !important;
+        backdrop-filter: blur(12px) !important;
+        border: 1px solid rgba(255,255,255,0.12) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important;
+        margin-top: 4px !important;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+    }
+
+    .pac-item {
+        background: transparent !important;
+        color: rgba(255,255,255,0.8) !important;
+        border-top: 1px solid rgba(255,255,255,0.06) !important;
+        padding: 10px 14px !important;
+        cursor: pointer !important;
+        font-size: 13px !important;
+    }
+
+        .pac-item:hover, .pac-item-selected {
+            background: rgba(255,255,255,0.07) !important;
+        }
+
+    .pac-item-query {
+        color: #ffffff !important;
+        font-weight: 600 !important;
+    }
+
+    .pac-icon {
+        filter: invert(1) opacity(0.4) !important;
+    }
+
+    .pac-matched {
+        color: #4bbfd3 !important;
+    }
+
+    .pac-logo::after {
+        display: none !important;
+    }
 
     @@media (max-width: 1100px) {
         .map-layout {
@@ -167,37 +383,61 @@
 
 <div class="map-page">
 
-    <h2 class="map-title">🗺️ Safety Map</h2>
-    <p class="map-subtitle">
-        Search locations, find nearby shelters, view alert zones, and choose the safest route.
-    </p>
+    <h2 class="map-title">Safety Map</h2>
+    <p class="map-subtitle">Find nearby shelters and choose the safest route</p>
 
     <div class="map-toolbar">
+        <!-- Search bar with icon inside -->
         <div class="map-search-group">
-            <input id="searchBox" type="text" class="form-control map-search-input"
-                   placeholder="Search for a specific location..." />
+            <span class="map-search-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                </svg>
+            </span>
+            <input id="searchBox" type="text" class="map-search-input"
+                   placeholder="123 Main Street, Downtown" autocomplete="off" />
 
-            <button id="searchBtn" class="map-search-btn" type="button">Search</button>
+            <div id="myLocationDropdown">
+                <div class="my-location-row" id="myLocationRow">
+                    <div class="my-location-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                        </svg>
+                    </div>
+                    My Location
+                </div>
+            </div>
         </div>
 
-        <button id="myLocationBtn" class="map-location-btn" type="button">📍 My Location</button>
+        <!-- Two separate pill buttons like reference -->
+        <div class="mode-toggle">
+            <button id="btnWalking" class="mode-btn active-walk" onclick="setTravelMode('WALKING')">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="5" r="2" />
+                    <path d="M12 7v6l-3 3M9 13l3-3 3 3M12 19v-3" />
+                </svg>
+                Walking
+            </button>
+            <button id="btnDriving" class="mode-btn" onclick="setTravelMode('DRIVING')">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="1" y="9" width="22" height="9" rx="2" />
+                    <path d="M5 9V7a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2" />
+                    <circle cx="7" cy="18" r="1" />
+                    <circle cx="17" cy="18" r="1" />
+                </svg>
+                Driving
+            </button>
+        </div>
+        <input type="hidden" id="travelMode" value="WALKING" />
 
-        <input id="closestCount" type="number" class="form-control"
-               placeholder="How many shelters?" min="1" style="width:200px;" />
-
-        <select id="travelMode" class="form-control" style="width:180px;">
-            <option value="WALKING">Walking</option>
-            <option value="DRIVING">Driving</option>
-        </select>
-
-        <button id="btnClosest" class="btn">Closest Shelters</button>
-        <button id="btnClear" class="btn">Clear Map</button>
+        <button id="btnClosest">Closest Shelters</button>
     </div>
 
     <div class="map-layout">
         <div class="map-map-area">
             <div class="map-legend">
-                <div class="map-legend-title">Map Key</div>
+                <div class="map-legend-title">Map Legend</div>
 
                 <div class="map-legend-item">
                     <span class="legend-color red"></span>
@@ -210,12 +450,12 @@
                 </div>
 
                 <div class="map-legend-item">
-                    <img src="https://maps.google.com/mapfiles/ms/icons/red-dot.png" style="width:20px; height:20px;" />
+                    <img src="https://maps.google.com/mapfiles/ms/icons/red-dot.png" style="width:14px;height:14px;" />
                     Official Shelter
                 </div>
 
                 <div class="map-legend-item">
-                    <img src="https://maps.google.com/mapfiles/ms/icons/green-dot.png" style="width:20px; height:20px;" />
+                    <img src="https://maps.google.com/mapfiles/ms/icons/green-dot.png" style="width:14px;height:14px;" />
                     Contributor Shelter
                 </div>
             </div>
@@ -224,11 +464,12 @@
         </div>
 
         <div id="shelterPanel" class="shelter-panel">
-            <h4>🏠 Shelter Details</h4>
-            <p>Click a shelter on the map to view details.</p>
+            <h4>Shelter Details</h4>
+            <p style="color:#6b8a93;font-size:14px;margin-top:6px;">Click a shelter on the map to view details.</p>
         </div>
     </div>
 </div>
+
 <script>
     const loggedInUser = '@Context.Session.GetString("UserName")';
 </script>
@@ -255,25 +496,8 @@
         return loggedInUser && loggedInUser !== '';
     }
 
-    function clearMap() {
-        directionsRenderer.setDirections({ routes: [] });
-
-        closestShelterMarkers.forEach(m => m.setMap(null));
-        closestShelterMarkers = [];
-
-        selectedShelterIndex = null;
-        infoWindow.close();
-
-        document.getElementById("shelterPanel").innerHTML = `
-            <h4>Shelter Details</h4>
-            <p>Click a shelter on the map to view details.</p>
-        `;
-    }
-
     function initMap() {
         const defaultCenter = { lat: 31.2518, lng: 34.7913 };
-
-        document.getElementById("btnClear").onclick = clearMap;
 
         map = new google.maps.Map(document.getElementById("map"), {
             center: defaultCenter,
@@ -306,37 +530,35 @@
         });
 
         const input = document.getElementById("searchBox");
-        const searchBtn = document.getElementById("searchBtn");
-        const myLocationBtn = document.getElementById("myLocationBtn");
+        const dropdown = document.getElementById("myLocationDropdown");
+        const myLocationRow = document.getElementById("myLocationRow");
 
-        autocomplete = new google.maps.places.Autocomplete(input);
-        autocomplete.addListener("place_changed", function () {
-            const place = autocomplete.getPlace();
-            if (!place.geometry) return;
-            moveToLocation(place.geometry.location, "Selected location");
+        // Show "My Location" option immediately when the user focuses the search bar
+        input.addEventListener("focus", function () {
+            dropdown.style.display = "block";
         });
 
-        searchBtn.onclick = () => {
-            const address = input.value.trim();
-            if (!address) return;
-
-            geocoder.geocode({ address }, (res, status) => {
-                if (status === "OK") {
-                    moveToLocation(res[0].geometry.location, "Selected location");
-                } else {
-                    alert("Location not found");
-                }
-            });
-        };
-
-        input.addEventListener("keydown", function (e) {
-            if (e.key === "Enter") {
-                e.preventDefault();
-                searchBtn.click();
+        // Hide "My Location" row once user starts typing (Google autocomplete takes over)
+        input.addEventListener("input", function () {
+            if (input.value.trim() !== "") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
             }
         });
 
-        myLocationBtn.onclick = () => {
+        // Hide when clicking anywhere outside the search group
+        document.addEventListener("click", function (e) {
+            if (!document.querySelector(".map-search-group").contains(e.target)) {
+                dropdown.style.display = "none";
+            }
+        });
+
+        // Handle "My Location" selection — mousedown so it fires before blur hides the dropdown
+        myLocationRow.addEventListener("mousedown", function (e) {
+            e.preventDefault();
+            dropdown.style.display = "none";
+            input.value = "My Location";
             navigator.geolocation.getCurrentPosition(
                 pos => {
                     moveToLocation(
@@ -346,16 +568,35 @@
                 },
                 () => alert("Cannot get location.")
             );
-        };
+        });
+
+        autocomplete = new google.maps.places.Autocomplete(input);
+        autocomplete.addListener("place_changed", function () {
+            const place = autocomplete.getPlace();
+            if (!place.geometry) return;
+            dropdown.style.display = "none";
+            moveToLocation(place.geometry.location, "Selected location");
+        });
+
+        input.addEventListener("keydown", function (e) {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                const address = input.value.trim();
+                if (!address || address === "My Location") return;
+                geocoder.geocode({ address }, (res, status) => {
+                    if (status === "OK") {
+                        dropdown.style.display = "none";
+                        moveToLocation(res[0].geometry.location, "Selected location");
+                    } else {
+                        alert("Location not found");
+                    }
+                });
+            }
+        });
 
         document.getElementById("btnClosest").onclick = loadClosestShelters;
 
-        document.getElementById("travelMode").addEventListener("change", function () {
-            if (selectedShelterIndex !== null) {
-                const s = closestListData[selectedShelterIndex];
-                drawRealRouteToShelter(s);
-            }
-        });
+        // travelMode is now controlled by toggle buttons via setTravelMode()
 
         loadShelters();
         loadCityRisks();
@@ -479,99 +720,87 @@
         }
     }
 
-       async function showShelterDetails(shelter) {
-        let html = "";
-        let imagesHtml = "";
+    async function showShelterDetails(shelter) {
+        // Normalize lat/lng field names — markers use latitude/longitude
+        const shelterForRoute = {
+            id: shelter.id,
+            name: shelter.name,
+            lat: shelter.latitude,
+            lng: shelter.longitude,
+            source: shelter.source,
+            isAvailable: shelter.isAvailable,
+            size: shelter.size,
+            feedbackId: getShelterFeedbackId(shelter)
+        };
 
-        if (shelter.source === "Contributor") {
-            try {
-                const res = await fetch(`/api/contributor-shelters/${shelter.id}/images`);
-                if (res.ok) {
-                    shelter.images = await res.json();
+        if (userLocation) {
+            // We have a location — calculate route and show name + distance + time
+            const travelModeValue = document.getElementById("travelMode").value;
+            directionsService.route(
+                {
+                    origin: userLocation,
+                    destination: { lat: shelterForRoute.lat, lng: shelterForRoute.lng },
+                    travelMode: google.maps.TravelMode[travelModeValue],
+                    drivingOptions: travelModeValue === "DRIVING" ? {
+                        departureTime: new Date(),
+                        trafficModel: "bestguess"
+                    } : undefined
+                },
+                (result, status) => {
+                    if (status === "OK") {
+                        const isWalking = travelModeValue === "WALKING";
+                        directionsRenderer.setOptions({
+                            polylineOptions: isWalking ? {
+                                strokeColor: "#4bbfd3",
+                                strokeOpacity: 0.0,
+                                strokeWeight: 6,
+                                icons: [{ icon: { path: "M 0,-1 0,1", strokeOpacity: 1, scale: 4 }, offset: "0", repeat: "16px" }]
+                            } : {
+                                strokeColor: "#f59e0b",
+                                strokeOpacity: 1.0,
+                                strokeWeight: 7,
+                                icons: []
+                            }
+                        });
+                        directionsRenderer.setDirections(result);
+                        showRouteDetails(result, shelterForRoute, travelModeValue);
+                    } else {
+                        // Route failed — fall back to name only
+                        showNameOnly(shelterForRoute);
+                    }
                 }
-            } catch (e) {
-                console.error("failed to load contributor images", e);
-            }
+            );
+        } else {
+            // No location set — just show name and prompt
+            showNameOnly(shelterForRoute);
         }
+    }
 
-        if (shelter.images && shelter.images.length > 0) {
-            imagesHtml = `
-                <div style="
-                    display:grid;
-                    grid-template-columns:1fr 1fr;
-                    gap:10px;
-                    margin:15px 0;">
-                    ${shelter.images.map(img => `
-                        <img src="${img}" style="
-                            width:100%;
-                            height:120px;
-                            object-fit:cover;
-                            border-radius:12px;
-                            transition:0.2s;
-                        " onmouseover="this.style.transform='scale(1.03)'"
-                          onmouseout="this.style.transform='scale(1)'"/>
-                    `).join("")}
+    function showNameOnly(shelter) {
+        let html = `
+            <div style="margin-bottom:18px;">
+                <div style="font-size:18px;font-weight:800;color:#2c4a52;margin-bottom:8px;line-height:1.3;">
+                    ${shelter.name}
                 </div>
-            `;
-        }
-        html += `
-            <div style="font-size:26px;font-weight:800;color:#2c4a52;margin-bottom:5px;">
-                🏠 Shelter Details
             </div>
-            <div style="color:#5a7c84;margin-bottom:18px;">
-                Information about the selected shelter
+            <div style="
+                background:#f8fdff;
+                border:1px solid #d6f2f7;
+                border-radius:16px;
+                padding:18px;
+                text-align:center;
+                color:#5a7c84;
+                font-size:13px;
+                margin-bottom:20px;
+            ">
+                Set your location to see distance and travel time.
             </div>
         `;
 
-        function box(label, value) {
-            return `
-                <div style="
-                    background:#f8fdff;
-                    border:1px solid #d6f2f7;
-                    border-radius:14px;
-                    padding:12px 14px;
-                    margin-bottom:10px;">
-
-                    <div style="color:#5a7c84;font-size:13px;margin-bottom:4px;">
-                        ${label}
-                    </div>
-
-                    <div style="color:#2c4a52;font-weight:800;">
-                        ${value}
-                    </div>
-                </div>
-            `;
-        }
-
-        html += box("Name", shelter.name);
-        html += box("Source", shelter.source === "Contributor" ? "🟢 Contributor Shelter" : "🔴 Official Shelter");
-
-        if (shelter.address) {
-            html += box("Address", shelter.address);
-        }
-
-        if (shelter.description) {
-            html += box("Description", shelter.description);
-        }
-
-        if (shelter.size !== null && shelter.size !== undefined) {
-            html += box("Size", shelter.size);
-        }
-
-        if (shelter.isAvailable !== null && shelter.isAvailable !== undefined) {
-            html += box("Available", shelter.isAvailable ? "Yes" : "No");
-        }
-
-        html += box("Latitude", shelter.latitude);
-        html += box("Longitude", shelter.longitude);
-
-        html += imagesHtml;
-
-        const feedbackId = getShelterFeedbackId(shelter);
-        html += getFeedbackSection(feedbackId);
+        html += getFeedbackSection(shelter.feedbackId);
 
         document.getElementById("shelterPanel").innerHTML = html;
-        loadFeedback(feedbackId);
+        loadFeedback(shelter.feedbackId);
     }
 
     async function loadClosestShelters() {
@@ -580,20 +809,19 @@
             return;
         }
 
-        let count = parseInt(document.getElementById("closestCount").value);
-        if (!count || count < 1) count = 10;
+        const count = 10;
 
         if (!allShelters.length) {
             alert("No shelters loaded yet.");
             return;
         }
+
         const userLatLng = new google.maps.LatLng(userLocation.lat, userLocation.lng);
 
         const sorted = allShelters
             .map(s => {
                 const shelterLatLng = new google.maps.LatLng(s.latitude, s.longitude);
                 const distance = google.maps.geometry.spherical.computeDistanceBetween(userLatLng, shelterLatLng);
-
                 return {
                     id: s.id,
                     feedbackId: getShelterFeedbackId(s),
@@ -623,9 +851,13 @@
         closestShelterMarkers = [];
 
         let html = `
-            <h4>Closest ${list.length} Shelters</h4>
-            <p style="margin-bottom:10px;">Select a shelter to see the real route.</p>
-            <ul style="padding-left:0; list-style:none;">
+            <div style="margin-bottom:20px;">
+                <div style="font-size:22px;font-weight:900;color:#ffffff;margin-bottom:4px;letter-spacing:-0.3px;">
+                    Closest ${list.length} Shelters
+                </div>
+                <div style="color:rgba(255,255,255,0.45);font-size:13px;">Tap a shelter to get directions</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px;">
         `;
 
         list.forEach((s, i) => {
@@ -633,16 +865,20 @@
                 ? `${Math.round(s.distance)} m`
                 : `${(s.distance / 1000).toFixed(2)} km`;
 
-                const marker = new google.maps.Marker({
-        position: { lat: s.lat, lng: s.lng },
-        map: map,
-        icon: {
-            url: "https://maps.google.com/mapfiles/ms/icons/purple-dot.png",
-            scaledSize: new google.maps.Size(20, 20)
-        },
-        zIndex: 9999,
-        title: s.name
-    });
+            const badgeColor = s.source === "Contributor" ? "#16a34a" : "#2c4a52";
+            const badgeLabel = s.source === "Contributor" ? "Contributor" : "Official";
+
+            const marker = new google.maps.Marker({
+                position: { lat: s.lat, lng: s.lng },
+                map: map,
+                icon: {
+                    url: "https://maps.google.com/mapfiles/ms/icons/purple-dot.png",
+                    scaledSize: new google.maps.Size(20, 20)
+                },
+                zIndex: 9999,
+                title: s.name
+            });
+
             closestShelterMarkers.push(marker);
 
             marker.addListener("click", () => {
@@ -650,15 +886,63 @@
             });
 
             html += `
-                <li onclick="focusClosest(${i})"
-                    style="padding:8px; cursor:pointer; border-bottom:1px solid #ccc;">
-                    <strong>${s.name}</strong> — ${d}
-                    <div style="font-size:12px; color:#666;">${s.source}</div>
-                </li>
+                <div onclick="focusClosest(${i})"
+                    style="
+                        background:#f8fdff;
+                        border:1px solid #d6f2f7;
+                        border-radius:16px;
+                        padding:14px 16px;
+                        cursor:pointer;
+                        display:flex;
+                        align-items:center;
+                        justify-content:space-between;
+                        gap:12px;
+                    "
+                    onmouseover="this.style.boxShadow='0 4px 16px rgba(75,191,211,0.2)';this.style.borderColor='#4bbfd3';"
+                    onmouseout="this.style.boxShadow='none';this.style.borderColor='#d6f2f7';"
+                >
+                    <div style="display:flex;align-items:center;gap:12px;min-width:0;">
+                        <div style="
+                            width:34px;height:34px;
+                            background:#e0f7fa;
+                            border-radius:50%;
+                            display:flex;align-items:center;justify-content:center;
+                            flex-shrink:0;
+                            font-size:14px;
+                            color:#2c4a52;
+                            font-weight:800;
+                        ">${i + 1}</div>
+                        <div style="min-width:0;">
+                            <div style="font-weight:700;color:#2c4a52;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+                                ${s.name}
+                            </div>
+                            <div style="margin-top:4px;">
+                                <span style="
+                                    background:${badgeColor};
+                                    color:white;
+                                    font-size:11px;
+                                    font-weight:700;
+                                    padding:2px 8px;
+                                    border-radius:20px;
+                                ">${badgeLabel}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="
+                        flex-shrink:0;
+                        background:#2c4a52;
+                        color:white;
+                        font-size:13px;
+                        font-weight:800;
+                        padding:6px 12px;
+                        border-radius:20px;
+                        white-space:nowrap;
+                    ">${d}</div>
+                </div>
             `;
         });
 
-        html += "</ul>";
+        html += "</div>";
         panel.innerHTML = html;
     }
 
@@ -678,6 +962,21 @@
         drawRealRouteToShelter(s);
     }
 
+    function setTravelMode(mode) {
+        document.getElementById("travelMode").value = mode;
+
+        const walkBtn = document.getElementById("btnWalking");
+        const driveBtn = document.getElementById("btnDriving");
+
+        walkBtn.className = "mode-btn" + (mode === "WALKING" ? " active-walk" : "");
+        driveBtn.className = "mode-btn" + (mode === "DRIVING" ? " active-drive" : "");
+
+        if (selectedShelterIndex !== null) {
+            const s = closestListData[selectedShelterIndex];
+            drawRealRouteToShelter(s);
+        }
+    }
+
     function drawRealRouteToShelter(shelter) {
         if (!userLocation) {
             alert("Please choose a location first.");
@@ -685,6 +984,16 @@
         }
 
         const travelModeValue = document.getElementById("travelMode").value;
+
+        // Walking = blue dashed, Driving = amber solid
+        const isWalking = travelModeValue === "WALKING";
+        directionsRenderer.setOptions({
+            polylineOptions: {
+                strokeColor: isWalking ? "#4bbfd3" : "#f59e0b",
+                strokeOpacity: isWalking ? 0 : 1.0,
+                strokeWeight: 6
+            }
+        });
 
         directionsService.route(
             {
@@ -703,83 +1012,147 @@
                     return;
                 }
 
+                // For walking: draw a dashed blue line manually on top
+                if (isWalking) {
+                    directionsRenderer.setOptions({
+                        polylineOptions: {
+                            strokeColor: "#4bbfd3",
+                            strokeOpacity: 0.0,
+                            strokeWeight: 6,
+                            icons: [{
+                                icon: {
+                                    path: "M 0,-1 0,1",
+                                    strokeOpacity: 1,
+                                    scale: 4
+                                },
+                                offset: "0",
+                                repeat: "16px"
+                            }]
+                        }
+                    });
+                } else {
+                    directionsRenderer.setOptions({
+                        polylineOptions: {
+                            strokeColor: "#f59e0b",
+                            strokeOpacity: 1.0,
+                            strokeWeight: 7,
+                            icons: []
+                        }
+                    });
+                }
+
                 directionsRenderer.setDirections(result);
                 showRouteDetails(result, shelter, travelModeValue);
             }
         );
     }
 
-    async function showRouteDetails(result, shelter, travelModeValue) {
+    function showRouteDetails(result, shelter, travelModeValue) {
         const route = result.routes[0];
         const leg = route.legs[0];
 
         const routeDistanceText = leg.distance ? leg.distance.text : "N/A";
-        const routeDurationText = leg.duration ? leg.duration.text : "N/A";
+        const routeDurationText = travelModeValue === "DRIVING"
+            ? (leg.duration_in_traffic ? leg.duration_in_traffic.text : leg.duration ? leg.duration.text : "N/A")
+            : (leg.duration ? leg.duration.text : "N/A");
 
-        let bestCase = "";
-        let worstCase = "";
-        let extraNote = "";
+        const isWalking = travelModeValue === "WALKING";
+        const modeLabel = isWalking ? "Walking Route" : "Driving Route";
+        const modeBadgeBg = isWalking ? "#e0faf5" : "#fff8e7";
+        const modeBadgeColor = isWalking ? "#0e7490" : "#b45309";
+        const timeIconBg = isWalking ? "#e8fafb" : "#fff8e7";
+        const timeIconColor = isWalking ? "#4bbfd3" : "#f59e0b";
 
-        if (travelModeValue === "DRIVING") {
-            const baseSeconds = leg.duration ? leg.duration.value : 0;
-            const bestMinutes = (baseSeconds / 60) * 0.9;
-            const worstMinutes = (baseSeconds / 60) * 1.35;
+        const feedbackId = shelter.feedbackId || shelter.id;
 
-            bestCase = `${bestMinutes.toFixed(1)} min`;
-            worstCase = `${worstMinutes.toFixed(1)} min`;
-            extraNote = "Driving case may vary due to roads and traffic.";
-        } else {
-            const meters = leg.distance ? leg.distance.value : 0;
-            const bestMinutes = (meters / 1.6 / 60);
-            const worstMinutes = (meters / 1.0 / 60);
+        const available = shelter.isAvailable;
+        const statusText = available === null || available === undefined ? null
+                         : available ? "Available" : "Unavailable";
+        const statusColor = available ? "#16a34a" : "#dc2626";
+        const statusBg = available ? "#f0fdf4" : "#fef2f2";
 
-            bestCase = `${bestMinutes.toFixed(1)} min`;
-            worstCase = `${worstMinutes.toFixed(1)} min`;
-            extraNote = "Walking case depends on pace and road access.";
-        }
+        const capacityText = (shelter.size !== null && shelter.size !== undefined)
+            ? shelter.size + " people" : null;
 
-        let imagesHtml = "";
-        if (shelter.source === "Contributor") {
-            try {
-                const res = await fetch(`/api/contributor-shelters/${shelter.id}/images`);
-                if (res.ok) {
-                    const images = await res.json();
+        const dest = encodeURIComponent(shelter.name);
+        const modeParam = isWalking ? "walking" : "driving";
+        const navUrl = `https://www.google.com/maps/dir/?api=1&destination=${dest}&travelmode=${modeParam}`;
 
-                    if (images.length > 0) {
-                        imagesHtml = `
-                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:10px; margin-bottom:10px;">
-                                ${images.map(img => `
-                                    <img src="${img}" style="width:100%; height:120px; object-fit:cover; border-radius:8px;" />
-                                `).join("")}
-                            </div>
-                        `;
-                    }
-                }
-            } catch (e) {
-                console.error("failed loading route shelter images", e);
-            }
-        }
+        let html = `
+            <div style="margin-bottom:20px;">
+                <div style="font-size:20px;font-weight:800;color:#1a2e35;margin-bottom:10px;line-height:1.3;">
+                    ${shelter.name}
+                </div>
+                <span style="background:${modeBadgeBg};color:${modeBadgeColor};font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;">
+                    ${modeLabel}
+                </span>
+            </div>
 
-        document.getElementById("shelterPanel").innerHTML =
-            "<h4>Shelter Route Details</h4>" +
-            "<p><strong>Name:</strong> " + shelter.name + "</p>" +
-            "<p><strong>Source:</strong> " + shelter.source + "</p>" +
-            (shelter.address ? "<p><strong>Address:</strong> " + shelter.address + "</p>" : "") +
-            (shelter.description ? "<p><strong>Description:</strong> " + shelter.description + "</p>" : "") +
-            (shelter.size !== null && shelter.size !== undefined ? "<p><strong>Size:</strong> " + shelter.size + "</p>" : "") +
-            (shelter.isAvailable !== null && shelter.isAvailable !== undefined ? "<p><strong>Available:</strong> " + (shelter.isAvailable ? "Yes" : "No") + "</p>" : "") +
-            "<p><strong>Travel mode:</strong> " + travelModeValue + "</p>" +
-            "<p><strong>Route distance:</strong> " + routeDistanceText + "</p>" +
-            "<p><strong>Google estimated time:</strong> " + routeDurationText + "</p>" +
-            "<p><strong>Best case:</strong> " + bestCase + "</p>" +
-            "<p><strong>Worst case:</strong> " + worstCase + "</p>" +
-            "<p><strong>Latitude:</strong> " + shelter.lat + "</p>" +
-            "<p><strong>Longitude:</strong> " + shelter.lng + "</p>" +
-            imagesHtml +
-            "<p style='margin-top:10px; color:#555;'>" + extraNote + "</p>" +
-            getFeedbackSection(shelter.feedbackId || shelter.id);
+            <div style="margin-bottom:12px;">
 
-        loadFeedback(shelter.feedbackId || shelter.id);
+                <div class="stat-row">
+                    <div class="stat-icon" style="background:#eef2ff;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="stat-text-label">Distance</div>
+                        <div class="stat-text-value">${routeDistanceText}</div>
+                    </div>
+                </div>
+
+                <div class="stat-row">
+                    <div class="stat-icon" style="background:${timeIconBg};">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="${timeIconColor}" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="stat-text-label">Estimated Time</div>
+                        <div class="stat-text-value">${routeDurationText}</div>
+                    </div>
+                </div>
+
+                ${statusText ? `
+                <div class="stat-row">
+                    <div class="stat-icon" style="background:${statusBg};">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="${statusColor}" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="stat-text-label">Status</div>
+                        <div class="stat-text-value" style="color:${statusColor};">${statusText}</div>
+                    </div>
+                </div>` : ""}
+
+                ${capacityText ? `
+                <div class="stat-row">
+                    <div class="stat-icon" style="background:#f5f0ff;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="stat-text-label">Capacity</div>
+                        <div class="stat-text-value">${capacityText}</div>
+                    </div>
+                </div>` : ""}
+
+            </div>
+
+            <div style="margin-top:20px;">
+        `;
+
+        html += getFeedbackSection(feedbackId) + `</div>`;
+
+        document.getElementById("shelterPanel").innerHTML = html;
+        loadFeedback(feedbackId);
     }
 
     async function loadCityRisks() {
@@ -987,9 +1360,7 @@
         try {
             const response = await fetch("/Feedback/AddReply", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     feedbackId: feedbackId,
                     parentReplyId: parentReplyId,
@@ -1029,9 +1400,7 @@
         try {
             const response = await fetch("/Feedback/Add", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     shelterId: shelterId,
                     comment: text

@@ -1,203 +1,110 @@
 ﻿<!DOCTYPE html>
 @{
     var role = Context.Session.GetString("RoleType");
-    var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
-    var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
-
-    Func<string, string, string> isActive = (controller, action) =>
-    {
-        return currentController == controller && currentAction == action ? "nav-active" : "";
-    };
 }
-
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - SamiSpot</title>
-
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SamiSpot.styles.css" asp-append-version="true" />
 
-    <style>
-        .nav-active {
-            color: #e8d5c8 !important;
-            font-weight: 600;
-            border-bottom: 2.5px solid #e8622a;
-            padding-bottom: 2px;
-        }
-
-        .navbar-nav .nav-link {
-            transition: 0.2s ease;
-            color: rgba(255,255,255,0.75) !important;
-        }
-
-            .navbar-nav .nav-link:hover {
-                color: #ffffff !important;
-            }
-
-        .logout-link {
-            color: rgba(255,255,255,0.75) !important;
-        }
-
-            .logout-link:hover {
-                color: #ffffff !important;
-            }
-
-        /* Dark navbar to match hero */
-        header nav.navbar {
-            background: #0d1117 !important;
-            border-bottom: none !important;
-            box-shadow: none !important;
-            margin-bottom: 0 !important;
-        }
-
-        /* Logo / brand text if any */
-        .navbar-brand {
-            color: #ffffff !important;
-        }
-
-        /* Hamburger icon on mobile */
-        .navbar-toggler {
-            border-color: rgba(255,255,255,0.2) !important;
-        }
-
-        .navbar-toggler-icon {
-            filter: invert(1);
-        }
-    </style>
 </head>
-
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3"
-             style="position: relative; z-index: 1000;">
-
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" style="position: relative; z-index: 1000;">
             <div class="container-fluid">
+                <div class="container" style="max-width:100%; padding:0;">
 
-                <button class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target=".navbar-collapse"
-                        aria-controls="navbarSupportedContent"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
 
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-
-                    <!-- LEFT SIDE -->
-                    <ul class="navbar-nav flex-grow-1">
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark @isActive("Home", "Index")"
-                               asp-controller="Home"
-                               asp-action="Index">
-                                Home
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark @isActive("Home", "Privacy")"
-                               asp-controller="Home"
-                               asp-action="Privacy">
-                                Privacy
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark @isActive("Home", "DataSources")"
-                               asp-controller="Home"
-                               asp-action="DataSources">
-                                Data Sources
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark @isActive("Home", "Emergency")"
-                               asp-controller="Home"
-                               asp-action="Emergency">
-                                Emergency
-                            </a>
-                        </li>
-
-                        @if (role == "Admin")
-                        {
+                        <!-- LEFT SIDE -->
+                        <ul class="navbar-nav flex-grow-1">
                             <li class="nav-item">
-                                <a class="nav-link text-dark @isActive("Account", "Admindashboard")"
-                                   asp-controller="Account"
-                                   asp-action="Admindashboard">
-                                    My Dashboard
+                                <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Home" asp-action="DataSources">Data Sources</a>
+                            </li>
+
+                            <!-- 🔥 NEW -->
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Home" asp-action="Emergency">Emergency</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="AiChat" asp-action="Index">
+                                    AI Chat 🤖
                                 </a>
-                            </li>
-                        }
-                        else if (role == "Contributor")
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark @isActive("Account", "Contributordashboard")"
-                                   asp-controller="Account"
-                                   asp-action="Contributordashboard">
-                                    My Dashboard
-                                </a>
-                            </li>
-                        }
-                    </ul>
+                            </li> -->
+                            <!-- ✅ DASHBOARD (only admin + contributor) -->
+                            @if (role == "Admin")
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Account" asp-action="Admindashboard">
+                                        My Dashboard
+                                    </a>
+                                </li>
+                            }
+                            else if (role == "Contributor")
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Account" asp-action="Contributordashboard">
+                                        My Dashboard
+                                    </a>
+                                </li>
+                            }
+                        </ul>
 
-                    <!-- RIGHT SIDE -->
-                    <ul class="navbar-nav">
-                        @{
-                            var userName = Context.Session.GetString("UserName");
-                        }
+                        <!-- RIGHT SIDE -->
+                        <ul class="navbar-nav">
+                            @{
+                                var userName = Context.Session.GetString("UserName");
+                            }
 
-                        @if (string.IsNullOrEmpty(userName))
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark @isActive("Account", "Login")"
-                                   asp-controller="Account"
-                                   asp-action="Login">
-                                    Login
-                                </a>
-                            </li>
+                            @if (string.IsNullOrEmpty(userName))
+                            {
+                                <!-- NOT LOGGED IN -->
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Account" asp-action="SelectRole">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Account" asp-action="Register">Sign Up</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <!-- LOGGED IN -->
+                                <li class="nav-item">
+                                    <span class="nav-link text-dark">Hello, @userName 👋</span>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link logout-link" href="/Account/Logout">Logout</a>
+                                </li>
+                            }
+                        </ul>
 
-                            <li class="nav-item">
-                                <a class="nav-link text-dark @isActive("Account", "Register")"
-                                   asp-controller="Account"
-                                   asp-action="Register">
-                                    Sign Up
-                                </a>
-                            </li>
-                        }
-                        else
-                        {
-                            <li class="nav-item">
-                                <span class="nav-link text-dark">
-                                    Hello, @userName
-                                </span>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link logout-link"
-                                   href="/Account/Logout">
-                                    Logout
-                                </a>
-                            </li>
-                        }
-                    </ul>
-
+                    </div>
                 </div>
-            </div>
         </nav>
     </header>
-
     @if (TempData["Success"] != null)
     {
         <div id="toast" class="toast-message">
             @TempData["Success"]
         </div>
     }
+
 
     <div class="container">
         <main role="main" class="pb-3">
@@ -207,19 +114,12 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2026 - SamiSpot -
-            <a asp-area=""
-               asp-controller="Home"
-               asp-action="Privacy">
-                Privacy
-            </a>
+            &copy; 2026 - SamiSpot - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
-
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
