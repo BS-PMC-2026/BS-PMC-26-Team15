@@ -98,3 +98,4 @@ wwwroot\uploads\contributor-shelters\e19da402-826a-4fbf-811c-2b88f75b9b22.jpg
 wwwroot\uploads\contributor-shelters\ef0f0157-7d61-4c40-8378-a6ce9ede8f18.png
 wwwroot\uploads\contributor-shelters\f15065ba-49d0-4efd-81b4-b38ad6913a4f.png
 wwwroot\uploads\contributor-shelters\fefad6f1-fc3b-4b0e-92ef-ad5b90f1bd40.png
+wwwroot\uploads\WhatsApp Image 2026-05-17 at 12.44.42 (1).jpeg

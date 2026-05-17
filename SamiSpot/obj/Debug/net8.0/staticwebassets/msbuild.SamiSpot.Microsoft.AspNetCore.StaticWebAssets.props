@@ -1818,5 +1818,23 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\contributor-shelters\fefad6f1-fc3b-4b0e-92ef-ad5b90f1bd40.png'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\WhatsApp Image 2026-05-17 at 12.44.42 (1).jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>SamiSpot</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SamiSpot</BasePath>
+      <RelativePath>uploads/WhatsApp Image 2026-05-17 at 12.44.42 (1).jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>zxiyiqr9u7</Fingerprint>
+      <Integrity>mYE0I8BzIOu1ivDLyOA4CFrLSLPUyHyPb5N1LTT/z6w=</Integrity>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\WhatsApp Image 2026-05-17 at 12.44.42 (1).jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
   </ItemGroup>
 </Project>

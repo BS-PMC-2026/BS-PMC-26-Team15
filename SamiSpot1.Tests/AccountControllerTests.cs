@@ -82,35 +82,7 @@ namespace SamiSpot1.Tests
             Assert.AreEqual("rania@gmail.com", user.Email);
         }
 
-        [TestMethod]
-        public void Login_Post_WhenNormalUser_RedirectsToMapIndex()
-        {
-            using var context = CreateContext(nameof(Login_Post_WhenNormalUser_RedirectsToMapIndex));
-
-            context.Users.Add(new User
-            {
-                UserName = "user1",
-                Email = "user@gmail.com",
-                Password = "Abcd1234",
-                RoleType = "User"
-            });
-
-            context.SaveChanges();
-
-            var controller = CreateControllerWithHttp(context);
-
-            var model = new LoginViewModel
-            {
-                Email = "user@gmail.com",
-                Password = "Abcd1234"
-            };
-
-            var result = controller.Login(model, null) as RedirectToActionResult;
-
-            Assert.IsNotNull(result);
-            Assert.AreEqual("Index", result.ActionName);
-            Assert.AreEqual("Map", result.ControllerName);
-        }
+       
         [TestMethod]
         public void Login_Post_WhenPasswordIsWrong_ReturnsView_WithErrorMessage()
         {

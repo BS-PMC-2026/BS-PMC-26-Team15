@@ -1,0 +1,145 @@
+﻿<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: #0d1117;
+        background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&auto=format&fit=crop&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        position: relative;
+    }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 15, 22, 0.72);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+    .role-container {
+        position: relative;
+        z-index: 1;
+        min-height: 92vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+    }
+
+    .role-card {
+        background: rgba(18, 26, 32, 0.82);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255,255,255,0.1);
+        width: 980px;
+        border-radius: 32px;
+        padding: 60px 50px;
+        text-align: center;
+        box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+    }
+
+    .role-title {
+        font-size: 42px;
+        font-weight: 800;
+        color: #ffffff;
+        margin-bottom: 10px;
+    }
+
+    .role-subtitle {
+        color: rgba(255,255,255,0.45);
+        font-size: 17px;
+        margin-bottom: 50px;
+    }
+
+    .roles {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+    }
+
+    .role-option {
+        width: 240px;
+        height: 280px;
+        background: rgba(255,255,255,0.06);
+        backdrop-filter: blur(8px);
+        border: 1.5px solid rgba(255,255,255,0.1);
+        border-radius: 24px;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.25s ease;
+        padding: 24px;
+    }
+
+        .role-option:hover {
+            transform: translateY(-8px);
+            background: rgba(255,255,255,0.1);
+            border-color: #eb7445;
+            box-shadow: 0 16px 40px rgba(235,116,69,0.2);
+        }
+
+    .role-icon {
+        font-size: 58px;
+        color: #eb7445;
+        margin-bottom: 20px;
+        transition: transform 0.25s;
+    }
+
+    .role-option:hover .role-icon {
+        transform: scale(1.1);
+    }
+
+    .role-name {
+        font-size: 22px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 12px;
+    }
+
+    .role-desc {
+        color: rgba(255,255,255,0.45);
+        font-size: 14px;
+        line-height: 1.5;
+    }
+</style>
+
+<div class="role-container">
+    <div class="role-card">
+
+        <h1 class="role-title">Please select your role</h1>
+        <p class="role-subtitle">Choose the role you want to continue with</p>
+
+        <div class="roles">
+
+            <a href="/Account/Login?role=Admin" class="role-option">
+                <div class="role-icon">
+                    <i class="bi bi-shield"></i>
+                </div>
+                <div class="role-name">Admin</div>
+                <div class="role-desc">Manage shelters, users, and emergency alerts</div>
+            </a>
+
+            <a href="/Account/Login?role=Contributor" class="role-option">
+                <div class="role-icon">
+                    <i class="bi bi-geo-alt"></i>
+                </div>
+                <div class="role-name">Contributor</div>
+                <div class="role-desc">Add and update shelter locations and information</div>
+            </a>
+
+            <a href="/Account/Login?role=User" class="role-option">
+                <div class="role-icon">
+                    <i class="bi bi-house"></i>
+                </div>
+                <div class="role-name">User</div>
+                <div class="role-desc">Find nearby shelters and navigate to safety</div>
+            </a>
+
+        </div>
+    </div>
+</div>

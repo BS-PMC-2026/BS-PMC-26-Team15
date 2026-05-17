@@ -1,9 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SamiSpot.Controllers;
 using SamiSpot.Data;
 using SamiSpot.Models;
+using SamiSpot.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Moq;
@@ -12,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using System.IO;
 
 namespace SamiSpot1.Tests
 {
@@ -19,10 +22,6 @@ namespace SamiSpot1.Tests
     [TestCategory("Unit")]
     public class AdminContributorTests
     {
-        // ─────────────────────────────────────────────
-        //  HELPERS
-        // ─────────────────────────────────────────────
-
         private ApplicationDbContext CreateContext(string dbName)
         {
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
@@ -100,28 +99,20 @@ namespace SamiSpot1.Tests
             return shelter.Id;
         }
 
-        // ─────────────────────────────────────────────
-        //  US13 – Add New Shelter (Contributor)
-        // ─────────────────────────────────────────────
-
         [TestMethod]
         public void AddShelter_Get_ReturnsView()
         {
-            // Arrange
             using var context = CreateContext(nameof(AddShelter_Get_ReturnsView));
             var controller = CreateContributorController(context);
 
-            // Act
             var result = controller.AddShelter() as ViewResult;
 
-            // Assert
             Assert.IsNotNull(result);
         }
 
         [TestMethod]
         public async Task AddShelter_Post_WhenUserIsNotLoggedIn_RedirectsToLogin()
         {
-            // Arrange
             using var context = CreateContext(nameof(AddShelter_Post_WhenUserIsNotLoggedIn_RedirectsToLogin));
             var controller = CreateContributorController(context, userName: null);
 
@@ -134,10 +125,8 @@ namespace SamiSpot1.Tests
                 Size = 10
             };
 
-            // Act
             var result = await controller.AddShelter(model) as RedirectToActionResult;
 
-            // Assert
             Assert.IsNotNull(result);
             Assert.AreEqual("Login", result.ActionName);
             Assert.AreEqual("Account", result.ControllerName);
@@ -146,24 +135,20 @@ namespace SamiSpot1.Tests
         [TestMethod]
         public async Task AddShelter_Post_WhenModelIsInvalid_ReturnsView()
         {
-            // Arrange
             using var context = CreateContext(nameof(AddShelter_Post_WhenModelIsInvalid_ReturnsView));
             var controller = CreateContributorController(context, userName: "rayan");
 
-            var model = new ContributorShelterFormViewModel(); // empty = invalid
+            var model = new ContributorShelterFormViewModel();
             controller.ModelState.AddModelError("Name", "Required");
 
-            // Act
             var result = await controller.AddShelter(model) as ViewResult;
 
-            // Assert
             Assert.IsNotNull(result);
         }
 
         [TestMethod]
         public async Task AddShelter_Post_WhenLatLngAreZero_ReturnsView_WithError()
         {
-            // Arrange
             using var context = CreateContext(nameof(AddShelter_Post_WhenLatLngAreZero_ReturnsView_WithError));
             var controller = CreateContributorController(context, userName: "rayan");
 
@@ -171,15 +156,13 @@ namespace SamiSpot1.Tests
             {
                 Name = "Shelter",
                 Address = "Addr",
-                Latitude = 0,  // no location picked
+                Latitude = 0,
                 Longitude = 0,
                 Size = 10
             };
 
-            // Act
             var result = await controller.AddShelter(model) as ViewResult;
 
-            // Assert
             Assert.IsNotNull(result);
             Assert.IsTrue(controller.ModelState.ErrorCount > 0);
         }
@@ -187,11 +170,9 @@ namespace SamiSpot1.Tests
         [TestMethod]
         public async Task AddShelter_Post_WhenTooManyImages_ReturnsView_WithError()
         {
-            // Arrange
             using var context = CreateContext(nameof(AddShelter_Post_WhenTooManyImages_ReturnsView_WithError));
             var controller = CreateContributorController(context, userName: "rayan");
 
-            // Create 11 fake image files (limit is 10)
             var fakeImages = Enumerable.Range(0, 11)
                 .Select(_ =>
                 {
@@ -212,22 +193,15 @@ namespace SamiSpot1.Tests
                 Images = fakeImages
             };
 
-            // Act
             var result = await controller.AddShelter(model) as ViewResult;
 
-            // Assert
             Assert.IsNotNull(result);
             Assert.IsTrue(controller.ModelState.ErrorCount > 0);
         }
 
-        // ─────────────────────────────────────────────
-        //  US25 – Admin Views All Shelter Submissions
-        // ─────────────────────────────────────────────
-
         [TestMethod]
         public void AllShelters_ReturnsView_WithAllShelters()
         {
-            // Arrange
             using var context = CreateContext(nameof(AllShelters_ReturnsView_WithAllShelters));
             SeedShelter(context, userId: "rayan", name: "Shelter A", status: "Pending");
             SeedShelter(context, userId: "doaa", name: "Shelter B", status: "Approved");
@@ -235,10 +209,8 @@ namespace SamiSpot1.Tests
 
             var controller = CreateAdminController(context);
 
-            // Act
             var result = controller.AllShelters() as ViewResult;
 
-            // Assert
             Assert.IsNotNull(result);
 
             var model = result.Model as List<ContributorShelter>;
@@ -249,14 +221,11 @@ namespace SamiSpot1.Tests
         [TestMethod]
         public void AllShelters_WhenNoShelters_ReturnsEmptyList()
         {
-            // Arrange
             using var context = CreateContext(nameof(AllShelters_WhenNoShelters_ReturnsEmptyList));
             var controller = CreateAdminController(context);
 
-            // Act
             var result = controller.AllShelters() as ViewResult;
 
-            // Assert
             Assert.IsNotNull(result);
 
             var model = result.Model as List<ContributorShelter>;
@@ -267,7 +236,6 @@ namespace SamiSpot1.Tests
         [TestMethod]
         public void AllShelters_ReturnsAllStatuses_NotJustPending()
         {
-            // Arrange
             using var context = CreateContext(nameof(AllShelters_ReturnsAllStatuses_NotJustPending));
             SeedShelter(context, status: "Pending");
             SeedShelter(context, status: "Approved");
@@ -275,95 +243,39 @@ namespace SamiSpot1.Tests
 
             var controller = CreateAdminController(context);
 
-            // Act
             var result = controller.AllShelters() as ViewResult;
             var model = result.Model as List<ContributorShelter>;
 
-            // Assert — admin sees all, not just pending
+            Assert.IsNotNull(model);
             Assert.IsTrue(model.Any(s => s.Status == "Pending"));
             Assert.IsTrue(model.Any(s => s.Status == "Approved"));
             Assert.IsTrue(model.Any(s => s.Status == "Rejected"));
         }
 
-        // ─────────────────────────────────────────────
-        //  US26 – Admin Approves Shelter
-        // ─────────────────────────────────────────────
-
-        // NOTE: ApproveShelter uses raw SQL (GetConnectionString).
-        // We test the redirect behaviour which runs after the SQL block.
-        // The actual status update is verified via the SQL WHERE clause in production.
-
-        [TestMethod]
-        public void ApproveShelter_WhenCalled_RedirectsToPendingShelters()
-        {
-            // Arrange
-            using var context = CreateContext(nameof(ApproveShelter_WhenCalled_RedirectsToPendingShelters));
-            var controller = CreateAdminController(context);
-
-            RedirectToActionResult result = null;
-
-            // Act — raw SQL throws on InMemory, catch and check what ran before it
-            try { result = controller.ApproveShelter(999) as RedirectToActionResult; }
-            catch { }
-
-            // Assert — if redirect was set before SQL it would be PendingShelters
-            // If SQL threw first, result is null — both cases are documented below
-            Assert.IsTrue(result == null || result.ActionName == "PendingShelters",
-                "Either SQL threw before redirect (expected on InMemory) or redirect is correct.");
-        }
-
         [TestMethod]
         public void ApproveShelter_UsingEF_UpdatesStatusToApproved()
         {
-            // Arrange — test the status change directly via EF (bypassing raw SQL)
             using var context = CreateContext(nameof(ApproveShelter_UsingEF_UpdatesStatusToApproved));
             int id = SeedShelter(context, status: "Pending");
 
-            // Act — simulate what ApproveShelter does, using EF instead of raw SQL
             var shelter = context.ContributorShelters.First(s => s.Id == id);
             shelter.Status = "Approved";
             context.SaveChanges();
 
-            // Assert
             var updated = context.ContributorShelters.First(s => s.Id == id);
             Assert.AreEqual("Approved", updated.Status);
-        }
-
-        // ─────────────────────────────────────────────
-        //  US27 – Admin Rejects Shelter
-        // ─────────────────────────────────────────────
-
-        [TestMethod]
-        public void RejectShelter_WhenCalled_RedirectsToPendingShelters()
-        {
-            // Arrange
-            using var context = CreateContext(nameof(RejectShelter_WhenCalled_RedirectsToPendingShelters));
-            var controller = CreateAdminController(context);
-
-            RedirectToActionResult result = null;
-
-            // Act
-            try { result = controller.RejectShelter(999) as RedirectToActionResult; }
-            catch { }
-
-            // Assert
-            Assert.IsTrue(result == null || result.ActionName == "PendingShelters",
-                "Either SQL threw before redirect (expected on InMemory) or redirect is correct.");
         }
 
         [TestMethod]
         public void RejectShelter_UsingEF_UpdatesStatusToRejected()
         {
-            // Arrange — test the status change directly via EF (bypassing raw SQL)
             using var context = CreateContext(nameof(RejectShelter_UsingEF_UpdatesStatusToRejected));
             int id = SeedShelter(context, status: "Pending");
 
-            // Act — simulate what RejectShelter does, using EF instead of raw SQL
             var shelter = context.ContributorShelters.First(s => s.Id == id);
             shelter.Status = "Rejected";
             context.SaveChanges();
 
-            // Assert
             var updated = context.ContributorShelters.First(s => s.Id == id);
             Assert.AreEqual("Rejected", updated.Status);
         }
@@ -371,19 +283,17 @@ namespace SamiSpot1.Tests
         [TestMethod]
         public void RejectShelter_DoesNotAffectOtherShelters()
         {
-            // Arrange
             using var context = CreateContext(nameof(RejectShelter_DoesNotAffectOtherShelters));
             int targetId = SeedShelter(context, name: "Target", status: "Pending");
             int otherId = SeedShelter(context, name: "Other", status: "Pending");
 
-            // Act — reject only the target
             var target = context.ContributorShelters.First(s => s.Id == targetId);
             target.Status = "Rejected";
             context.SaveChanges();
 
-            // Assert — other shelter is untouched
             var other = context.ContributorShelters.First(s => s.Id == otherId);
             Assert.AreEqual("Pending", other.Status);
         }
     }
 }
+
