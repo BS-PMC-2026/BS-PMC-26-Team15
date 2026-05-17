@@ -17,192 +17,417 @@
 
 <style>
     body {
-        background: #f4fbfd;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: #0d1117;
+        background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&auto=format&fit=crop&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        position: relative;
+        color: rgba(255,255,255,0.9);
     }
 
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 15, 22, 0.72);
+            z-index: 0;
+            pointer-events: none;
+        }
+
     .add-shelter-page {
+        position: relative;
+        z-index: 1;
         width: 100%;
-        padding: 40px 60px;
+        max-width: 100%;
         margin: 0;
+        padding: 30px 70px 60px;
     }
 
     .page-title {
-        font-size: 38px;
+        font-size: 42px;
         font-weight: 800;
-        color: #2c4a52;
+        color: #ffffff;
         margin-bottom: 6px;
     }
 
     .page-subtitle {
-        color: #5a7c84;
-        font-size: 17px;
-        margin-bottom: 35px;
-        max-width: 1100px;
+        color: rgba(255,255,255,0.45);
+        font-size: 15px;
+        margin-bottom: 34px;
+    }
+
+    .form-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .form-card {
+        background: rgba(18, 26, 32, 0.82);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 22px;
+        padding: 40px;
+        width: 100%;
+        box-shadow: 0 24px 60px rgba(0,0,0,0.5);
     }
 
     .section-title {
-        color: #2c4a52;
-        font-size: 24px;
+        font-size: 18px;
         font-weight: 800;
-        margin: 32px 0 18px;
-        padding-bottom: 10px;
-        border-bottom: 2px solid #cdeff5;
+        color: #ffffff;
+        margin-bottom: 24px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .form-label {
-        color: #2c4a52;
+        font-size: 14px;
+        color: rgba(255,255,255,0.75);
         font-weight: 700;
         margin-bottom: 8px;
     }
 
-    .form-control {
-        border-radius: 14px;
-        border: 1px solid #d6f2f7;
-        padding: 13px 15px;
-        background: #ffffff;
+    .field-help {
+        font-size: 12px;
+        color: rgba(255,255,255,0.35);
+        margin-bottom: 8px;
     }
+
+    .form-control {
+        border-radius: 12px;
+        border: 1.5px solid rgba(255,255,255,0.12);
+        padding: 13px 16px;
+        background: rgba(255,255,255,0.07);
+        font-size: 15px;
+        color: #ffffff;
+        transition: border-color 0.2s, background 0.2s;
+    }
+
+        .form-control::placeholder {
+            color: rgba(255,255,255,0.3);
+        }
 
         .form-control:focus {
             border-color: #4bbfd3;
-            box-shadow: 0 0 0 0.2rem rgba(75,191,211,0.18);
+            background: rgba(255,255,255,0.1);
+            box-shadow: none;
+            color: #ffffff;
+            outline: none;
         }
 
+        .form-control[readonly] {
+            background: rgba(255,255,255,0.04);
+            color: rgba(255,255,255,0.5);
+        }
+
+    .input-with-button {
+        display: flex;
+        gap: 12px;
+    }
+
     .search-btn {
-        border-radius: 0 14px 14px 0;
+        border-radius: 12px;
         border: none;
-        background: #4bbfd3;
+        background: #ff6333;
         color: white;
         font-weight: 700;
         padding: 0 26px;
+        cursor: pointer;
+        transition: background 0.2s;
+        white-space: nowrap;
     }
 
         .search-btn:hover {
-            background: #36aeca;
+            background: #f05225;
             color: white;
         }
 
     #map {
         width: 100%;
-        height: 430px;
-        border-radius: 18px;
+        height: 520px;
+        border-radius: 16px;
         overflow: hidden;
-        border: 1px solid #d6f2f7;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        border: 1px solid rgba(255,255,255,0.1);
     }
 
     .hint-text {
-        color: #5a7c84;
-        margin-top: 8px;
-        font-size: 14px;
+        color: rgba(255,255,255,0.35);
+        margin-top: 10px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
     }
 
     .available-box {
-        padding: 14px 0;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 14px;
+        padding: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .available-text strong {
+        display: block;
+        font-size: 15px;
+        color: #ffffff;
+    }
+
+    .available-text span {
+        display: block;
+        font-size: 12px;
+        color: rgba(255,255,255,0.4);
+        margin-top: 3px;
+    }
+
+    .form-check-input {
+        width: 44px;
+        height: 22px;
+        cursor: pointer;
+        background-color: rgba(255,255,255,0.1);
+        border-color: rgba(255,255,255,0.2);
+    }
+
+        .form-check-input:checked {
+            background-color: #ff6333;
+            border-color: #ff6333;
+        }
+
+    .upload-box {
+        border: 1.5px dashed rgba(255,255,255,0.15);
+        border-radius: 14px;
+        padding: 38px;
+        text-align: center;
+        color: rgba(255,255,255,0.4);
+        cursor: pointer;
+        background: rgba(255,255,255,0.03);
+        transition: border-color 0.2s, background 0.2s;
+        display: block;
+    }
+
+        .upload-box:hover {
+            border-color: #ff6333;
+            background: rgba(255,99,51,0.05);
+        }
+
+        .upload-box span {
+            display: block;
+            font-size: 15px;
+            color: rgba(255,255,255,0.7);
+            font-weight: 600;
+        }
+
+        .upload-box small {
+            display: block;
+            margin-top: 6px;
+            font-size: 12px;
+            color: rgba(255,255,255,0.35);
+        }
+
+    .file-input {
+        display: none;
     }
 
     .submit-btn {
-        background: #4bbfd3;
+        width: 100%;
+        background: #ff6333;
         border: none;
         color: white;
-        border-radius: 30px;
-        padding: 13px 34px;
+        border-radius: 12px;
+        padding: 16px;
         font-weight: 800;
-        box-shadow: 0 8px 18px rgba(75,191,211,0.25);
+        font-size: 16px;
+        box-shadow: 0 8px 24px rgba(255,99,51,0.3);
         transition: all 0.25s ease;
-        margin-top: 10px;
+        margin-top: 20px;
+        cursor: pointer;
     }
 
         .submit-btn:hover {
-            background: #36aeca;
+            background: #f05225;
             transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(255,99,51,0.4);
             color: white;
         }
 
+    .text-danger {
+        color: #f87171 !important;
+    }
+
+    /* Dark Google autocomplete dropdown */
+    .pac-container {
+        background: rgba(18, 26, 32, 0.96) !important;
+        backdrop-filter: blur(12px) !important;
+        border: 1px solid rgba(255,255,255,0.12) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important;
+        margin-top: 4px !important;
+    }
+
+    .pac-item {
+        background: transparent !important;
+        color: rgba(255,255,255,0.8) !important;
+        border-top: 1px solid rgba(255,255,255,0.06) !important;
+        padding: 10px 14px !important;
+        cursor: pointer !important;
+        font-size: 13px !important;
+    }
+
+        .pac-item:hover, .pac-item-selected {
+            background: rgba(255,255,255,0.07) !important;
+        }
+
+    .pac-item-query {
+        color: #ffffff !important;
+        font-weight: 600 !important;
+    }
+
+    .pac-icon {
+        filter: invert(1) opacity(0.4) !important;
+    }
+
+    .pac-matched {
+        color: #4bbfd3 !important;
+    }
+
+    .pac-logo::after {
+        display: none !important;
+    }
+
     @@media (max-width: 768px) {
         .add-shelter-page {
-            padding: 25px;
+            padding: 24px 18px 50px;
         }
 
         .page-title {
             font-size: 32px;
+        }
+
+        .form-card {
+            padding: 24px;
+        }
+
+        .input-with-button {
+            flex-direction: column;
+        }
+
+        .search-btn {
+            width: 100%;
+            height: 48px;
+        }
+
+        #map {
+            height: 380px;
         }
     }
 </style>
 
 <div class="add-shelter-page">
 
-    <h2 class="page-title"> Add New Shelter</h2>
-    <p class="page-subtitle">
-        Contributors can submit a new shelter by filling in the details below.
-        After submission, the shelter will be reviewed by an admin before appearing on the map.
-    </p>
+    <h2 class="page-title">Add New Shelter</h2>
+    <p class="page-subtitle">Help others find safety by adding shelter information</p>
 
     <form asp-action="AddShelter" asp-controller="Contributor" method="post" enctype="multipart/form-data">
 
-        <div class="section-title">Shelter Details</div>
+        <div class="form-layout">
+            <div class="form-card">
 
-        <div class="mb-3">
-            <label class="form-label">Shelter Name</label>
-            <input asp-for="Name" class="form-control" />
-            <span asp-validation-for="Name" class="text-danger"></span>
-        </div>
+                <div class="section-title">Location & Map</div>
 
-        <div class="section-title">📍 Location</div>
+                <div class="mb-4">
+                    <label class="form-label">Search Location</label>
+                    <div class="input-with-button">
+                        <input type="text" id="searchBox" class="form-control"
+                               placeholder="Enter address or place name" />
+                        <button type="button" id="searchBtn" class="btn search-btn">Search</button>
+                    </div>
+                </div>
 
-        <div class="mb-3">
-            <label class="form-label">Search Location</label>
-            <div class="input-group">
-                <input type="text" id="searchBox" class="form-control" placeholder="Search for shelter location..." />
-                <button type="button" id="searchBtn" class="btn search-btn">Search</button>
+                <div class="mb-4">
+                    <label class="form-label">Selected Address</label>
+                    <input asp-for="Address" id="Address" class="form-control" readonly
+                           placeholder="123 Main Street, Downtown" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">Map Preview</label>
+                    <div id="map"></div>
+                    <div class="hint-text">Click map to adjust pin location</div>
+                </div>
+
+                <div class="section-title mt-5">Shelter Details</div>
+
+                <div class="mb-4">
+                    <label class="form-label">Shelter Name</label>
+                    <div class="field-help">Choose or write a shelter name</div>
+                    <input asp-for="Name" class="form-control"
+                           list="shelterNameSuggestions"
+                           placeholder="e.g., Downtown Community Shelter" />
+                    <datalist id="shelterNameSuggestions">
+                        <option value="North Community Shelter"></option>
+                        <option value="Central Station Shelter"></option>
+                        <option value="Green Park Safe Shelter"></option>
+                        <option value="Community Center Shelter"></option>
+                        <option value="Main Entrance Shelter"></option>
+                    </datalist>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">How many people can this shelter hold?</label>
+                    <input asp-for="Size" class="form-control" type="number"
+                           min="1" max="5000" placeholder="e.g., 150" />
+                    <span asp-validation-for="Size" class="text-danger"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">Additional Information</label>
+                    <div class="field-help">Would you like to add anything else about this shelter?</div>
+                    <textarea asp-for="Description" class="form-control" rows="4"
+                              placeholder="e.g., Has wheelchair access, pet-friendly, 24/7 staffed..."></textarea>
+                </div>
+
+                <div class="form-check mb-4 available-box">
+                    <div class="available-text">
+                        <strong>Available now</strong>
+                        <span>Is this shelter currently accepting people?</span>
+                    </div>
+                    <input asp-for="IsAvailable" class="form-check-input" />
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">Upload Images</label>
+                    <div class="field-help">Maximum 10 images</div>
+                    <label for="Images" class="upload-box">
+                        <span>Click to upload or drag and drop</span>
+                        <small>PNG, JPG up to 5MB each</small>
+                    </label>
+                    <input asp-for="Images" id="Images" type="file"
+                           multiple accept="image/*" class="file-input" />
+                </div>
+
+                <button type="submit" class="btn submit-btn">Submit Shelter</button>
+
             </div>
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label">Selected Address</label>
-            <input asp-for="Address" id="Address" class="form-control" readonly />
-            <span asp-validation-for="Address" class="text-danger"></span>
         </div>
 
         <input asp-for="Latitude" id="Latitude" type="hidden" />
         <input asp-for="Longitude" id="Longitude" type="hidden" />
 
-        <div class="mb-3">
-            <label class="form-label">Choose Location on Map</label>
-            <div id="map"></div>
-            <div class="hint-text">💡 Search for a place or click directly on the map.</div>
-        </div>
-
-        <div class="section-title">ℹ️ Extra Information</div>
-
-        <div class="mb-3">
-            <label class="form-label">Description</label>
-            <textarea asp-for="Description" class="form-control" rows="4"></textarea>
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label">How many people can this shelter hold?</label>
-            <input asp-for="Size" class="form-control" type="number" min="1" max="5000" placeholder="Example: 30 people" />
-            <small class="text-muted">
-                Please enter the maximum number of people that can safely fit inside this shelter.
-            </small>
-            <span asp-validation-for="Size" class="text-danger"></span>
-        </div>
-
-        <div class="form-check mb-3 available-box">
-            <input asp-for="IsAvailable" class="form-check-input" />
-            <label asp-for="IsAvailable" class="form-check-label">Available now</label>
-        </div>
-
-        <div class="mb-4">
-            <label class="form-label">Upload Images (max 10)</label>
-            <input asp-for="Images" id="Images" type="file" multiple accept="image/*" class="form-control" />
-        </div>
-
-        <button type="submit" class="btn submit-btn">Submit Shelter</button>
     </form>
 </div>
 
 @section Scripts {
+
     <partial name="_ValidationScriptsPartial" />
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuiZcDNCGOmwM7OSjNncN7yrjIjcRMzJk&libraries=places,geometry&callback=initMap"></script>
@@ -211,7 +436,6 @@
         let map;
         let marker;
         let geocoder;
-        let searchBox;
 
         function initMap() {
             const defaultCenter = { lat: 31.2518, lng: 34.7913 };
@@ -229,18 +453,14 @@
 
             autocomplete.addListener("place_changed", function () {
                 const place = autocomplete.getPlace();
-
                 if (!place.geometry || !place.geometry.location) {
                     alert("Location not found.");
                     return;
                 }
-
                 const lat = place.geometry.location.lat();
                 const lng = place.geometry.location.lng();
-
                 map.setCenter({ lat, lng });
                 map.setZoom(16);
-
                 setMarker(lat, lng);
                 setLocationFields(lat, lng, place.formatted_address || input.value);
             });
@@ -248,25 +468,20 @@
             map.addListener("click", function (event) {
                 const lat = event.latLng.lat();
                 const lng = event.latLng.lng();
-
                 setMarker(lat, lng);
                 reverseGeocode(lat, lng);
             });
 
             document.getElementById("searchBtn").addEventListener("click", function () {
                 const address = document.getElementById("searchBox").value;
-
                 if (!address) return;
-
-                geocoder.geocode({ address: address }, function (results, status) {
+                geocoder.geocode({ address }, function (results, status) {
                     if (status === "OK" && results[0]) {
                         const location = results[0].geometry.location;
                         const lat = location.lat();
                         const lng = location.lng();
-
                         map.setCenter(location);
                         map.setZoom(16);
-
                         setMarker(lat, lng);
                         setLocationFields(lat, lng, results[0].formatted_address);
                     } else {
@@ -277,14 +492,8 @@
         }
 
         function setMarker(lat, lng) {
-            if (marker) {
-                marker.setMap(null);
-            }
-
-            marker = new google.maps.Marker({
-                position: { lat, lng },
-                map: map
-            });
+            if (marker) marker.setMap(null);
+            marker = new google.maps.Marker({ position: { lat, lng }, map });
         }
 
         function setLocationFields(lat, lng, address) {

@@ -214,6 +214,10 @@
                    name="returnUrl"
                    value="@Context.Request.Query["returnUrl"]" />
 
+            <input type="hidden"
+                   asp-for="Role"
+                   value="@Context.Request.Query["role"]" />
+
             <div asp-validation-summary="All"
                  class="text-danger mb-4 text-center">
             </div>
