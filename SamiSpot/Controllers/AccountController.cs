@@ -105,12 +105,6 @@ namespace SamiSpot.Controllers
                 return View(model);
             }
 
-            if (user.RoleType != model.Role)
-            {
-                ModelState.AddModelError("", "Selected role does not match this account ❌");
-                return View(model);
-            }
-
             HttpContext.Session.SetString("UserId", user.Id.ToString());
             HttpContext.Session.SetString("UserName", user.UserName);
             HttpContext.Session.SetString("RoleType", user.RoleType);
@@ -173,11 +167,6 @@ namespace SamiSpot.Controllers
             if (!password.Any(char.IsDigit)) return false;
 
             return true;
-        }
-
-        public IActionResult SelectRole()
-        {
-            return View();
         }
     }
 }

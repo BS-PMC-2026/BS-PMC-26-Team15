@@ -42,11 +42,11 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-controller="Home" asp-action="Emergency">Emergency</a>
                             </li>
-                            <!-- <li class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link text-dark" asp-controller="AiChat" asp-action="Index">
                                     AI Chat 🤖
                                 </a>
-                            </li> -->
+                            </li>
                             <!-- ✅ DASHBOARD (only admin + contributor) -->
                             @if (role == "Admin")
                             {
@@ -76,7 +76,7 @@
                             {
                                 <!-- NOT LOGGED IN -->
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-controller="Account" asp-action="SelectRole">Login</a>
+                                    <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Login</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-controller="Account" asp-action="Register">Sign Up</a>

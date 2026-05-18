@@ -5,132 +5,272 @@
 }
 
 <style>
-    body {
-        background: #f4fbfd;
+    .sh-wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 48px 32px 80px;
     }
 
-    .my-shelters-page {
-        width: 100%;
-        padding: 40px 60px;
-        margin: 0;
-    }
-    .page-header {
+    .sh-header {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        margin-bottom: 30px;
+        align-items: flex-end;
+        margin-bottom: 32px;
         flex-wrap: wrap;
-        gap: 15px;
+        gap: 16px;
     }
 
-    .page-title {
-        font-size: 38px;
-        font-weight: 800;
-        color: #2c4a52;
+    .sh-title {
+        font-size: 30px;
+        font-weight: 700;
+        color: #0e1c20;
         margin: 0;
     }
 
-    .page-subtitle {
-        color: #5a7c84;
-        font-size: 17px;
-        margin-top: 5px;
+    .sh-sub {
+        font-size: 14px;
+        color: #5e8089;
+        margin: 5px 0 0;
     }
 
-    .add-btn {
-        background: #4bbfd3;
-        color: white;
-        border-radius: 30px;
-        padding: 12px 24px;
+    .sh-add {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        background: #ffffff;
+        border: 1px solid #d4edf2;
+        border-radius: 10px;
+        padding: 9px 18px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #0e1c20;
         text-decoration: none;
-        font-weight: 700;
-        box-shadow: 0 8px 18px rgba(75,191,211,0.25);
-        transition: 0.2s;
+        transition: background 0.15s, border-color 0.15s;
     }
 
-        .add-btn:hover {
-            background: #36aeca;
-            color: white;
-            transform: translateY(-2px);
+        .sh-add:hover {
+            background: #f0f8fa;
+            border-color: #a8d8e2;
+            color: #0e1c20;
         }
 
+    .sh-add-icon {
+        font-size: 18px;
+        line-height: 1;
+        color: #1ab8cc;
+    }
+
+    .alert {
+        padding: 13px 18px;
+        border-radius: 10px;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .alert-success {
+        background: #d6f5e6;
+        color: #166b42;
+        border-left: 3px solid #2ec97e;
+    }
+
+    .alert-danger {
+        background: #fde8e8;
+        color: #7b1c1c;
+        border-left: 3px solid #e84c4c;
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: 80px 40px;
+        background: #ffffff;
+        border: 1px dashed #d4edf2;
+        border-radius: 16px;
+        color: #5e8089;
+        font-size: 15px;
+    }
+
+        .empty-state a {
+            color: #1ab8cc;
+            font-weight: 600;
+            text-underline-offset: 3px;
+        }
+
+    .table-card {
+        background: #ffffff;
+        border: 1px solid #d4edf2;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
     .table-scroll {
-        width: 100%;
         overflow-x: auto;
     }
 
-    .custom-table {
+    table {
         width: 100%;
         border-collapse: collapse;
+        min-width: 640px;
     }
 
-        .custom-table thead th {
-            background: #eaf9fc;
-            color: #2c4a52;
-            font-weight: 800;
-            padding: 16px;
-            border-bottom: 2px solid #cdeff5;
+    thead tr {
+        border-bottom: 1px solid #d4edf2;
+    }
+
+    thead th {
+        padding: 50px 60px;
+        text-align: left;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #5e8089;
+        background: #f7fcfd;
+    }
+
+
+    tbody tr {
+        border-bottom: 1px solid #eaf4f7;
+        transition: background 0.12s;
+    }
+
+        tbody tr:last-child {
+            border-bottom: none;
         }
 
-        .custom-table tbody tr {
-            background: #ffffff;
-            transition: all 0.2s ease;
+        tbody tr:hover {
+            background: #f7fcfd;
         }
 
-            .custom-table tbody tr:hover {
-                background: #f9feff;
-                box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+    tbody td {
+        padding: 30px 40px;
+        font-size: 15px;
+        color: #0e1c20;
+        vertical-align: middle;
+    }
+
+    .id-val {
+        font-size: 13px;
+        color: #5e8089;
+    }
+
+    .shelter-name {
+        font-weight: 500;
+    }
+
+    .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 11px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .badge-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    .b-approved {
+        background: #d6f5e6;
+        color: #166b42;
+    }
+
+        .b-approved .badge-dot {
+            background: #2ec97e;
+        }
+
+    .b-pending {
+        background: #fef3e0;
+        color: #7a4e00;
+    }
+
+        .b-pending .badge-dot {
+            background: #f0a843;
+        }
+
+    .b-rejected {
+        background: #fde8e8;
+        color: #7b1c1c;
+    }
+
+        .b-rejected .badge-dot {
+            background: #e84c4c;
+        }
+
+    .date-cell {
+        font-size: 13px;
+        color: #5e8089;
+    }
+
+    .acts {
+        display: flex;
+        gap: 7px;
+        align-items: center;
+    }
+
+    .act-btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 600;
+        border: 1px solid #d4edf2;
+        background: #ffffff;
+        color: #0e1c20;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background 0.13s, border-color 0.13s;
+        font-family: inherit;
+    }
+
+        .act-btn:hover {
+            background: #f0f8fa;
+            border-color: #a8d8e2;
+            color: #0e1c20;
+        }
+
+        .act-btn.del {
+            color: #7b1c1c;
+            border-color: #f5bcbc;
+        }
+
+            .act-btn.del:hover {
+                background: #fde8e8;
             }
 
-        .custom-table tbody td {
-            background: #ffffff;
-            padding: 18px;
-            color: #3c5c63;
-            border-bottom: 1px solid #dceff3;
-            vertical-align: middle;
+    @@media (max-width: 640px) {
+        .sh-wrap {
+            padding: 28px 16px 60px;
         }
 
-    .id-cell {
-        font-weight: 800;
-        color: #4bbfd3;
-    }
-
-    .action-btn {
-        border-radius: 20px;
-        padding: 6px 14px;
-        font-weight: 700;
-        margin-right: 6px;
-    }
-
-    .empty-box {
-        background: #eaf9fc;
-        border-left: 5px solid #4bbfd3;
-        padding: 20px;
-        color: #2c4a52;
-        border-radius: 10px;
-    }
-
-    @@media (max-width: 768px) {
-        .my-shelters-page {
-            padding: 25px;
+        .sh-header {
+            flex-direction: column;
+            align-items: flex-start;
         }
 
-        .custom-table {
-            min-width: 700px;
+        .sh-add {
+            width: 100%;
+            justify-content: center;
         }
     }
 </style>
 
-<div class="my-shelters-page">
+<div class="sh-wrap">
 
-    <div class="page-header">
+    <div class="sh-header">
         <div>
-            <h2 class="page-title"> My Shelters</h2>
-            <p class="page-subtitle">
-                Track, update, and manage the shelters you submitted.
-            </p>
+            <h1 class="sh-title">My Shelters</h1>
+            <p class="sh-sub">Track, update, and manage the shelters you submitted.</p>
         </div>
-
-        <a href="/Contributor/AddShelter" class="add-btn">+ Add Shelter</a>
+        <a href="/Contributor/AddShelter" class="sh-add">
+            <span class="sh-add-icon">+</span>
+            Add Shelter
+        </a>
     </div>
 
     @if (TempData["SuccessMessage"] != null)
@@ -145,72 +285,74 @@
 
     @if (Model == null || !Model.Any())
     {
-        <div class="empty-box">
-            You haven't added any shelters yet.
-            <a href="/Contributor/AddShelter">Add one now!</a>
+        <div class="empty-state">
+            <p>You haven't added any shelters yet.</p>
+            <a href="/Contributor/AddShelter">Add one now →</a>
         </div>
     }
     else
     {
-        <div class="table-scroll">
-            <table class="custom-table">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Shelter Name</th>
-                        <th>Status</th>
-                        <th>Date Added</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    @foreach (var shelter in Model)
-                    {
+        <div class="table-card">
+            <div class="table-scroll">
+                <table>
+                    <thead>
                         <tr>
-                            <td class="id-cell">@shelter.Id</td>
-
-                            <td>@shelter.Name</td>
-
-                            <td>
-                                @if (shelter.Status == "Approved")
-                                {
-                                    <span class="badge bg-success">Approved</span>
-                                }
-                                else if (shelter.Status == "Pending")
-                                {
-                                    <span class="badge bg-warning text-dark">Pending</span>
-                                }
-                                else
-                                {
-                                    <span class="badge bg-danger">Rejected</span>
-                                }
-                            </td>
-
-                            <td>@shelter.CreatedAt.ToString("dd/MM/yyyy")</td>
-
-                            <td>
-                                <a href="/Contributor/ShelterDetails/@shelter.Id"
-                                   class="btn btn-sm btn-primary action-btn">View</a>
-
-                                <a href="/Contributor/EditShelter/@shelter.Id"
-                                   class="btn btn-sm btn-warning action-btn">Edit</a>
-
-                                <form action="/Contributor/DeleteShelter/@shelter.Id"
-                                      method="post"
-                                      style="display:inline"
-                                      onsubmit="return confirm('Are you sure you want to delete this shelter?')">
-                                    @Html.AntiForgeryToken()
-                                    <button type="submit"
-                                            class="btn btn-sm btn-danger action-btn">
-                                        Delete
-                                    </button>
-                                </form>
-                            </td>
+                            <th>#</th>
+                            <th>Shelter Name</th>
+                            <th>Status</th>
+                            <th>Date Added</th>
+                            <th>Actions</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach (var shelter in Model)
+                        {
+                            <tr>
+                                <td><span class="id-val">@shelter.Id</span></td>
+
+                                <td><span class="shelter-name">@shelter.Name</span></td>
+
+                                <td>
+                                    @if (shelter.Status == "Approved")
+                                    {
+                                        <span class="badge b-approved">
+                                            <span class="badge-dot"></span>Approved
+                                        </span>
+                                    }
+                                    else if (shelter.Status == "Pending")
+                                    {
+                                        <span class="badge b-pending">
+                                            <span class="badge-dot"></span>Pending
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge b-rejected">
+                                            <span class="badge-dot"></span>Rejected
+                                        </span>
+                                    }
+                                </td>
+
+                                <td><span class="date-cell">@shelter.CreatedAt.ToString("dd MMM yyyy")</span></td>
+
+                                <td>
+                                    <div class="acts">
+                                        <a href="/Contributor/ShelterDetails/@shelter.Id" class="act-btn">View</a>
+                                        <a href="/Contributor/EditShelter/@shelter.Id" class="act-btn">Edit</a>
+                                        <form action="/Contributor/DeleteShelter/@shelter.Id"
+                                              method="post"
+                                              style="display:inline"
+                                              onsubmit="return confirm('Are you sure you want to delete this shelter?')">
+                                            @Html.AntiForgeryToken()
+                                            <button type="submit" class="act-btn del">Delete</button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     }
 
