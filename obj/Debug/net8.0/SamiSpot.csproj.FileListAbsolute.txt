@@ -9,3 +9,13 @@ C:\Users\doaaa\source\repos\samispot\obj\Debug\net8.0\SamiSpot.MvcApplicationPar
 C:\Users\doaaa\source\repos\samispot\obj\Debug\net8.0\SamiSpot.RazorAssemblyInfo.cache
 C:\Users\doaaa\source\repos\samispot\obj\Debug\net8.0\SamiSpot.RazorAssemblyInfo.cs
 C:\Users\doaaa\source\repos\samispot\obj\Debug\net8.0\SamiSpot.sourcelink.json
+C:\Users\alafi\source\repos\SamiSpot\obj\Debug\net8.0\SamiSpot.csproj.AssemblyReference.cache
+C:\Users\alafi\source\repos\SamiSpot\obj\Debug\net8.0\SamiSpot.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alafi\source\repos\SamiSpot\obj\Debug\net8.0\SamiSpot.AssemblyInfoInputs.cache
+C:\Users\alafi\source\repos\SamiSpot\obj\Debug\net8.0\SamiSpot.AssemblyInfo.cs
+C:\Users\alafi\source\repos\SamiSpot\obj\Debug\net8.0\SamiSpot.csproj.CoreCompileInputs.cache
+C:\Users\alafi\source\repos\SamiSpot\obj\Debug\net8.0\SamiSpot.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\alafi\source\repos\SamiSpot\obj\Debug\net8.0\SamiSpot.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\alafi\source\repos\SamiSpot\obj\Debug\net8.0\SamiSpot.RazorAssemblyInfo.cache
+C:\Users\alafi\source\repos\SamiSpot\obj\Debug\net8.0\SamiSpot.RazorAssemblyInfo.cs
+C:\Users\alafi\source\repos\SamiSpot\obj\Debug\net8.0\SamiSpot.sourcelink.json
