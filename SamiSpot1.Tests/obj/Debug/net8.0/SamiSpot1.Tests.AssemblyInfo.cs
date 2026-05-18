@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SamiSpot1.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+966860ecfe48077cbde7f44496ace95c72c3ccfc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+300fc287e32837664420915efc021c312520c124")]
 [assembly: System.Reflection.AssemblyProductAttribute("SamiSpot1.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SamiSpot1.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

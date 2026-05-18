@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YA7E8+4s8s3ATHiODk9+e9z2bVuaV3tHshN+nultjo8=",
+  "Hash": "QuMJCdR2DTpKbEUm++Ghfu72PeFIFWqM1nVqTgH9ngQ=",
   "Source": "SamiSpot",
   "BasePath": "_content/SamiSpot",
   "Mode": "Default",
@@ -1333,8 +1333,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "u7v1alf01n",
-      "Integrity": "tv1vrK6uCzutHNWNkDqgpfF7ujaVB5iwmvO2RJuzfH4=",
+      "Fingerprint": "3r8b2a0bt1",
+      "Integrity": "8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\map.css"
@@ -3442,6 +3442,51 @@
   ],
   "Endpoints": [
     {
+      "Route": "css/map.3r8b2a0bt1.css",
+      "AssetFile": "C:\\Users\\alafi\\source\\repos\\SamiSpot\\SamiSpot\\wwwroot\\css\\map.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 18 May 2026 09:01:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3r8b2a0bt1"
+        },
+        {
+          "Name": "label",
+          "Value": "css/map.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U="
+        }
+      ]
+    },
+    {
       "Route": "css/map.css",
       "AssetFile": "C:\\Users\\alafi\\source\\repos\\SamiSpot\\SamiSpot\\wwwroot\\css\\map.css",
       "Selectors": [],
@@ -3452,7 +3497,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4660"
+          "Value": "3"
         },
         {
           "Name": "Content-Type",
@@ -3460,11 +3505,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"tv1vrK6uCzutHNWNkDqgpfF7ujaVB5iwmvO2RJuzfH4=\""
+          "Value": "\"8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 28 Apr 2026 08:42:12 GMT"
+          "Value": "Mon, 18 May 2026 09:01:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3474,52 +3519,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-tv1vrK6uCzutHNWNkDqgpfF7ujaVB5iwmvO2RJuzfH4="
-        }
-      ]
-    },
-    {
-      "Route": "css/map.u7v1alf01n.css",
-      "AssetFile": "C:\\Users\\alafi\\source\\repos\\SamiSpot\\SamiSpot\\wwwroot\\css\\map.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4660"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"tv1vrK6uCzutHNWNkDqgpfF7ujaVB5iwmvO2RJuzfH4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 28 Apr 2026 08:42:12 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "u7v1alf01n"
-        },
-        {
-          "Name": "label",
-          "Value": "css/map.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-tv1vrK6uCzutHNWNkDqgpfF7ujaVB5iwmvO2RJuzfH4="
+          "Value": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U="
         }
       ]
     },
