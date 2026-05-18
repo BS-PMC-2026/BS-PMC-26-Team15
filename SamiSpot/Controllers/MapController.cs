@@ -158,7 +158,14 @@ namespace SamiSpot.Controllers
                     }
 
                     var responseText = await response.Content.ReadAsStringAsync();
-                    var parsed = JsonSerializer.Deserialize<GovMapLayerResponse>(responseText, options);
+
+if (responseText.TrimStart().StartsWith("<"))
+{
+    skipped++;
+    continue;
+}
+
+var parsed = JsonSerializer.Deserialize<GovMapLayerResponse>(responseText, options);
 
                     if (parsed?.Data == null || parsed.Data.Count == 0)
                     {
