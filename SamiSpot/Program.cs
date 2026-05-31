@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using SamiSpot.Data;
 using SamiSpot.Services;
 
@@ -203,6 +203,7 @@ INSERT INTO Users (UserName, Email, Password, RoleType)
 VALUES ('Admin', 'admin@sami.com', 'Admin123', 'Admin')
 ");
             }
+
 
             // LOAD CITY DATA
             if (!context.CityLocations.Any())
