@@ -1,0 +1,1141 @@
+﻿@model SamiSpot.Models.AiChatViewModel
+
+@{
+    ViewData["Title"] = "AI Chat";
+}
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    :root {
+        --brand: #4bbfd3;
+        --brand-mid: #35a8be;
+        --brand-dark: #1e8fa3;
+        --brand-light: #89d8e8;
+        --brand-pale: #d8f4f9;
+        --brand-faint: #eef9fc;
+        --text-primary: #0f1f2a;
+        --text-secondary: #4a6577;
+        --text-muted: #8da5b3;
+        --bg-page: #f0f8fa;
+        --bg-panel: #ffffff;
+        --bg-sidebar: #f8fcfd;
+        --border: rgba(75,191,211,.18);
+        --border-mid: rgba(75,191,211,.32);
+        --border-subtle: rgba(15,31,42,.08);
+        --shadow-sm: 0 2px 8px rgba(15,31,42,.05);
+        --shadow-md: 0 4px 20px rgba(15,31,42,.08);
+        --r-sm: 8px;
+        --r-md: 12px;
+        --r-lg: 16px;
+        --r-xl: 20px;
+        --font: 'DM Sans', -apple-system, sans-serif;
+        --font-mono: 'DM Mono', monospace;
+    }
+
+    /* ── DO NOT touch html/body overflow — let the site handle that ── */
+
+    /* The chat page fills the remaining viewport below the navbar.
+       We use a wrapper that is position:relative so we can measure height. */
+    .ai-page-wrap {
+        width: 100%;
+        /* 100vh minus whatever your navbar is — tweak 65px to match */
+        height: calc(100vh - 65px);
+        display: flex;
+        align-items: stretch;
+        padding: 0;
+    }
+
+    .ai-page {
+        font-family: var(--font);
+        flex: 1;
+        display: flex;
+        background: var(--bg-page);
+        border-radius: var(--r-xl);
+        overflow: hidden;
+        border: 1px solid var(--border-mid);
+        box-shadow: var(--shadow-md);
+        /* full height of wrapper */
+        height: 100%;
+    }
+
+    /* ══════════════════════════════
+       SIDEBAR
+    ══════════════════════════════ */
+    .ai-sidebar {
+        width: 256px;
+        min-width: 256px;
+        flex-shrink: 0;
+        background: var(--bg-sidebar);
+        border-right: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .sidebar-header {
+        padding: 18px 14px 13px;
+        border-bottom: 1px solid var(--border);
+        flex-shrink: 0;
+    }
+
+    .sidebar-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 14px;
+    }
+
+    .sidebar-orb-sm {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 38% 38%, #c8eef5 0%, #4bbfd3 45%, #2e9db5 100%);
+        box-shadow: 0 0 0 4px var(--brand-pale);
+        flex-shrink: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+        .sidebar-orb-sm::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 8px;
+            width: 10px;
+            height: 6px;
+            background: rgba(255,255,255,.55);
+            border-radius: 50%;
+            transform: rotate(-20deg);
+        }
+
+    .sidebar-brand-text strong {
+        display: block;
+        font-size: 13.5px;
+        font-weight: 700;
+        color: var(--text-primary);
+        letter-spacing: -.02em;
+    }
+
+    .sidebar-brand-text span {
+        font-size: 10.5px;
+        color: var(--text-muted);
+    }
+
+    .new-chat-btn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        padding: 10px 14px;
+        background: var(--brand);
+        color: #fff;
+        border: none;
+        border-radius: var(--r-sm);
+        font-family: var(--font);
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background .15s, transform .1s;
+    }
+
+        .new-chat-btn:hover {
+            background: var(--brand-mid);
+        }
+
+        .new-chat-btn:active {
+            transform: scale(.98);
+        }
+
+    .sidebar-section-label {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        padding: 14px 14px 6px;
+        flex-shrink: 0;
+    }
+
+    .ai-history {
+        flex: 1;
+        overflow-y: auto;
+        padding: 0 8px 8px;
+    }
+
+        .ai-history::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .ai-history::-webkit-scrollbar-thumb {
+            background: var(--border-mid);
+            border-radius: 10px;
+        }
+
+    .history-item {
+        padding: 9px 10px;
+        border-radius: var(--r-sm);
+        border: 1px solid transparent;
+        margin-bottom: 2px;
+        cursor: pointer;
+        transition: background .15s, border-color .15s;
+    }
+
+        .history-item:hover {
+            background: var(--brand-faint);
+            border-color: var(--border);
+        }
+
+        .history-item.active {
+            background: var(--brand-pale);
+            border-color: var(--border-mid);
+        }
+
+        .history-item a {
+            display: block;
+            text-decoration: none;
+        }
+
+    .history-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text-primary);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 2px;
+    }
+
+    .history-item.active .history-title {
+        color: var(--brand-dark);
+    }
+
+    .history-date {
+        font-size: 10.5px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+    }
+
+    .delete-wrap {
+        margin-top: 6px;
+    }
+
+    .btn-delete {
+        width: 100%;
+        padding: 4px 0;
+        background: transparent;
+        border: 1px solid rgba(224,59,43,.2);
+        border-radius: 5px;
+        color: #c0392b;
+        font-family: var(--font);
+        font-size: 11px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: .15s;
+    }
+
+        .btn-delete:hover {
+            background: rgba(224,59,43,.06);
+            border-color: rgba(224,59,43,.4);
+        }
+
+    .no-history {
+        font-size: 12px;
+        color: var(--text-muted);
+        padding: 24px 4px;
+        text-align: center;
+    }
+
+    /* ══════════════════════════════
+       MAIN — CSS grid 3 rows, fixed height
+       topbar: shrinks to content
+       messages: takes ALL remaining space, scrolls
+       input: shrinks to content, always at bottom
+    ══════════════════════════════ */
+    .ai-main {
+        flex: 1;
+        min-width: 0;
+        /* KEY: grid with explicit rows */
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        height: 100%; /* fill the parent .ai-page height */
+        overflow: hidden; /* clip at this boundary only */
+        background: var(--bg-page);
+    }
+
+    /* Row 1 — topbar */
+    .ai-topbar {
+        padding: 14px 28px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: var(--bg-panel);
+        flex-shrink: 0;
+    }
+
+    .topbar-orb {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 38% 38%, #c8eef5 0%, #4bbfd3 45%, #2e9db5 100%);
+        box-shadow: 0 0 0 5px var(--brand-pale);
+        flex-shrink: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+        .topbar-orb::before {
+            content: '';
+            position: absolute;
+            top: 7px;
+            left: 9px;
+            width: 11px;
+            height: 7px;
+            background: rgba(255,255,255,.55);
+            border-radius: 50%;
+            transform: rotate(-20deg);
+        }
+
+    .topbar-text h2 {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--text-primary);
+        letter-spacing: -.02em;
+    }
+
+    .topbar-text p {
+        font-size: 12px;
+        color: var(--text-secondary);
+        margin-top: 1px;
+    }
+
+    .online-badge {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #166534;
+        background: #dcfce7;
+        border: 1px solid #86efac;
+        padding: 5px 12px;
+        border-radius: 99px;
+    }
+
+    .online-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #16a34a;
+        animation: pulseDot 2s ease-in-out infinite;
+    }
+
+    @@keyframes pulseDot {
+        0%, 100% {
+            opacity: 1
+        }
+
+        50% {
+            opacity: .35
+        }
+    }
+
+    /* ── Row 2 — messages: SCROLLS, fills remaining space ── */
+    .ai-messages {
+        /* grid gives this row all leftover height */
+        overflow-y: auto; /* scroll HERE, not on body */
+        overflow-x: hidden;
+        padding: 32px 36px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        background: var(--bg-page);
+        /* allow content to grow naturally inside scroll */
+        min-height: 0; /* critical for flex children in a grid row */
+    }
+
+        .ai-messages::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .ai-messages::-webkit-scrollbar-thumb {
+            background: var(--border-mid);
+            border-radius: 10px;
+        }
+
+    /* ── EMPTY STATE — truly centered in the scroll area ── */
+    .empty-chat {
+        /* stretch to fill all available space in the flex column */
+        flex: 1;
+        display: flex;
+        align-items: center; /* vertical center */
+        justify-content: center; /* horizontal center */
+        min-height: 100%;
+        padding: 20px;
+    }
+
+    .empty-inner {
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    /* Big orb */
+    .hero-orb {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 36% 34%, #e0f6fa 0%, #6dcfe0 30%, #35a8be 65%, #1e8fa3 100%);
+        box-shadow: 0 0 0 16px rgba(75,191,211,.1), 0 0 0 32px rgba(75,191,211,.05), 0 10px 40px rgba(75,191,211,.3);
+        margin-bottom: 28px;
+        position: relative;
+        overflow: hidden;
+        animation: orbFloat 4s ease-in-out infinite;
+        flex-shrink: 0;
+    }
+
+        .hero-orb::before {
+            content: '';
+            position: absolute;
+            top: 22px;
+            left: 26px;
+            width: 36px;
+            height: 22px;
+            background: rgba(255,255,255,.48);
+            border-radius: 50%;
+            transform: rotate(-25deg);
+        }
+
+    .orb-eyes {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -54%);
+        display: flex;
+        gap: 14px;
+    }
+
+    .orb-eye {
+        width: 12px;
+        height: 16px;
+        background: rgba(255,255,255,.78);
+        border-radius: 50%;
+    }
+
+    @@keyframes orbFloat {
+        0%, 100% {
+            transform: translateY(0)
+        }
+
+        50% {
+            transform: translateY(-10px)
+        }
+    }
+
+    .empty-inner h3 {
+        font-size: 26px;
+        font-weight: 700;
+        color: var(--text-primary);
+        letter-spacing: -.03em;
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+
+    .empty-inner p {
+        font-size: 16px;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: 0;
+    }
+
+    /* 2×2 chip grid */
+    .suggestion-chips {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 28px;
+        width: 100%;
+    }
+
+    .chip {
+        padding: 12px 15px;
+        background: var(--bg-panel);
+        border: 1px solid var(--border-mid);
+        border-radius: var(--r-sm);
+        font-size: 13.5px;
+        color: var(--text-secondary);
+        cursor: pointer;
+        font-family: var(--font);
+        font-weight: 500;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: .15s;
+        box-shadow: var(--shadow-sm);
+    }
+
+        .chip:hover {
+            border-color: var(--brand);
+            color: var(--brand-dark);
+            background: var(--brand-faint);
+            transform: translateY(-1px);
+        }
+
+    .chip-icon {
+        width: 26px;
+        height: 26px;
+        background: var(--brand-pale);
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+        .chip-icon svg {
+            width: 13px;
+            height: 13px;
+            stroke: var(--brand-dark);
+            fill: none;
+        }
+
+    /* ── Date separator ── */
+    .msg-date-sep {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--text-muted);
+        font-size: 11px;
+        font-family: var(--font-mono);
+        letter-spacing: .04em;
+        text-transform: uppercase;
+        flex-shrink: 0;
+    }
+
+        .msg-date-sep::before, .msg-date-sep::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+    /* ── Message rows ── */
+    .msg-row {
+        display: flex;
+        align-items: flex-end;
+        gap: 12px;
+        animation: msgIn .22s ease both;
+        flex-shrink: 0;
+    }
+
+        .msg-row.user {
+            flex-direction: row-reverse;
+        }
+
+    @@keyframes msgIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px)
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0)
+        }
+    }
+
+    .msg-avatar {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        font-weight: 700;
+    }
+
+    .msg-row.assistant .msg-avatar {
+        background: radial-gradient(circle at 38% 38%, #c8eef5 0%, #4bbfd3 50%, #2e9db5 100%);
+        box-shadow: 0 0 0 3px var(--brand-pale);
+        position: relative;
+        overflow: hidden;
+    }
+
+        .msg-row.assistant .msg-avatar::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 6px;
+            width: 8px;
+            height: 5px;
+            background: rgba(255,255,255,.55);
+            border-radius: 50%;
+            transform: rotate(-20deg);
+        }
+
+    .msg-row.user .msg-avatar {
+        background: var(--bg-panel);
+        color: var(--brand-dark);
+        border: 1.5px solid var(--border-mid);
+    }
+
+    .msg-col {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        max-width: 65%;
+    }
+
+    .msg-row.user .msg-col {
+        align-items: flex-end;
+    }
+
+    .msg-sender {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        padding: 0 4px;
+    }
+
+    /* BIGGER bubbles */
+    .msg-bubble {
+        padding: 14px 20px;
+        border-radius: var(--r-md);
+        font-size: 16px; /* big and readable */
+        line-height: 1.75;
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+    /* AI: white bg, dark text */
+    .msg-row.assistant .msg-bubble {
+        background: var(--bg-panel);
+        border: 1px solid var(--border);
+        color: var(--text-primary);
+        border-bottom-left-radius: 4px;
+        box-shadow: var(--shadow-sm);
+    }
+    /* User: pale teal bg, dark text — readable! */
+    .msg-row.user .msg-bubble {
+        background: var(--brand-pale);
+        border: 1px solid var(--border-mid);
+        color: var(--text-primary);
+        border-bottom-right-radius: 4px;
+    }
+
+    .msg-time {
+        font-size: 10.5px;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        padding: 0 4px;
+    }
+
+    /* Typing dots */
+    .typing-bubble {
+        background: var(--bg-panel);
+        border: 1px solid var(--border);
+        border-radius: var(--r-md);
+        border-bottom-left-radius: 4px;
+        padding: 16px 22px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        box-shadow: var(--shadow-sm);
+    }
+
+    .typing-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--brand-light);
+        animation: typeBounce 1.3s ease-in-out infinite;
+    }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: .18s;
+            background: var(--brand);
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: .36s;
+            background: var(--brand-mid);
+        }
+
+    @@keyframes typeBounce {
+        0%, 60%, 100% {
+            transform: translateY(0);
+            opacity: .7
+        }
+
+        30% {
+            transform: translateY(-8px);
+            opacity: 1
+        }
+    }
+
+    /* ── Row 3 — input: always at bottom, never jumps ── */
+    .ai-input-area {
+        padding: 14px 28px 18px;
+        border-top: 1px solid var(--border);
+        background: var(--bg-panel);
+        flex-shrink: 0;
+    }
+
+    .input-shell {
+        background: var(--bg-page);
+        border: 1.5px solid var(--border-mid);
+        border-radius: var(--r-md);
+        padding: 14px 16px;
+        transition: border-color .2s, box-shadow .2s, background .2s;
+    }
+
+        .input-shell:focus-within {
+            border-color: var(--brand);
+            box-shadow: 0 0 0 3px rgba(75,191,211,.13);
+            background: #fff;
+        }
+
+    .ai-textarea {
+        width: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        resize: none;
+        min-height: 52px;
+        max-height: 140px;
+        font-size: 15px;
+        line-height: 1.65;
+        color: var(--text-primary);
+        font-family: var(--font);
+    }
+
+        .ai-textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+    .input-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .left-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .loc-btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 7px 13px;
+        background: transparent;
+        border: 1px solid var(--border-mid);
+        border-radius: var(--r-sm);
+        color: var(--text-secondary);
+        font-family: var(--font);
+        font-size: 12.5px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: .15s;
+    }
+
+        .loc-btn:hover {
+            border-color: var(--brand);
+            color: var(--brand-dark);
+            background: var(--brand-faint);
+        }
+
+    .loc-pill {
+        font-size: 11px;
+        color: var(--text-muted);
+        border: 1px solid var(--border-subtle);
+        padding: 4px 11px;
+        border-radius: 99px;
+        font-family: var(--font-mono);
+        background: transparent;
+    }
+
+        .loc-pill.active {
+            color: #166534;
+            border-color: #86efac;
+            background: #dcfce7;
+        }
+
+    .send-btn {
+        width: 40px;
+        height: 40px;
+        background: var(--brand);
+        border: none;
+        border-radius: var(--r-sm);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background .15s, transform .1s;
+        flex-shrink: 0;
+    }
+
+        .send-btn:hover {
+            background: var(--brand-mid);
+        }
+
+        .send-btn:active {
+            transform: scale(.92);
+        }
+
+    .input-hint {
+        margin-top: 9px;
+        font-size: 11px;
+        color: var(--text-muted);
+        text-align: center;
+        font-family: var(--font-mono);
+    }
+
+    @@media (max-width: 768px) {
+        .ai-sidebar {
+            display: none;
+        }
+
+        .ai-messages {
+            padding: 20px 16px 14px;
+        }
+
+        .ai-input-area {
+            padding: 10px 14px 14px;
+        }
+    }
+</style>
+
+<div class="ai-page-wrap">
+    <div class="ai-page">
+
+        <!-- ══ Sidebar ══ -->
+        <aside class="ai-sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-brand">
+                    <div class="sidebar-orb-sm"></div>
+                    <div class="sidebar-brand-text">
+                        <strong>AI Assistant</strong>
+                        <span>Safety &amp; Shelter Guide</span>
+                    </div>
+                </div>
+                <form method="post" asp-action="NewChat">
+                    <button type="submit" class="new-chat-btn">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                        New Chat
+                    </button>
+                </form>
+            </div>
+
+            <div class="sidebar-section-label">Recent Chats</div>
+
+            <div class="ai-history">
+                @if (Model.Sessions != null && Model.Sessions.Any())
+                {
+                    foreach (var session in Model.Sessions)
+                    {
+                        <div class="history-item @(Model.CurrentSessionId == session.Id ? "active" : "")">
+                            <a asp-action="Index" asp-route-sessionId="@session.Id">
+                                <div class="history-title">@session.Title</div>
+                                <div class="history-date">@session.UpdatedAt.ToString("dd/MM/yyyy HH:mm")</div>
+                            </a>
+                            <form method="post" asp-action="DeleteChat" class="delete-wrap" onsubmit="return confirmDeleteChat();">
+                                <input type="hidden" name="sessionId" value="@session.Id" />
+                                <button type="submit" class="btn-delete">Delete</button>
+                            </form>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="no-history">No chats yet.</div>
+                }
+            </div>
+        </aside>
+
+        <!-- ══ Main (3-row grid) ══ -->
+        <section class="ai-main">
+
+            <!-- Row 1: topbar -->
+            <div class="ai-topbar">
+                <div class="topbar-orb"></div>
+                <div class="topbar-text">
+                    <h2>AI Safety Assistant</h2>
+                    <p>Alerts · Shelters · Emergency guidance</p>
+                </div>
+                <div class="online-badge">
+                    <div class="online-dot"></div>
+                    Online
+                </div>
+            </div>
+
+            <!-- Row 2: messages (scrollable) -->
+            <div class="ai-messages" id="chatMessages">
+                @if (Model.CurrentSession == null)
+                {
+                    <div class="empty-chat">
+                        <div class="empty-inner">
+                            <div class="hero-orb">
+                                <div class="orb-eyes">
+                                    <div class="orb-eye"></div>
+                                    <div class="orb-eye"></div>
+                                </div>
+                            </div>
+                            <h3>How can I help you stay safe?</h3>
+                            <p>Ask about shelters, active alerts, or what to do in an emergency.</p>
+                            <div class="suggestion-chips">
+                                <button class="chip" onclick="fillPrompt('Is it safe to stay here?')">
+                                    <div class="chip-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg></div>
+                                    Is it safe to stay here?
+                                </button>
+                                <button class="chip" onclick="fillPrompt('Where is the nearest shelter?')">
+                                    <div class="chip-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg></div>
+                                    Nearest shelter
+                                </button>
+                                <button class="chip" onclick="fillPrompt('What should I do during an alert?')">
+                                    <div class="chip-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg></div>
+                                    Alert guidance
+                                </button>
+                                <button class="chip" onclick="fillPrompt('Show me evacuation routes near me')">
+                                    <div class="chip-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="10" r="3" /><path d="M12 2a8 8 0 0 0-8 8c0 5.4 7.1 12.5 7.8 13.1a.3.3 0 0 0 .4 0C12.9 22.5 20 15.4 20 10a8 8 0 0 0-8-8z" /></svg></div>
+                                    Evacuation routes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else if (Model.Messages != null && Model.Messages.Any())
+                {
+                    <div class="msg-date-sep">Today</div>
+                    foreach (var msg in Model.Messages)
+                    {
+                        <div class="msg-row @msg.Role">
+                            <div class="msg-avatar">@(msg.Role != "assistant" ? "You" : "")</div>
+                            <div class="msg-col">
+                                <span class="msg-sender">@(msg.Role == "assistant" ? "AI" : "You")</span>
+                                <div class="msg-bubble">@Html.Raw(msg.Content)</div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="empty-chat">
+                        <div class="empty-inner">
+                            <div class="hero-orb">
+                                <div class="orb-eyes">
+                                    <div class="orb-eye"></div>
+                                    <div class="orb-eye"></div>
+                                </div>
+                            </div>
+                            <h3>Send your first message</h3>
+                            <p>Type a question below to start the conversation.</p>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <!-- Row 3: input (always pinned to bottom) -->
+            @if (Model.CurrentSession != null)
+            {
+                <div class="ai-input-area">
+                    <form id="chatForm">
+                        <input type="hidden" name="sessionId" value="@Model.CurrentSession.Id" />
+                        <input type="hidden" name="latitude" id="latitude" />
+                        <input type="hidden" name="longitude" id="longitude" />
+
+                        <div class="input-shell">
+                            <textarea id="messageInput" name="message" class="ai-textarea"
+                                      placeholder="Ask a safety question…" rows="2" required></textarea>
+                            <div class="input-actions">
+                                <div class="left-actions">
+                                    <button type="button" class="loc-btn" onclick="getLocation()">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                            <circle cx="12" cy="10" r="3" />
+                                            <path d="M12 2a8 8 0 0 0-8 8c0 5.4 7.1 12.5 7.8 13.1a.3.3 0 0 0 .4 0C12.9 22.5 20 15.4 20 10a8 8 0 0 0-8-8z" />
+                                        </svg>
+                                        Use My Location
+                                    </button>
+                                    <span class="loc-pill" id="locationStatus">No location</span>
+                                </div>
+                                <button type="submit" class="send-btn" title="Send">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="22" y1="2" x2="11" y2="13" />
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="input-hint">Enter to send &nbsp;·&nbsp; Shift+Enter for new line</div>
+                    </form>
+                </div>
+            }
+
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function confirmDeleteChat() { return confirm("Delete this chat?"); }
+
+        function restoreSavedLocation() {
+            var lat = localStorage.getItem("chat_latitude");
+            var lng = localStorage.getItem("chat_longitude");
+            if (!lat || !lng) return;
+            var latEl = document.getElementById("latitude");
+            var lngEl = document.getElementById("longitude");
+            if (latEl) latEl.value = lat;
+            if (lngEl) lngEl.value = lng;
+            var s = document.getElementById("locationStatus");
+            if (s) { s.textContent = "Located ✓"; s.classList.add("active"); }
+        }
+
+        function getLocation() {
+            var s = document.getElementById("locationStatus");
+            if (!navigator.geolocation) { s.textContent = "Not supported"; return; }
+            s.textContent = "Detecting…";
+            navigator.geolocation.getCurrentPosition(
+                function(pos) {
+                    var lat = pos.coords.latitude, lng = pos.coords.longitude;
+                    document.getElementById("latitude").value = lat;
+                    document.getElementById("longitude").value = lng;
+                    localStorage.setItem("chat_latitude", lat);
+                    localStorage.setItem("chat_longitude", lng);
+                    s.textContent = "Located ✓"; s.classList.add("active");
+                },
+                function() { s.textContent = "Denied"; s.classList.remove("active"); }
+            );
+        }
+
+        function fillPrompt(text) {
+            var ta = document.getElementById("messageInput");
+            if (ta) { ta.value = text; ta.focus(); }
+        }
+
+        function currentTime() {
+            var d = new Date();
+            return d.getHours().toString().padStart(2,'0') + ':' + d.getMinutes().toString().padStart(2,'0');
+        }
+
+        function parseMarkdown(text) {
+            // Convert [label](url) to a real clickable link
+            return text.replace(/\[([^\]]+)\]\((https?:\/\/[^\)]+)\)/g,
+                '<a href="$2" target="_blank" rel="noopener noreferrer" style="color:var(--brand-dark);text-decoration:underline;word-break:break-all;">$1</a>');
+        }
+
+        function addMessage(role, content) {
+            content = parseMarkdown(content);
+            var msgs = document.getElementById("chatMessages");
+            var empty = msgs.querySelector(".empty-chat");
+            if (empty) empty.remove();
+
+            if (!msgs.querySelector(".msg-date-sep")) {
+                var ds = document.createElement("div");
+                ds.className = "msg-date-sep"; ds.textContent = "Today";
+                msgs.appendChild(ds);
+            }
+
+            var row = document.createElement("div");
+            row.className = "msg-row " + role;
+            var avatarText = role === "assistant" ? "" : "You";
+            row.innerHTML =
+                '<div class="msg-avatar">' + avatarText + '</div>' +
+                '<div class="msg-col">' +
+                  '<span class="msg-sender">' + (role === "assistant" ? "AI" : "You") + '</span>' +
+                  '<div class="msg-bubble">' + content + '</div>' +
+                  '<span class="msg-time">' + currentTime() + '</span>' +
+                '</div>';
+
+            msgs.appendChild(row);
+            msgs.scrollTop = msgs.scrollHeight;
+        }
+
+        function addTyping() {
+            var msgs = document.getElementById("chatMessages");
+            var row = document.createElement("div");
+            row.className = "msg-row assistant"; row.id = "typingRow";
+            row.innerHTML =
+                '<div class="msg-avatar"></div>' +
+                '<div class="msg-col">' +
+                  '<span class="msg-sender">AI</span>' +
+                  '<div class="typing-bubble">' +
+                    '<div class="typing-dot"></div>' +
+                    '<div class="typing-dot"></div>' +
+                    '<div class="typing-dot"></div>' +
+                  '</div>' +
+                '</div>';
+            msgs.appendChild(row);
+            msgs.scrollTop = msgs.scrollHeight;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            restoreSavedLocation();
+            // Parse markdown links in any server-rendered bubbles
+            document.querySelectorAll(".msg-bubble").forEach(function(b) {
+                b.innerHTML = parseMarkdown(b.innerHTML);
+            });
+            var msgs = document.getElementById("chatMessages");
+            if (msgs) msgs.scrollTop = msgs.scrollHeight;
+
+            var form = document.getElementById("chatForm");
+            if (!form) return;
+
+            var ta = document.getElementById("messageInput");
+            if (ta) {
+                ta.addEventListener("keydown", function(e) {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                        e.preventDefault();
+                        form.requestSubmit ? form.requestSubmit() : form.submit();
+                    }
+                });
+            }
+
+            form.addEventListener("submit", async function(e) {
+                e.preventDefault();
+                var input = document.getElementById("messageInput");
+                var message = input.value.trim();
+                if (!message) return;
+                addMessage("user", message);
+                input.value = "";
+                addTyping();
+                var formData = new FormData(form);
+                formData.set("message", message);
+                try {
+                    var res = await fetch("/AiChat/SendMessageAjax", { method: "POST", body: formData });
+                    var data = await res.json();
+                    var t = document.getElementById("typingRow");
+                    if (t) t.remove();
+                    addMessage("assistant", data.assistantMessage);
+                } catch(err) {
+                    var t = document.getElementById("typingRow");
+                    if (t) t.remove();
+                    addMessage("assistant", "Sorry, something went wrong. Please try again.");
+                }
+            });
+        });
+    </script>
+}

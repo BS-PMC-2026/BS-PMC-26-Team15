@@ -11,10 +11,10 @@ builder.Services.AddHttpClient();
 builder.Services.AddScoped<CityImportService>();
 builder.Services.AddScoped<RedAlertService>();
 
-if (!isTesting)
-{
-    builder.Services.AddHostedService<RedAlertBackgroundService>();
-}
+//if (!isTesting)
+//{
+   // builder.Services.AddHostedService<RedAlertBackgroundService>();
+//}
 
 builder.Services.AddScoped<CityCoordinateService>();
 
@@ -22,11 +22,17 @@ if (!isTesting)
 {
     builder.Services.AddDbContext<ApplicationDbContext>(options =>
         options.UseSqlServer(
-            builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Configuration.GetConnectionString("DefaultConnection"),
+            sqlOptions => sqlOptions.EnableRetryOnFailure(
+                maxRetryCount: 5,
+                maxRetryDelay: TimeSpan.FromSeconds(30),
+                errorNumbersToAdd: null
+            )));
 }
 
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession();
+builder.Services.AddScoped<OpenAiService>();
 
 var app = builder.Build();
 
@@ -198,11 +204,6 @@ VALUES ('Admin', 'admin@sami.com', 'Admin123', 'Admin')
 ");
             }
 
-            // if (!context.Shelters.Any())
-            // {
-            //     var controller = new SamiSpot.Controllers.MapController(context);
-            //     await controller.ScanGovMapSample();
-            // }
 
             // LOAD CITY DATA
             if (!context.CityLocations.Any())
@@ -229,7 +230,8 @@ VALUES ('Admin', 'admin@sami.com', 'Admin123', 'Admin')
     }
     catch (Exception ex)
     {
-        Console.WriteLine("Startup DB setup failed: " + ex.Message);
+        Console.WriteLine($"⚠️ DB initialization failed, app will still start: {ex.Message}");
+        // App continues running — DB init will retry on next request
     }
 }
 
