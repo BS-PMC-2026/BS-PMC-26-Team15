@@ -11,10 +11,10 @@ builder.Services.AddHttpClient();
 builder.Services.AddScoped<CityImportService>();
 builder.Services.AddScoped<RedAlertService>();
 
-if (!isTesting)
-{
-    builder.Services.AddHostedService<RedAlertBackgroundService>();
-}
+//if (!isTesting)
+//{
+   // builder.Services.AddHostedService<RedAlertBackgroundService>();
+//}
 
 builder.Services.AddScoped<CityCoordinateService>();
 
@@ -22,11 +22,17 @@ if (!isTesting)
 {
     builder.Services.AddDbContext<ApplicationDbContext>(options =>
         options.UseSqlServer(
-            builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Configuration.GetConnectionString("DefaultConnection"),
+            sqlOptions => sqlOptions.EnableRetryOnFailure(
+                maxRetryCount: 5,
+                maxRetryDelay: TimeSpan.FromSeconds(30),
+                errorNumbersToAdd: null
+            )));
 }
 
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession();
+builder.Services.AddScoped<OpenAiService>();
 
 var app = builder.Build();
 
@@ -50,16 +56,18 @@ app.MapControllerRoute(
 
 if (!app.Environment.IsEnvironment("Testing"))
 {
-    using (var scope = app.Services.CreateScope())
+    try
     {
-        var services = scope.ServiceProvider;
+        using (var scope = app.Services.CreateScope())
+        {
+            var services = scope.ServiceProvider;
 
-        var context = services.GetRequiredService<ApplicationDbContext>();
+            var context = services.GetRequiredService<ApplicationDbContext>();
 
-        context.Database.EnsureCreated();
+            context.Database.EnsureCreated();
 
-        // USERS
-        context.Database.ExecuteSqlRaw(@"
+            // USERS
+            context.Database.ExecuteSqlRaw(@"
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Users' AND xtype='U')
 CREATE TABLE Users (
     Id INT IDENTITY PRIMARY KEY,
@@ -70,14 +78,14 @@ CREATE TABLE Users (
     IsActive BIT NOT NULL DEFAULT 1
 )");
 
-        context.Database.ExecuteSqlRaw(@"
+            context.Database.ExecuteSqlRaw(@"
 IF COL_LENGTH('Users', 'IsActive') IS NULL
 ALTER TABLE Users
 ADD IsActive BIT NOT NULL DEFAULT 1
 ");
 
-        // SHELTERS
-        context.Database.ExecuteSqlRaw(@"
+            // SHELTERS
+            context.Database.ExecuteSqlRaw(@"
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Shelters' AND xtype='U')
 CREATE TABLE Shelters (
     Id INT IDENTITY PRIMARY KEY,
@@ -91,7 +99,7 @@ CREATE TABLE Shelters (
     IsActive BIT NOT NULL DEFAULT 1
 )");
 
-        context.Database.ExecuteSqlRaw(@"
+            context.Database.ExecuteSqlRaw(@"
 IF COL_LENGTH('Shelters', 'Capacity') IS NULL ALTER TABLE Shelters ADD Capacity INT NULL;
 IF COL_LENGTH('Shelters', 'ExternalId') IS NULL ALTER TABLE Shelters ADD ExternalId NVARCHAR(MAX) NULL;
 IF COL_LENGTH('Shelters', 'GovMapMiklatId') IS NULL ALTER TABLE Shelters ADD GovMapMiklatId NVARCHAR(MAX) NULL;
@@ -103,8 +111,8 @@ IF COL_LENGTH('Shelters', 'ShelterType') IS NULL ALTER TABLE Shelters ADD Shelte
 IF COL_LENGTH('Shelters', 'SourceUrl') IS NULL ALTER TABLE Shelters ADD SourceUrl NVARCHAR(MAX) NULL;
 ");
 
-        // ALERTS
-        context.Database.ExecuteSqlRaw(@"
+            // ALERTS
+            context.Database.ExecuteSqlRaw(@"
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Alerts' AND xtype='U')
 CREATE TABLE Alerts (
     Id INT IDENTITY PRIMARY KEY,
@@ -114,8 +122,8 @@ CREATE TABLE Alerts (
     IsDrill BIT NOT NULL
 )");
 
-        // CITY LOCATIONS
-        context.Database.ExecuteSqlRaw(@"
+            // CITY LOCATIONS
+            context.Database.ExecuteSqlRaw(@"
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='CityLocations' AND xtype='U')
 CREATE TABLE CityLocations (
     Id INT IDENTITY PRIMARY KEY,
@@ -127,8 +135,8 @@ CREATE TABLE CityLocations (
     Longitude FLOAT NOT NULL
 )");
 
-        // CONTRIBUTOR SHELTERS
-        context.Database.ExecuteSqlRaw(@"
+            // CONTRIBUTOR SHELTERS
+            context.Database.ExecuteSqlRaw(@"
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='ContributorShelters' AND xtype='U')
 CREATE TABLE ContributorShelters (
     Id INT IDENTITY PRIMARY KEY,
@@ -144,8 +152,8 @@ CREATE TABLE ContributorShelters (
     CreatedAt DATETIME NOT NULL
 )");
 
-        // CONTRIBUTOR SHELTER IMAGES
-        context.Database.ExecuteSqlRaw(@"
+            // CONTRIBUTOR SHELTER IMAGES
+            context.Database.ExecuteSqlRaw(@"
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='ContributorShelterImages' AND xtype='U')
 CREATE TABLE ContributorShelterImages (
     Id INT IDENTITY PRIMARY KEY,
@@ -155,8 +163,8 @@ CREATE TABLE ContributorShelterImages (
     REFERENCES ContributorShelters(Id)
 )");
 
-        // FEEDBACKS
-        context.Database.ExecuteSqlRaw(@"
+            // FEEDBACKS
+            context.Database.ExecuteSqlRaw(@"
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Feedbacks' AND xtype='U')
 CREATE TABLE Feedbacks (
     Id INT IDENTITY PRIMARY KEY,
@@ -166,8 +174,8 @@ CREATE TABLE Feedbacks (
     CreatedAt DATETIME
 )");
 
-        // FEEDBACK REPLIES
-        context.Database.ExecuteSqlRaw(@"
+            // FEEDBACK REPLIES
+            context.Database.ExecuteSqlRaw(@"
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='FeedbackReplies' AND xtype='U')
 CREATE TABLE FeedbackReplies (
     Id INT IDENTITY(1,1) PRIMARY KEY,
@@ -185,44 +193,44 @@ CREATE TABLE FeedbackReplies (
         REFERENCES FeedbackReplies(Id)
 )");
 
-        // ADMIN USER
-        var adminExists = context.Users.Any(u => u.Email == "admin@sami.com");
+            // ADMIN USER
+            var adminExists = context.Users.Any(u => u.Email == "admin@sami.com");
 
-        if (!adminExists)
-        {
-            context.Database.ExecuteSqlRaw(@"
+            if (!adminExists)
+            {
+                context.Database.ExecuteSqlRaw(@"
 INSERT INTO Users (UserName, Email, Password, RoleType)
 VALUES ('Admin', 'admin@sami.com', 'Admin123', 'Admin')
 ");
+            }
+
+            // LOAD CITY DATA
+            if (!context.CityLocations.Any())
+            {
+                var cityImportService =
+                    services.GetRequiredService<CityImportService>();
+
+                var env =
+                    services.GetRequiredService<IWebHostEnvironment>();
+
+                var filePath = Path.Combine(
+                    env.ContentRootPath,
+                    "Data",
+                    "city.csv");
+
+                cityImportService.ImportCitiesFromCsv(filePath);
+
+                var cityCoordinateService =
+                    services.GetRequiredService<CityCoordinateService>();
+
+                cityCoordinateService.UpdateCityLatLng();
+            }
         }
-
-        // if (!context.Shelters.Any())
-        // {
-        //     var controller = new SamiSpot.Controllers.MapController(context);
-        //     await controller.ScanGovMapSample();
-        // }
-
-        // LOAD CITY DATA
-        if (!context.CityLocations.Any())
-        {
-            var cityImportService =
-                services.GetRequiredService<CityImportService>();
-
-            var env =
-                services.GetRequiredService<IWebHostEnvironment>();
-
-            var filePath = Path.Combine(
-                env.ContentRootPath,
-                "Data",
-                "city.csv");
-
-            cityImportService.ImportCitiesFromCsv(filePath);
-
-            var cityCoordinateService =
-                services.GetRequiredService<CityCoordinateService>();
-
-            cityCoordinateService.UpdateCityLatLng();
-        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"⚠️ DB initialization failed, app will still start: {ex.Message}");
+        // App continues running — DB init will retry on next request
     }
 }
 
