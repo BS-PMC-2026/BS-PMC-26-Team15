@@ -16,7 +16,7 @@ namespace SamiSpot.Controllers
             _context = context;
             _ai = ai;
         }
-
+        // US34: allow AI to use current location (BSPMT15-212)
         private int? GetCurrentUserId()
         {
             var userIdStr = HttpContext.Session.GetString("UserId");
