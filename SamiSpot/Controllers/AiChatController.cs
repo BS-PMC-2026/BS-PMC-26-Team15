@@ -15,6 +15,7 @@ namespace SamiSpot.Controllers
         {
             _context = context;
             _ai = ai;
+            // US35: AI recommended actions during emergencies (BSPMT15-219)
         }
         // US34: allow AI to use current location (BSPMT15-212)
         private int? GetCurrentUserId()
