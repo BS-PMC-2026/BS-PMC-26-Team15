@@ -10,7 +10,6 @@ namespace SamiSpot.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly OpenAiService _ai;
-
         public AiChatController(ApplicationDbContext context, OpenAiService ai)
         {
             _context = context;
@@ -69,7 +68,6 @@ namespace SamiSpot.Controllers
 
             return View(vm);
         }
-
         [HttpPost]
         public IActionResult NewChat()
         {
@@ -90,7 +88,6 @@ namespace SamiSpot.Controllers
 
             return RedirectToAction("Index", new { sessionId = newSession.Id });
         }
-
         [HttpPost]
         public async Task<IActionResult> SendMessageAjax(int sessionId, string message, double? latitude, double? longitude)
         {
